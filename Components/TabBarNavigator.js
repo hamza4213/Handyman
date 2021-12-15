@@ -17,8 +17,6 @@ const TabNavigator=()=>{
                 tabBarShowLabel:false,  
                 headerShown:false,
                 tabBarHideOnKeyboard:true,
-                // tabBarActiveBackgroundColor:"#3B9433",
-                // tabBarInactiveBackgroundColor:"#3B9433",
                 tabBarIcon: ({focused,color,size,padding,bottom,backgroundColor,borderRadius,width,paddingBottom,paddingLeft,borderBottomColor,borderBottomWidth})=>{
                     let iconName;
                     if(route.name === "Home"){

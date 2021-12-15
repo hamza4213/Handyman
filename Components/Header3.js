@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 
-const Header = (props) => {
+const Header3 = (props) => {
     const{txt,txt2,Iconname1,Iconname2}=props;
     return (
         <View style={{flexDirection:'row',justifyContent:'space-between',backgroundColor:'#dcdcdc',padding:'2%',paddingLeft:'4%'}}>
@@ -20,4 +20,4 @@ const Header = (props) => {
         </View>
     );
 };
-export default Header;
+export default Header3;

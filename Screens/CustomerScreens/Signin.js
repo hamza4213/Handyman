@@ -14,7 +14,7 @@ import FormInput from "../../Components/Forminput";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 
-const Signin = () => {
+const Signin = props => {
   const [IMageSource, setIMageSource] = useState("");
   useState;
   const [CheckIMage, setCheckIMage] = useState(true);
@@ -68,7 +68,7 @@ const Signin = () => {
         >
           <FormInput
             labelValue={PhoneNumber}
-            placeholderText={"productexperience@gmail.com"}
+            placeholderText={"Phone Number"}
             onChangeText={val => setPhoneNumber(val)}
             keyboardTyp="numeric"
           />
@@ -145,22 +145,24 @@ const Signin = () => {
           <Text style={{ fontSize: 16 }}>Polices</Text>
         </View>
         <View style={{ height: 15 }} />
-        <View
-          style={{
-            width: "80%",
-            alignSelf: "center",
-            alignItems: "center",
-            borderWidth: 1,
-            height: 35,
-            borderRadius: 10,
-            justifyContent: "center",
-            backgroundColor: "#fbd43e",
-          }}
-        >
-          <Text style={{ justifyContent: "center", fontSize: 18 }}>
-            Continue
-          </Text>
-        </View>
+        <TouchableOpacity onPress={() => props.navigation.navigate("SetDate")}>
+          <View
+            style={{
+              width: "80%",
+              alignSelf: "center",
+              alignItems: "center",
+              borderWidth: 1,
+              height: 35,
+              borderRadius: 10,
+              justifyContent: "center",
+              backgroundColor: "#fbd43e",
+            }}
+          >
+            <Text style={{ justifyContent: "center", fontSize: 18 }}>
+              Continue
+            </Text>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

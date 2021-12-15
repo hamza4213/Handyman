@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "./Screens/CustomerScreens/Signin";
 import TabBarNavigator from "./Components/TabBarNavigator";
+import SetDate from "./Screens/CustomerScreens/SetDate";
 function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -23,6 +24,11 @@ function App() {
         <Stack.Screen
           name="Signin"
           component={Signin}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SetDate"
+          component={SetDate}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

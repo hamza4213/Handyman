@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import Header from '../../Components/Header';
+import Header from '../../Components/userHeader';
 import Images from '../../Components/Image';
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";

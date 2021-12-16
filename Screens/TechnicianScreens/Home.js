@@ -11,9 +11,9 @@ const Home = () => {
         {IMAGE:require('../../Images/more.png'),height:50, width:50, Imgtext:'more'},
     ]
     return (
-        <View style={{width:'100%',height:'100%',marginTop:'5%',backgroundColor:'#fff'}}>
+        <View style={{width:'100%',height:'100%',marginTop:'7%',backgroundColor:'#fff'}}>
             
-            <View style={{width:'100%',height:'10%',justifyContent:'center',}}>
+            <View style={{width:'100%',height:'8%',}}>
                 <Header3 txt='HandyMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
             </View>
             

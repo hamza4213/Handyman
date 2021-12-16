@@ -31,8 +31,8 @@ const Profile = () => {
         },
     ]
     return (
-        <View style={{width:'100%',height:'100%',marginTop:'6%',alignItems:'center',backgroundColor:'#fff'}}>
-            <View style={{width:'100%',height:'10%',justifyContent:'center',bottom:'1%'}}>
+        <View style={{width:'100%',height:'100%',marginTop:'7%',alignItems:'center',backgroundColor:'#fff'}}>
+            <View style={{width:'100%',height:'10%',}}>
                 <Header3 txt='HandyMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
             </View>
             <View style={{height:'40%',width:'100%',backgroundColor:'#FFD943',bottom:'3%',padding:'2%'}}>

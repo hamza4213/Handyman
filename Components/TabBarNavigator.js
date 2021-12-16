@@ -2,8 +2,8 @@ import React from 'react';
 import { Dimensions} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
-import Home from '../Screens/AdminScreens/Home';
-import Profile from '../Screens/AdminScreens/Profile';
+import HomeScreen from '../Screens/CustomerScreens/HomeScreen';
+import ElectricianScreen from '../Screens/CustomerScreens/ElectricianScreen';
 const fullScreenWidth=Dimensions.get("window").width;
 const Tabs=createBottomTabNavigator();
 const TabNavigator2=()=>{
@@ -16,13 +16,12 @@ const TabNavigator2=()=>{
                 tabBarHideOnKeyboard:true,
                 tabBarIcon: ({focused,color,size,padding,bottom,backgroundColor,borderRadius,width,paddingBottom,paddingLeft,borderBottomColor,borderBottomWidth})=>{
                     let iconName;
-                    if(route.name === "Home"){
-                        iconName = focused ? 'home' : 'home-outline'
-                        size=28
-                    }
-                    else if(route.name === "Profile"){
-                        iconName = focused ? 'person' : 'person-outline'
-                        size=28
+                    if (route.name === "HomeScreen") {
+                    iconName = focused ? "home" : "home-outline";
+                    size = 28;
+                    } else if (route.name === "ElectricianScreen") {
+                    iconName = focused ? "settings-outline" : "settings-outline";
+                    size = 28;
                     }
                     return(
                         <IonicIcon
@@ -43,8 +42,8 @@ const TabNavigator2=()=>{
                 style:{width:fullScreenWidth,},
             }}
         >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Profile" component={Profile}/>
+            <Tabs.Screen name="HomeScreen" component={HomeScreen} />
+            <Tabs.Screen name="ElectricianScreen" component={ElectricianScreen}/>
         </Tabs.Navigator>
     );
 };

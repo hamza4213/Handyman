@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import Header from '../../Components/userHeader';
+import Header from '../../Components/UserHeader';
 import Images from '../../Components/Image';
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
 const DATA= [
-    {IMAGE:require('../../images/bulb.png'),height:50, width:50, Imgtext:'Electrician'},
-        {IMAGE:require('../../images/tap.png'),height:50, width:50, Imgtext:'plumber'},
-            {IMAGE:require('../../images/tv.png'),height:50, width:50, Imgtext:'television'},
-                {IMAGE:require('../../images/more.png'),height:50, width:50, Imgtext:'more'},
+    {IMAGE:require('../../images/bulb.png'),height:50, width:50, Imgtext:'Electrician', navigateto:"ElectricianScreen"},
+        {IMAGE:require('../../images/tap.png'),height:50, width:50, Imgtext:'plumber', navigateto:"ElectricianScreen"},
+            {IMAGE:require('../../images/tractor.png'),height:50, width:70, Imgtext:'Agroequipment', navigateto:"ElectricianScreen",right:10,imgright:10},
+                {IMAGE:require('../../images/more.png'),height:50, width:50, Imgtext:'more', navigateto:"ElectricianScreen",imgright:30,right:20},
 ]
 
 const HomeScreen = () => {
@@ -18,8 +18,8 @@ return (
     <View style={{height:'100%',width:'100%'}}>
     <View style={{height:'10%',backgroundColor:'#D3D3D3',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
     <View style={{flexDirection:'row'}}>
-        <Ionicons name="menu" size={28} color="black" style={{top:2}}/>
-    <Header text='HANDIMAN' fontSize={24} fontWeight='bold' color='grey'/>
+        {/* <Ionicons name="menu" size={28} color="black" style={{top:2}}/> */}
+    <Header text='HANDYMAN' fontSize={24} fontWeight='bold' color='grey'/>
     </View>
     <View style={{flexDirection:'row'}}>
         <Header text='Sambalpur' fontSize={20} color='grey' fontWeight='bold'/> 
@@ -39,10 +39,10 @@ return (
     />
     </View>
     <View>
-        <Text style={{fontSize:18}}>what do you need to find?</Text>
+        <Text style={{fontSize:18,fontWeight:'bold',left:10}}>what do you need to find?</Text>
     </View>
-    <View style={{height:'40%',}}>
-        <Image source={require('../../images/taps.jpg')}/>
+    <View style={{}}>
+        <Image source={require('../../images/taps.jpg')} style={{height:'100%',width:'95%',alignSelf:'center'}}/>
     </View>
     </View>
 );

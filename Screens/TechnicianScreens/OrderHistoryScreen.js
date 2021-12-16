@@ -112,7 +112,7 @@ const OrderHistoryScreen = ({route}) => {
                     <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.paymentTime}</Text>
                 </View>
             </View>
-            {/* 5 ////////////////////////////////////////////////////// */}
+            {/* ////////////////////////////////////////////////////// */}
 
         </View>
     );

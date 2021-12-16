@@ -9,7 +9,7 @@ import { Ionicons } from "@expo/vector-icons";
 const DATA= [
     {IMAGE:require('../../images/bulb.png'),height:50, width:50, Imgtext:'Electrician', navigateto:"ElectricianScreen"},
         {IMAGE:require('../../images/tap.png'),height:50, width:50, Imgtext:'plumber', navigateto:"ElectricianScreen"},
-            {IMAGE:require('../../images/tractor.png'),height:50, width:70, Imgtext:'Agroequipment', navigateto:"ElectricianScreen",right:10,imgright:10},
+            {IMAGE:require('../../images/tractor.png'),height:50, width:70, Imgtext:'Agro equipment', navigateto:"ElectricianScreen",right:10,imgright:10},
                 {IMAGE:require('../../images/more.png'),height:50, width:50, Imgtext:'more', navigateto:"ElectricianScreen",imgright:30,right:20},
 ]
 

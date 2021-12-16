@@ -3,7 +3,7 @@ import { View, Text, FlatList,} from 'react-native';
 import ImagePick from '../../Components/ImagePick';
 import Images3 from '../../Components/Images3';
 import Header3 from '../../Components/Header3';
-const Profile = ({navigation}) => {
+const Profile = () => {
     const ARR=[ 
         {   
             Name:"RKDash",
@@ -15,6 +15,7 @@ const Profile = ({navigation}) => {
         {
             IMAGE:require('../../Images/myOrder.png'),
             height:50, width:50,borderRadius:20,backgroundColor:'#dcdcdc', Imgtext:'My Order',
+            navigateto:"OrderDetailScreen"
         },
         {
             IMAGE:require('../../Images/adress.png'),
@@ -32,9 +33,11 @@ const Profile = ({navigation}) => {
     return (
         <View style={{width:'100%',height:'100%',marginTop:'6%',alignItems:'center',backgroundColor:'#fff'}}>
             <View style={{width:'100%',height:'10%',justifyContent:'center',}}>
-                <Header3 txt='HandiMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
+                <Header3 txt='HandyMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
             </View>
-            <View style={{height:'40%',width:'100%',backgroundColor:'#FFD943',bottom:'2%'}}></View>
+            <View style={{height:'40%',width:'100%',backgroundColor:'#FFD943',bottom:'2%'}}>
+                <Text style={{fontSize:18,color:'#fff'}}>Profile</Text>
+            </View>
 
             {/* <View>
                 <ImagePick/>
@@ -56,9 +59,8 @@ const Profile = ({navigation}) => {
                 <FlatList
                     data={ARR1}
                     numColumns='2'
-                    keyExtractor={(item) => item}
+                    keyExtractor={(item) => item.Imgtext}
                     renderItem={({item}) => <Images3 item={item} 
-                    onPress={()=>navigation.navigate("OrderDetailScreen")}
                     />}
                 />
             </View>

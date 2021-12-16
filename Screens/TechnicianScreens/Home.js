@@ -5,7 +5,7 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 import Images3 from "../../Components/Images3";
 const Home = () => {
     const Arr= [
-        {IMAGE:require('../../Images/img1.png'),height:50, width:50, Imgtext:'Order'},
+        {IMAGE:require('../../Images/img1.png'),height:50, width:50, Imgtext:'Order',navigateto:"OrderDetailScreen"},
         {IMAGE:require('../../Images/img2.png'),height:50, width:50, Imgtext:'Aceept'},
         {IMAGE:require('../../Images/img3.png'),height:50, width:50, Imgtext:'Payment'},
         {IMAGE:require('../../Images/more.png'),height:50, width:50, Imgtext:'more'},
@@ -14,7 +14,7 @@ const Home = () => {
         <View style={{width:'100%',height:'100%',marginTop:'5%',backgroundColor:'#fff'}}>
             
             <View style={{width:'100%',height:'10%',justifyContent:'center',}}>
-                <Header3 txt='HandiMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
+                <Header3 txt='HandyMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
             </View>
             
             <View style={{width:'100%',height:'4%',justifyContent:'center',flexDirection:'row',borderBottomWidth:1,borderColor:'#dcdcdc'}}>
@@ -30,7 +30,7 @@ const Home = () => {
                 <FlatList
                     data={Arr}
                     numColumns='2'
-                    keyExtractor={(item) => item}
+                    keyExtractor={(item) => item.Imgtext}
                     renderItem={({item}) => <Images3 item={item}/>}
                 />
             </View>

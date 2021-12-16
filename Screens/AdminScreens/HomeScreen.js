@@ -12,9 +12,9 @@ export default function HomeScreen() {
 
     const data= [
         {IMAGE:require('../../Images/notes.png'),height:50, width:50, Imgtext:'ORDER'},
-            {IMAGE:require('../../Images/history.jpg'),height:50, width:50, Imgtext:'ORDER HISTORY'},
-                {IMAGE:require('../../Images/tech.png'),height:50, width:50, Imgtext:'TECHNICIAN'},
-                    {IMAGE:require('../../Images/services.png'),height:50, width:50, Imgtext:'SERVICES'},
+            {IMAGE:require('../../Images/history.jpg'),height:50, width:50,Imgtext:'ORDER HISTORY',justifyContent:'center', navigateto:'OrderHistory'},
+                {IMAGE:require('../../Images/tech.png'),height:50, width:50, Imgtext:'TECHNICIAN',},
+                    {IMAGE:require('../../Images/services.png'),height:50, width:50, Imgtext:'SERVICES',right:29,navigateto:'OrderHandle'},
     ]
 
 
@@ -24,12 +24,12 @@ export default function HomeScreen() {
             <View style={{
                 flexDirection:"row",
                 height:"5%",
-                width:"100%",
+                width:"96%",
                 backgroundColor:"#f2f2f2",
                 marginTop:"6%",
                 alignItems:"center",
-                justifyContent:"space-between"
-                
+                justifyContent:"space-between",
+                marginLeft:"2%"
             }}>
                 <View style={{
                     flexDirection:"row"
@@ -39,7 +39,7 @@ export default function HomeScreen() {
                     fontSize:18,
                     fontWeight:"bold"
                 }}>
-                    Handiman
+                    Handyman
                 </Text>
                 </View>
 
@@ -60,7 +60,8 @@ export default function HomeScreen() {
             <View style={{
                 flexDirection:"row",
                 height:"5%",
-                width:"100%",
+                width:"96%",
+                marginLeft:"2%",
                 alignItems:"center"
             }}>
 
@@ -84,13 +85,13 @@ export default function HomeScreen() {
                 />
 
                 <View style={{
-                    height:"30%",
-                    // backgroundColor:"blue"
+                    height:250,
                 }}>
                     <Text style={{
                         fontWeight:"bold",
                         fontSize:15,
-                        marginTop:"5%"
+                        marginTop:"5%",
+                        marginLeft:4
                     }}>
                         MOST USED SERVICES IN ODISHA
                     </Text>
@@ -106,16 +107,20 @@ export default function HomeScreen() {
                 </View>
 
                 <View style={{
-                    height:"30%",
+                    height:"6%",
+                    // backgroundColor:"blue"
                 }}> 
-
                 <Text style={{
                     fontWeight:"bold",
                     fontSize:15,
-                    marginTop:"5%"
+                    marginTop:"3%",
+                    marginLeft:4
                 }}>
                     WHAT DO YOU NEED TO FIND ?
-                </Text>
+                </Text>       
+                </View>
+
+                <View>
                 <Image source={require('../../Images/taps.jpg')}/>
                 </View>
                     
@@ -127,7 +132,8 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
-      height:"100%",
-      width:"100%"
+    //   height:"100%",
+    //   width:"100%",
+    flex:1
     },
   });

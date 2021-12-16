@@ -76,7 +76,6 @@ export default function OrderHistory() {
                 flexDirection:"row",
                 marginLeft:"7%",
                 paddingTop:"2%",
-                // justifyContent:"space-between"
             }}>
                     <View style={{
                         width:"45%",
@@ -107,8 +106,7 @@ export default function OrderHistory() {
                 flexDirection:"row",
                 marginLeft:"7%",
                 paddingTop:"5%",
-                width:"80%",               
-                // justifyContent:"space-between"
+                width:"80%",
             }}>
                 <Text style={{fontWeight:"bold"}}>Customer Name</Text>
                 <Text style={{fontWeight:"bold",marginLeft:"25%"}}>Mobile No</Text>
@@ -230,11 +228,11 @@ export default function OrderHistory() {
                 flexDirection:"row",
                 marginLeft:"7%",
                 paddingTop:"5%",
-                width:"70%",               
-                justifyContent:"space-between"
+                width:"92%",               
+                justifyContent:"space-between",
             }}>
                 <Text style={{}}>Payment Received</Text>
-                <Text style={{marginLeft:"18%"}}>Payment Received Date & Time</Text>
+                <Text style={{}}>Payment Received Date & Time</Text>
             </View>
 
             <View style={{
@@ -266,9 +264,6 @@ export default function OrderHistory() {
                             </Text>
                     </View>
             </View>
-
-
-            
         </View>
     )
 }

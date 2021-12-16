@@ -12,14 +12,16 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-  //   <NavigationContainer >
-  //     <Stack.Navigator screenOptions={{headerShown:false}}>
-  //       <Stack.Screen name="HomeScreen" component={TabNavigatorAdmin} />
-  //     </Stack.Navigator>
-  // </NavigationContainer>
+    <NavigationContainer >
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="HomeScreen" component={TabNavigatorAdmin} />
+        <Stack.Screen name="OrderHistory" component={OrderHistory}/>
+        <Stack.Screen name="OrderHandle" component={OrderHandle}/>
+      </Stack.Navigator>
+  </NavigationContainer>
 
-  
-    <OrderHandle/>
+  // <OrderHistory/>
+    // <OrderHandle/>
   );
 }
 

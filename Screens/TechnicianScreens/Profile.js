@@ -32,16 +32,16 @@ const Profile = () => {
     ]
     return (
         <View style={{width:'100%',height:'100%',marginTop:'6%',alignItems:'center',backgroundColor:'#fff'}}>
-            <View style={{width:'100%',height:'10%',justifyContent:'center',}}>
+            <View style={{width:'100%',height:'10%',justifyContent:'center',bottom:'1%'}}>
                 <Header3 txt='HandyMan' txt2="SambalPur" Iconname1="menu" Iconname2="location-outline"  />
             </View>
-            <View style={{height:'40%',width:'100%',backgroundColor:'#FFD943',bottom:'2%'}}>
+            <View style={{height:'40%',width:'100%',backgroundColor:'#FFD943',bottom:'3%',padding:'2%'}}>
                 <Text style={{fontSize:18,color:'#fff'}}>Profile</Text>
+                <View style={{height:'90%',width:'100%',justifyContent:'flex-end'}}>
+                    <ImagePick/>
+                </View>
             </View>
 
-            {/* <View>
-                <ImagePick/>
-            </View> */}
             <View style={{height:'10%',width:'100%',justifyContent:'center',}}>
                 <FlatList
                     data={ARR}
@@ -60,8 +60,7 @@ const Profile = () => {
                     data={ARR1}
                     numColumns='2'
                     keyExtractor={(item) => item.Imgtext}
-                    renderItem={({item}) => <Images3 item={item} 
-                    />}
+                    renderItem={({item}) => <Images3 item={item} />}
                 />
             </View>
         </View>

@@ -6,8 +6,8 @@ import Images3 from "../../Components/Images3";
 const Home = () => {
     const Arr= [
         {IMAGE:require('../../Images/img1.png'),height:50, width:50, Imgtext:'Order',navigateto:"OrderDetailScreen"},
-        {IMAGE:require('../../Images/img2.png'),height:50, width:50, Imgtext:'Aceept'},
-        {IMAGE:require('../../Images/img3.png'),height:50, width:50, Imgtext:'Payment'},
+        {IMAGE:require('../../Images/img2.png'),height:50, width:50, Imgtext:'Aceept',navigateto:"AcceptOrderScreen"},
+        {IMAGE:require('../../Images/img3.png'),height:50, width:50, Imgtext:'Payment',navigateto:"PaymentScreen"},
         {IMAGE:require('../../Images/more.png'),height:50, width:50, Imgtext:'more'},
     ]
     return (

@@ -1,10 +1,15 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { View, Text,TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { Adddata } from '../Redux/counterSlice';
 const OrderDetail = (props) => {
+    const dispatch=useDispatch();
     const {item} = props;
     const navigation= useNavigation();
+    useEffect(() => {
+        dispatch(Adddata(item))
+    }, [])
     return (
         <>
         <TouchableOpacity 

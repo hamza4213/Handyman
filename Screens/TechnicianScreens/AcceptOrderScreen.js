@@ -1,19 +1,33 @@
 import React from 'react';
-import { View, Text,Dimensions,TouchableOpacity } from 'react-native';
-
-const OrderHistoryScreen = ({route}) => {
-    const {data}=route.params;
+import { View,TextInput,Dimensions,Text} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useSelector, useDispatch } from 'react-redux'
+const AcceptOrderScreen = () => {
+    const count = useSelector((state) => state.counter.data)
     return (
-        <View style={{width:Dimensions.get("screen").width,height:Dimensions.get('window').height,marginTop:'6%',padding:'2%',paddingLeft:'4%',backgroundColor:'#fff'}}>
-            <View style={{width:'100%',height:'7%',justifyContent:'center',}}>
-                <Text style={{fontSize:22,fontWeight:'bold'}}>ORDER HISTORY</Text>
+        <View style={{width:Dimensions.get("screen").width,height:Dimensions.get('screen').height,marginTop:'6%',padding:'4%',backgroundColor:'#fff'}}>
+            
+            <View style={{width:'100%',height:'7%'}}>
+                <Text style={{fontSize:24,fontWeight:'bold',}}>Accept By Technician</Text>
             </View>
-           
+
+            <View style={{width:'100%',height:'5%',borderWidth:1,borderRadius:5,borderColor:'#8c8c8c',padding:'2%'}}>
+                <TextInput
+
+                />
+            </View>
+            <View style={{height:35,width:'100%',marginTop:'2%',justifyContent:'center',left:'40%'}}>
+                <TouchableOpacity style={{height:'100%',width:'20%',justifyContent:'center',alignItems:'center',borderRadius:5,backgroundColor:'#3A8EC0'}}>
+                    <Text>Accept</Text>
+                </TouchableOpacity>
+            </View>
+            {/* ///////////////////////////////////////////////////////////////////////// */}
+
             <View style={{width:'100%',height:'15%',justifyContent:'center',}}>
-                <Text style={{fontSize:24,fontWeight:'bold',}}>{data.Text1}</Text>
+                <Text style={{fontSize:24,fontWeight:'bold',}}>{count.Text1}</Text>
                 <View style={{flexDirection:'row',marginTop:'1%'}}>
-                    <Text style={{fontSize:16,color:'#8c8c8c',fontWeight:'bold',}}>{data.Text4}</Text>
-                    <Text style={{fontSize:16,color:'#8c8c8c',fontWeight:'bold',}}>{data.Text5}</Text>
+                    <Text style={{fontSize:16,color:'#8c8c8c',fontWeight:'bold',}}>{count.Text4}</Text>
+                    <Text style={{fontSize:16,color:'#8c8c8c',fontWeight:'bold',}}>{count.Text5}</Text>
                 </View>
                 <Text style={{fontSize:16,fontWeight:'bold',}}>Technician Assigned</Text>
             </View>
@@ -30,13 +44,13 @@ const OrderHistoryScreen = ({route}) => {
                 </View>
             </View>
             
-            <View style={{width:'100%',height:'8%',justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={{width:'100%',height:'7%',justifyContent:'space-between',flexDirection:'row'}}>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{data.Service}</Text>
+                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{count.Service}</Text>
                 </View>
 
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{data.AddInfo}</Text>
+                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{count.AddInfo}</Text>
                 </View>
             </View>
             {/* 2 ///////////////////////////////////////////////// */}
@@ -49,12 +63,12 @@ const OrderHistoryScreen = ({route}) => {
                 </View>
             </View>
             
-            <View style={{width:'100%',height:'8%',justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={{width:'100%',height:'7%',justifyContent:'space-between',flexDirection:'row'}}>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{data.CustmerName}</Text>
+                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{count.CustmerName}</Text>
                 </View>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{data.CMOBNO}</Text>
+                    <Text style={{fontSize:20,color:'#8C8C8C',fontWeight:'bold',}}>{count.CMOBNO}</Text>
                 </View>
             </View>
             {/* 3 ///////////////////////////////////////////////////// */}
@@ -67,12 +81,12 @@ const OrderHistoryScreen = ({route}) => {
                 </View>
             </View>
             
-            <View style={{width:'100%',height:'8%',justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={{width:'100%',height:'7%',justifyContent:'space-between',flexDirection:'row'}}>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.customerAddress}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.customerAddress}</Text>
                 </View>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.Pincode}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.Pincode}</Text>
                 </View>
             </View>
             {/* 4 ////////////////////////////////////////////////////// */}
@@ -85,12 +99,12 @@ const OrderHistoryScreen = ({route}) => {
                 </View>
             </View>
             
-            <View style={{width:'100%',height:'8%',justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={{width:'100%',height:'7%',justifyContent:'space-between',flexDirection:'row'}}>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.Techname}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.Techname}</Text>
                 </View>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.TechMobNo}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.TechMobNo}</Text>
                 </View>
             </View>
             {/* 5 ////////////////////////////////////////////////////// */}
@@ -103,13 +117,13 @@ const OrderHistoryScreen = ({route}) => {
                 </View>
             </View>
             
-            <View style={{width:'100%',height:'8%',justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={{width:'100%',height:'7%',justifyContent:'space-between',flexDirection:'row'}}>
                 <View style={{width:'50%',}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.paymentRec}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.paymentRec}</Text>
                 </View>
                 <View style={{width:'50%',flexDirection:'row'}}>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.paymentdate}</Text>
-                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{data.paymentTime}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.paymentdate}</Text>
+                    <Text style={{fontSize:18,color:'#8C8C8C',fontWeight:'bold',}}>{count.paymentTime}</Text>
                 </View>
             </View>
             {/* ////////////////////////////////////////////////////// */}
@@ -117,4 +131,4 @@ const OrderHistoryScreen = ({route}) => {
         </View>
     );
 };
-export default OrderHistoryScreen;
+export default AcceptOrderScreen;

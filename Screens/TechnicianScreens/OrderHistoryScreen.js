@@ -1,8 +1,14 @@
-import React from 'react';
+import React,{useEffect}from 'react';
 import { View, Text,Dimensions,TouchableOpacity } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux'
+import { Adddata } from '../../Redux/counterSlice';
 
 const OrderHistoryScreen = ({route}) => {
     const {data}=route.params;
+    const dispatch=useDispatch();
+    useEffect(() => {
+        dispatch(Adddata(data))
+    }, [])
     return (
         <View style={{width:Dimensions.get("screen").width,height:Dimensions.get('window').height,marginTop:'6%',padding:'2%',paddingLeft:'4%',backgroundColor:'#fff'}}>
             <View style={{width:'100%',height:'7%',justifyContent:'center',}}>

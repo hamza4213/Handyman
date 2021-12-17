@@ -7,7 +7,6 @@ import OrderHistoryScreen from './Screens/TechnicianScreens/OrderHistoryScreen';
 import AcceptOrderScreen from './Screens/TechnicianScreens/AcceptOrderScreen';
 import PaymentScreen from './Screens/TechnicianScreens/PaymentScreen';
 import store from './Redux/store';
-import check from './Components/check';
 import { Provider } from 'react-redux';
 const Stack=createStackNavigator();
 export default function App() {
@@ -26,7 +25,6 @@ export default function App() {
         <Stack.Screen name="AcceptOrderScreen" component={AcceptOrderScreen} />
 
         <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
-        {/* <Stack.Screen name="check" component={check} /> */}
 
       </Stack.Navigator>
   </NavigationContainer>

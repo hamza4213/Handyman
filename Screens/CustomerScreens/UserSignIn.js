@@ -10,6 +10,7 @@ import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
 import CountryPicker from "react-native-country-picker-modal";
 import { AntDesign } from "@expo/vector-icons";
+import Textinput from '../../Components/Textinputcomponent';
 
 
 const UserSignIn = (props) => {

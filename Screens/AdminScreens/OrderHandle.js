@@ -384,17 +384,13 @@ export default function OrderHandle() {
                             </Text>
                     </View>
             </View>
-
         </View>
-
-
     </View>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#fff',
+    backgroundColor: '#fff',
     flex:1
     },
-  });
+});

@@ -3,8 +3,12 @@ import { View, Text } from 'react-native'
 
 export default function Profile() {
     return (
-        <View>
-            <Text>this is profile screen</Text>
+        <View style={{
+            flex:1,
+            alignItems:"center",
+            justifyContent:"center"
+        }}>
+            <Text>This is profile screen</Text>
         </View>
     )
 }

@@ -10,7 +10,7 @@ const TabNavigatorAdmin=()=>{
     return (
         <Tab.Navigator
             screenOptions={({route})=>({
-                tabBarStyle:{height:55,},
+                tabBarStyle:{height:55},
                 tabBarShowLabel:false,  
                 headerShown:false,
                 tabBarHideOnKeyboard:true,

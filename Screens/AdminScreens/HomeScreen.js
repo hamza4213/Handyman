@@ -1,12 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
-import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AdminFlatlist from '../../Components/AdminFlatlist';
-import TabNavigator from '../../Components/TabNavigatorAdmin';
-
 
 export default function HomeScreen() {
 
@@ -16,8 +13,6 @@ export default function HomeScreen() {
                 {IMAGE:require('../../Images/tech.png'),height:50, width:50, Imgtext:'TECHNICIAN',},
                     {IMAGE:require('../../Images/services.png'),height:50, width:50, Imgtext:'SERVICES',right:29,navigateto:'OrderHandle'},
     ]
-
-
     return (
         <View style={styles.container}>
 
@@ -103,12 +98,10 @@ export default function HomeScreen() {
                     renderItem={({item}) => 
                     <AdminFlatlist item={item}/>}
                     />   
-
                 </View>
 
                 <View style={{
-                    height:"6%",
-                    // backgroundColor:"blue"
+                    height:"6%"
                 }}> 
                 <Text style={{
                     fontWeight:"bold",
@@ -122,18 +115,15 @@ export default function HomeScreen() {
 
                 <View>
                 <Image source={require('../../Images/taps.jpg')}/>
-                </View>
-                    
+                </View> 
+
             <StatusBar style="auto"/>
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#fff',
-    //   height:"100%",
-    //   width:"100%",
-    flex:1
+        flex:1,
+        backgroundColor: '#fff',
     },
-  });
+    });

@@ -1,14 +1,34 @@
 import React from 'react'
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text,StyleSheet, Picker} from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function OrderHandle() {
+
+    const technician=[
+        {
+            id:1,
+            name:"Rahul"
+        },
+        {
+            id:2,
+            name:"Yadav"
+        },
+        {
+            id:3,
+            name:"Rajev"
+        },
+        {
+            id:4,
+            name:"Mohan"
+        }
+    ]
     return (
         <View style={styles.container}>
         
         <View style={{
             height:85,
             alignItems:"center",
+            top:20
         }}>
                 <Text style={{
                     fontWeight:"bold",
@@ -123,8 +143,7 @@ export default function OrderHandle() {
         </View>
 
         <View style={{
-            height:100,
-            // backgroundColor:"red"            
+            height:100,           
         }}>
             <View style={{
                 marginLeft:"7%",              
@@ -145,13 +164,25 @@ export default function OrderHandle() {
                     </Text>                   
             </View>
 
-            <Text style={{
-                fontWeight:"bold",
-                paddingLeft:"7%"
-            }}>
-                Technician assigned
-            </Text>
+                    <Text style={{
+                        paddingLeft:"7%",
+                        fontWeight:"bold"
+                    }}>
+                        Technician Assigned
+                    </Text>
 
+                    <View style={{
+                        paddingLeft:"5%",
+                    }}>
+                        <Picker style={{
+                            fontWeight:"bold",
+                            borderColor:"gray",
+                            borderWidth:1                       
+                        }}>
+                            {technician.map(item=>(<Picker.Item label={item.name} value={item.name} />))}              
+                        </Picker> 
+                    </View>
+            
             <View style={{
                 flexDirection:"row",
                 marginLeft:"7%",
@@ -238,7 +269,6 @@ export default function OrderHandle() {
                 marginLeft:"7%",
                 paddingTop:"5%",
                 width:"80%",               
-                // justifyContent:"space-between"
             }}>
                 <Text style={{fontWeight:"bold"}}>Customer Address</Text>
                 <Text style={{fontWeight:"bold",marginLeft:"20%"}}>Pin Code</Text>
@@ -279,7 +309,6 @@ export default function OrderHandle() {
                 marginLeft:"7%",
                 paddingTop:"5%",
                 width:"80%",               
-                // justifyContent:"space-between"
             }}>
                 <Text style={{fontWeight:"bold"}}>Technician Name</Text>
                 <Text style={{fontWeight:"bold",marginLeft:"20%"}}>Technician Mobile No</Text>

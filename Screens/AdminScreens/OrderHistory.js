@@ -1,23 +1,26 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Header } from 'react-native/Libraries/NewAppScreen';
-
 export default function OrderHistory() {
 
-    const technician=[
+    const arr=[
         {
-            id:1,
-            name:"Rahul"
+            Text1:"KSPNMIR2020004",
+            Text2:"05-09-2020 - ",
+            Text3:"08:45",
+            Service:'NMIR',
+            AddInfo:'testUnit',
+            CustmerName:'NMIR',
+            CMOBNO:'9556693650',
+            customerAddress:'PLOT NO - 91 SAMBALPUT, ODISHA',
+            Pincode:'751003',
+            Techname:'NMIR',
+            TechMobNo:'9090772138',
+            paymentRec:'RS. 300',
+            paymentdate:'05-12-2021 - ',
+            paymentTime:'14:54PM'
         },
-        {
-            id:2,
-            name:"Yadav"
-        },
-        {
-            id:3,
-            name:"Rajev"
-        }
     ]
+
     return (
         <View style={styles.container}>
             
@@ -147,7 +150,6 @@ export default function OrderHistory() {
                 marginLeft:"7%",
                 paddingTop:"5%",
                 width:"80%",               
-                // justifyContent:"space-between"
             }}>
                 <Text style={{fontWeight:"bold"}}>Customer Address</Text>
                 <Text style={{fontWeight:"bold",marginLeft:"20%"}}>Pin Code</Text>
@@ -160,7 +162,6 @@ export default function OrderHistory() {
             }}>
                     <View style={{
                         width:"45%",
-                        
                     }}>
                         <Text style={{
                             fontWeight:"bold",
@@ -188,7 +189,6 @@ export default function OrderHistory() {
                 marginLeft:"7%",
                 paddingTop:"5%",
                 width:"80%",               
-                // justifyContent:"space-between"
             }}>
                 <Text style={{fontWeight:"bold"}}>Technician Name</Text>
                 <Text style={{fontWeight:"bold",marginLeft:"20%"}}>Technician Mobile No</Text>
@@ -200,8 +200,7 @@ export default function OrderHistory() {
                 paddingTop:"2%",
             }}>
                     <View style={{
-                        width:"45%",
-                        
+                        width:"45%"
                     }}>
                         <Text style={{
                             fontWeight:"bold",
@@ -231,8 +230,8 @@ export default function OrderHistory() {
                 width:"92%",               
                 justifyContent:"space-between",
             }}>
-                <Text style={{}}>Payment Received</Text>
-                <Text style={{}}>Payment Received Date & Time</Text>
+                <Text>Payment Received</Text>
+                <Text>Payment Received Date & Time</Text>
             </View>
 
             <View style={{
@@ -241,8 +240,7 @@ export default function OrderHistory() {
                 paddingTop:"2%",
             }}>
                     <View style={{
-                        width:"45%",
-                        
+                        width:"45%"
                     }}>
                         <Text style={{
                             fontWeight:"bold",
@@ -270,8 +268,8 @@ export default function OrderHistory() {
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#fff',
-      height:"100%",
-      width:"100%"
+    backgroundColor: '#fff',
+    height:"100%",
+    width:"100%"
     },
   });

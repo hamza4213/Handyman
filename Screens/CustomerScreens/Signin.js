@@ -8,15 +8,26 @@ import {
   Pressable,
   TouchableOpacity,
   Image,
+  TextInput,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import FormInput from "../../Components/Forminput";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-
+import { AntDesign } from "@expo/vector-icons";
+import CountryPicker from "react-native-country-picker-modal";
 const Signin = props => {
   const [IMageSource, setIMageSource] = useState("");
-  useState;
+  // useState;
+  const [Country, setCountry] = useState({
+    callingCode: ["92"],
+    cca2: "PK",
+    currency: ["PKR"],
+    flag: "flag-pk",
+    name: "Pakistan",
+    region: "Asia",
+    subregion: "Southern Asia",
+  });
   const [CheckIMage, setCheckIMage] = useState(true);
   const height = Dimensions.get("screen").height;
   const [PhoneNumber, setPhoneNumber] = useState();
@@ -66,12 +77,53 @@ const Signin = props => {
         <View
           style={{ width: "85%", alignSelf: "center", height: height - 220 }}
         >
-          <FormInput
+          {/* <FormInput
             labelValue={PhoneNumber}
             placeholderText={"Phone Number"}
             onChangeText={val => setPhoneNumber(val)}
             keyboardTyp="numeric"
-          />
+          /> */}
+
+          <View style={{ height: "5%", width: "90%" }} />
+          <View
+            style={{
+              alignSelf: "center",
+              flexDirection: "row",
+              height: 50,
+              borderWidth: 1,
+              borderColor: "gray",
+              justifyContent: "center",
+              // padding:10,
+            }}
+          >
+            <View style={{ width: "6%", justifyContent: "center" }} />
+            <View style={{ justifyContent: "center" }}>
+              <CountryPicker
+                placeholder={Country.callingCode}
+                // placeholderTextColor="#fff"
+                // image={require("../../Images/flag.png")}
+                // onSelect={check ? country => setCountry(country) : null}
+                onSelect={country => setCountry(country)}
+                ios={true}
+                withFlag={true}
+                onOpen={val => console.log(val)}
+                withCallingCode={true}
+                withFilter={true}
+                withAlphaFilter={true}
+                withEmoji={true}
+                country={true}
+                visible={false}
+                countryCode={false}
+              />
+            </View>
+            <View style={{ justifyContent: "center" }}>
+              <AntDesign name="down" size={15} color="black" />
+            </View>
+            <View style={{ width: "88%", justifyContent: "center" }}>
+              <TextInput placeholder="Phone" maxLength={14} />
+            </View>
+          </View>
+
           <View style={{ height: "4%" }} />
           <FormInput
             labelValue={Otp}
@@ -138,7 +190,7 @@ const Signin = props => {
           <View style={{ width: 5 }} />
           <TouchableOpacity>
             <Text style={{ color: "gray", fontSize: 16, fontWeight: "bold" }}>
-              Handiman
+              Handyman
             </Text>
           </TouchableOpacity>
           <View style={{ width: 3 }} />

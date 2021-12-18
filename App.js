@@ -7,17 +7,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "./Screens/CustomerScreens/Signin";
 import TabBarNavigator from "./Components/TabBarNavigator";
 import SetDate from "./Screens/CustomerScreens/SetDate";
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-
+import Time from "./Screens/CustomerScreens/Time";
+import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
 const Stack = createNativeStackNavigator();
 
-function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -31,9 +25,14 @@ function App() {
           component={SetDate}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="Time"
+          component={Time}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default App;

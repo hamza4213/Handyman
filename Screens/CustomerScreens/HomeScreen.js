@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import Header from '../../Components/UserHeader';
+import Header from '../../Components/UserHeader'
 import Images from '../../Components/Image';
 import { AntDesign } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DATA= [
     {IMAGE:require('../../images/bulb.png'),height:50, width:50, Imgtext:'Electrician', navigateto:"ElectricianScreen"},
@@ -26,6 +26,23 @@ return (
         <AntDesign name="enviromento" size={24} color="black" style={{top:3}}/>
     </View>
     </View>
+    <View style={{
+                flexDirection:"row",
+                height:"4%",
+                justifyContent:'space-around',
+                top:5,
+            }}>
+                <MaterialCommunityIcons
+                name="bell-ring-outline"
+                size={22}
+                />
+                <Text style={{
+                    fontSize:13,
+                }}>
+                    Please expect delays in services due to COVID-19 restrictions
+                </Text>
+            </View>
+            <View style={{borderBottomWidth:0.3}}></View>
     <View style={{height:'3%',}}>
         <Text style={{textAlign:'center',fontWeight:'bold',fontSize:18}}>Most used services in odisha</Text>
     </View>

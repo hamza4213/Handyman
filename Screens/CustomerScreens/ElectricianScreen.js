@@ -8,8 +8,8 @@ import Listicon from "../../Components/Listicon";
 
 const ARRAY = [
     {iconName:'down',text:'rate chart',description:'^100Rs'},
-    {iconName:'down',text:'Terms and conditions',description:'^no conditions'},
-    {iconName:'down',text:'how it works',description:'^no working'}
+    {iconName:'down',text:'Terms and conditions',description:'^Term &conditions'},
+    {iconName:'down',text:'how it works',description:'^It is working'}
 ]
 
 

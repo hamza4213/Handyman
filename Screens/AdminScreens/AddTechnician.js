@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 
 import DataForm from '../../Components/DataForm'
@@ -20,20 +20,19 @@ const AddTechnician = () => {
                 <Text style={{color:'white',fontWeight:"bold",fontSize:18,left:10}}>Add Technician</Text>
             </View>
 
-            <View style={{
-                backgroundColor:"blue",
-                height:"90%"
+                <View style={{
+                height:650,
+                top:30,
             }}>
                 <DataForm/>
             </View>
 
-            {/* <View style={{
+            <View style={{
                 height:50,
                 width:"100%",
                 top:35,
                 alignItems:"center",
                 justifyContent:"center",
-                backgroundColor:"blue"
             }}>
                     <TouchableOpacity
                     // onPress={}
@@ -44,12 +43,11 @@ const AddTechnician = () => {
                         alignItems:"center",
                         justifyContent:"center",
                         borderRadius:10,
-                        top:40
                     }}
                     >
                         <Text style={{color:'white',fontSize:18}}>Save</Text>
                     </TouchableOpacity>
-            </View> */}
+            </View>
         </View>
     )
 }
@@ -58,8 +56,6 @@ export default AddTechnician
 
 const styles = StyleSheet.create({
     container:{
-        height:"100%",
-        width:"100%",
         flex:1,
         backgroundColor:'#fff'
     }

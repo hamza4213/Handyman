@@ -1,19 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text} from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
-
 export default function DataForm(props) {
-
-    
     return (
-        <View style={{
-            flex:1,
-            backgroundColor:'#fff'}}>
-            
+        <View>
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -42,7 +35,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -73,7 +65,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -103,7 +94,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -116,7 +106,6 @@ export default function DataForm(props) {
                 <Text style={{color:'red'}}> *</Text>
                 </View>
                 
-
                 <TextInput
                     style={{
                     height: 40,
@@ -134,7 +123,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -147,7 +135,6 @@ export default function DataForm(props) {
                 <Text style={{color:'red'}}> *</Text>
                 </View>
                 
-
                 <TextInput
                     style={{
                     height: 40,
@@ -165,7 +152,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -177,7 +163,6 @@ export default function DataForm(props) {
                 <Text>Date of Leaving</Text>
                 </View>
                 
-
                 <TextInput
                     style={{
                     height: 40,
@@ -195,7 +180,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -208,7 +192,6 @@ export default function DataForm(props) {
                 <Text style={{color:'red'}}> *</Text>
                 </View>
                 
-
                 <TextInput
                     style={{
                     height: 40,
@@ -227,7 +210,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             }}>
@@ -257,7 +239,6 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
             // backgroundColor:"blue"
@@ -291,10 +272,8 @@ export default function DataForm(props) {
             <View style={{
             height:65,
             width:"100%",
-            top:20,
             flexDirection:"row",
             alignItems:"center",
-            // backgroundColor:"blue"
             }}>
                 <View style={{
                     width:"20%",
@@ -321,9 +300,6 @@ export default function DataForm(props) {
                 
                 <Text style={{left:20,color:'black'}}>No file chosen</Text>
             </View>
-
         </View>
     )
 }
-
-

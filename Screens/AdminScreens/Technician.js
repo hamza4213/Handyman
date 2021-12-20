@@ -3,9 +3,10 @@ import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import Feather from "react-native-vector-icons/Feather"
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
+import AddTechnician from './AddTechnician';
 
 
-export default function Technician() {
+export default function Technician({navigation}) {
 
     const FormData=[
         {
@@ -53,7 +54,7 @@ export default function Technician() {
             <View style={{
                 height:65,
                 width:"100%",
-                // backgroundColor:"blue",
+                top:20,
                 flexDirection:"row",
                 alignContent:"center",
                 alignItems:"center",
@@ -80,12 +81,14 @@ export default function Technician() {
             </View>
 
             <View style={{
-                // backgroundColor:"gray",
                 height:50,
                 width:"98%",
-                justifyContent:"center",
-                alignItems:"flex-end"
+                justifyContent:"flex-end",
+                alignItems:"center",
+                top:15,
+                flexDirection:"row"
             }}>
+            
                 <TouchableOpacity
                 // onPress={}
                 style={{
@@ -94,7 +97,21 @@ export default function Technician() {
                     backgroundColor:"#3A8EC0",
                     alignItems:"center",
                     justifyContent:"center",
-                    borderRadius:5
+                    borderRadius:5,
+                    right:50
+                }}>
+                    <Text style={{color:"white"}}>Search</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                onPress={() => navigation.navigate('AddTechnician')}
+                style={{
+                    height:40,
+                    width:100,
+                    backgroundColor:"#3A8EC0",
+                    alignItems:"center",
+                    justifyContent:"center",
+                    borderRadius:5,
                 }}>
                     <Text style={{color:"white"}}>Add Technician</Text>
                 </TouchableOpacity>
@@ -104,9 +121,8 @@ export default function Technician() {
                 height:45,
                 width:"100%",
                 backgroundColor:"#3A8EC0",
-                top:5,
+                top:15,
                 justifyContent:"center",
-                
             }}>
                 <Text style={{color:"white",fontWeight:"bold",fontSize:16,left:7}}>Technician List</Text>
             </View>
@@ -115,7 +131,8 @@ export default function Technician() {
                 height:40,
                 width:"100%",
                 backgroundColor:"#d8d8d8",
-                flexDirection:"row"
+                flexDirection:"row",
+                top:15
             }}> 
 
             <View style={{
@@ -154,9 +171,8 @@ export default function Technician() {
             </View>
 
             <View style={{
-                // backgroundColor:"gray",
                 height:"100%",
-                // top:10
+                top:15
             }}>
                 <FlatList
                 data={FormData}
@@ -164,7 +180,6 @@ export default function Technician() {
                 <View style={{
                     height:70,
                     width:"100%",
-                    // backgroundColor:"red",
                     flexDirection:"row"
                 }}>                    
                     <View style={{
@@ -202,7 +217,7 @@ export default function Technician() {
                 justifyContent:"center"
             }}>
                 <TouchableOpacity
-                // onPress={}
+                onPress={() => navigation.navigate('EditDetails')}
                 >
                     <FontAwesome5
                     name='edit'
@@ -211,8 +226,6 @@ export default function Technician() {
                     />
                 </TouchableOpacity>
             </View> 
-
-
                 </View>
             )}
             keyExtractor={(item) => item.id}

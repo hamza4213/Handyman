@@ -8,10 +8,10 @@ import AdminFlatlist from '../../Components/AdminFlatlist';
 export default function HomeScreen() {
 
     const data= [
-        {IMAGE:require('../../Images/notes.png'),height:50, width:50, Imgtext:'ORDER'},
+        {IMAGE:require('../../Images/notes.png'),height:50, width:50, Imgtext:'ORDER',navigateto:'OrderHandle'},
             {IMAGE:require('../../Images/history.jpg'),height:50, width:50,Imgtext:'ORDER HISTORY',justifyContent:'center', navigateto:'OrderHistory'},
-                {IMAGE:require('../../Images/tech.png'),height:50, width:50, Imgtext:'TECHNICIAN',},
-                    {IMAGE:require('../../Images/services.png'),height:50, width:50, Imgtext:'SERVICES',right:29,navigateto:'OrderHandle'},
+                {IMAGE:require('../../Images/tech.png'),height:50, width:50, Imgtext:'TECHNICIAN',navigateto:'Technician'},
+                    {IMAGE:require('../../Images/services.png'),height:50, width:50, Imgtext:'SERVICES',right:29,navigateto:'Services'},
     ]
     return (
         <View style={styles.container}>

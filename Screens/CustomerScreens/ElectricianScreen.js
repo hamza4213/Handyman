@@ -81,6 +81,26 @@ const ElectricianScreen = ({ navigation, route }) => {
           placeholderText={"Enter here"}
           onChangeText={val => setAdinfo(val)}
         />
+
+        <View>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            Mode of Payment
+          </Text>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "yellow",
+                width: 15,
+                height: 15,
+                borderRadius: 20,
+                borderColor: "black",
+                borderWidth: 1,
+                padding: 2
+              }}
+            />
+            <Text style={{ fontWeight: "bold" }}>Cash on delivery</Text>
+          </View>
+        </View>
       </View>
       <View style={{ height: 15, backgroundColor: "#D3D3D3" }} />
       <View style={{ flexDirection: "row" }}>
@@ -116,6 +136,7 @@ const ElectricianScreen = ({ navigation, route }) => {
           costumer decides not to continue with the service after inspection.
         </Text>
       </View>
+
       {/* 
       <FlatList
         data={ARRAY}

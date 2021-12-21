@@ -7,11 +7,11 @@ import OrderDetailScreen from './Screens/TechnicianScreens/OrderDetailScreen';
 import OrderHistoryScreen from './Screens/TechnicianScreens/OrderHistoryScreen';
 import AcceptOrderScreen from './Screens/TechnicianScreens/AcceptOrderScreen';
 import PaymentScreen from './Screens/TechnicianScreens/PaymentScreen';
-import SetDate from "./Screens/CustomerScreens/SetDate";
-import Time from "./Screens/CustomerScreens/Time";
+// import SetDate from "./Screens/CustomerScreens/SetDate";
+// import Time from "./Screens/CustomerScreens/Time";
 import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
 import store from './Redux/store';
-import Signin from "./Screens/CustomerScreens/Signin";
+// import Signin from "./Screens/CustomerScreens/Signin";
 import { Provider } from 'react-redux';
 const Stack=createStackNavigator();
 export default function App() {
@@ -30,11 +30,11 @@ export default function App() {
         <Stack.Screen name="AcceptOrderScreen" component={AcceptOrderScreen} />
 
         <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Signin"
           component={Signin}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="SetDate"
           component={SetDate}
         
@@ -43,7 +43,7 @@ export default function App() {
           name="Time"
           component={Time}
         
-        />
+        /> */}
 
       </Stack.Navigator>
   </NavigationContainer>

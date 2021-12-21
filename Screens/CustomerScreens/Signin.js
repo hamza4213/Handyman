@@ -7,15 +7,19 @@ import {
   Dimensions,
   Pressable,
   TouchableOpacity,
-  Image
+  Image,
+  Alert
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import FormInput from "../../Components/Forminput";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import axios from "axios";
+import { NavigationContainer } from "@react-navigation/native";
 
-const Signin = ({ route }) => {
+const Signin = ({ route, navigation }) => {
   const ph_number = route.params;
+  console.log();
   const [IMageSource, setIMageSource] = useState("");
   useState;
   const [CheckIMage, setCheckIMage] = useState(true);
@@ -144,22 +148,46 @@ const Signin = ({ route }) => {
           <Text style={{ fontSize: 16 }}>Polices</Text>
         </View>
         <View style={{ height: 15 }} />
-        <View
-          style={{
-            width: "80%",
-            alignSelf: "center",
-            alignItems: "center",
-            borderWidth: 1,
-            height: 35,
-            borderRadius: 10,
-            justifyContent: "center",
-            backgroundColor: "#fbd43e"
+        <TouchableOpacity
+          onPress={() => {
+            // console.log(Email, UserName, Address, Password, Pincode);
+            const req = {
+              name: UserName,
+              address: Address,
+              password: Password,
+              phone: ph_number,
+              email: Email,
+              pincode: Pincode
+            };
+            console.log(req);
+            axios
+              .post(" https://floringetest.in/handiman/api/register", req)
+              .then(res => {
+                // console.log(res.data);
+                // res.data.HasError
+                //   ? Alert.alert("error occured")
+                //   :
+                navigation.navigate("UserSignIn");
+              });
           }}
         >
-          <Text style={{ justifyContent: "center", fontSize: 18 }}>
-            Continue
-          </Text>
-        </View>
+          <View
+            style={{
+              width: "80%",
+              alignSelf: "center",
+              alignItems: "center",
+              borderWidth: 1,
+              height: 35,
+              borderRadius: 10,
+              justifyContent: "center",
+              backgroundColor: "#fbd43e"
+            }}
+          >
+            <Text style={{ justifyContent: "center", fontSize: 18 }}>
+              Continue
+            </Text>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

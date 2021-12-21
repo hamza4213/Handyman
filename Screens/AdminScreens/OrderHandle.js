@@ -1,7 +1,5 @@
 import React from 'react'
-import { View, Text,StyleSheet, Picker} from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
-
+import { View, Text,StyleSheet, Picker, TextInput, TouchableOpacity} from 'react-native'
 export default function OrderHandle() {
 
     const technician=[

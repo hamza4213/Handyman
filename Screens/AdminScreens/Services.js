@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 
 export default function Services({navigation}) {

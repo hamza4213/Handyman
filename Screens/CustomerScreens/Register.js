@@ -26,7 +26,7 @@ import { auth } from "../../Firebase/Firebase";
 const app = getApp();
 const Signin = ({ route, navigation }) => {
   const ph_number = route.params;
-  console.log();
+
   const [IMageSource, setIMageSource] = useState("");
   useState;
   const [CheckIMage, setCheckIMage] = useState(true);
@@ -54,7 +54,7 @@ const Signin = ({ route, navigation }) => {
         ph_number,
         recaptchaVerifier.current
       );
-      console.log(ph_number);
+
       setVerificationId(verificationId);
       showMessage({
         text: "Verification code has been sent to your phone.",
@@ -67,7 +67,6 @@ const Signin = ({ route, navigation }) => {
     Send();
   }, []);
   const handleVerifyOtp = async () => {
-    console.log("fkn");
     try {
       const credential = PhoneAuthProvider.credential(verificationId, Otp);
       await signInWithCredential(auth, credential);

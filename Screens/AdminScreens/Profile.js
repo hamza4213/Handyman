@@ -136,6 +136,7 @@ export default function Profile() {
                     padding:10,
                 }}
                 placeholder=""
+                keyboardType='numeric'
                 />
             </View>
 
@@ -161,7 +162,6 @@ export default function Profile() {
                     </TouchableOpacity>
             </View>
             </View>
-      
         </View>
     )
 }

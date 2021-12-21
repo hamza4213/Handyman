@@ -59,6 +59,7 @@ export default function DataForm(props) {
                     padding:10,
                 }}
                 placeholder=""
+                keyboardType='numeric'
                 />
             </View>
             
@@ -233,6 +234,7 @@ export default function DataForm(props) {
                     padding:10,
                 }}
                 placeholder=""
+                keyboardType='numeric'
                 />
             </View>
 

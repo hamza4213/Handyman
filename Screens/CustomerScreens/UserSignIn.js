@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import CountryPicker from "react-native-country-picker-modal";
 import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
+import { ScrollView } from "react-native-web";
 
 const UserSignIn = ({ navigation }) => {
   const [IMageSource, setIMageSource] = useState("");
@@ -118,7 +119,10 @@ const UserSignIn = ({ navigation }) => {
           top: "2%"
         }}
         onPress={() => {
-          navigation.navigate("UserSignIn1");
+          navigation.navigate(
+            "UserSignIn1",
+            (ph_number = Country.callingCode + phoneNo)
+          );
         }}
       >
         <Text

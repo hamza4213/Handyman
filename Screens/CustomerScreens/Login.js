@@ -7,8 +7,7 @@ import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
 import { ScrollView } from "react-native-web";
 
-const UserSignIn = ({ navigation }) => {
-  const [IMageSource, setIMageSource] = useState("");
+const Login = ({ navigation }) => {
   const [Country, setCountry] = useState({
     callingCode: ["92"],
     cca2: "PK",
@@ -21,20 +20,6 @@ const UserSignIn = ({ navigation }) => {
   const [CheckIMage, setCheckIMage] = useState(true);
   const [phoneNo, setPhoneNo] = useState("");
 
-  const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1
-    });
-    if (!result.cancelled) {
-      // setUpload(result.uri);
-      // IMage = result.uri;
-      setIMageSource(result.uri);
-      setCheckIMage(false);
-    }
-  };
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#fff" }}>
       <View style={{ height: "10%", justifyContent: "flex-end" }}>
@@ -43,28 +28,9 @@ const UserSignIn = ({ navigation }) => {
         </Text>
       </View>
       <View style={{ height: "20%" }}>
-        {CheckIMage
-          ? <TouchableOpacity onPress={() => pickImage()}>
-              <View style={{ alignSelf: "center" }}>
-                <Ionicons name="person-outline" size={34} color="black" />
-              </View>
-            </TouchableOpacity>
-          : <TouchableOpacity onPress={() => pickImage()}>
-              <View
-                style={{
-                  alignSelf: "center",
-                  height: 50,
-                  width: 50,
-                  right: 20,
-                  marginTop: 30
-                }}
-              >
-                <Image
-                  style={{ height: 100, width: 100, borderRadius: 100 }}
-                  source={{ uri: IMageSource }}
-                />
-              </View>
-            </TouchableOpacity>}
+        <View style={{ alignSelf: "center" }}>
+          <Ionicons name="person-outline" size={34} color="black" />
+        </View>
       </View>
       <View
         style={{
@@ -109,6 +75,28 @@ const UserSignIn = ({ navigation }) => {
           />
         </View>
       </View>
+      <View
+        style={{
+          color: "black",
+          flexDirection: "row",
+          justifyContent: "flex-end"
+        }}
+      >
+        <Text style={{ color: "black" }}>already have account? </Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          <Text
+            style={{
+              fontWeight: "bold"
+            }}
+          >
+            Sign In
+          </Text>
+        </TouchableOpacity>
+      </View>
       <TouchableOpacity
         style={{
           backgroundColor: "#FFEB2A",
@@ -143,4 +131,4 @@ const UserSignIn = ({ navigation }) => {
     </View>
   );
 };
-export default UserSignIn;
+export default Login;

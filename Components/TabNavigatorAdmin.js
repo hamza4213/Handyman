@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../Screens/AdminScreens/HomeScreen';
 import Profile from '../Screens/AdminScreens/Profile';
+import Services from '../Screens/AdminScreens/Services';
+import AboutUs from '../Screens/AdminScreens/AboutUs';
 const fullScreenWidth=Dimensions.get("window").width;
 const Tab=createBottomTabNavigator();
 const TabNavigatorAdmin=()=>{
@@ -18,6 +20,14 @@ const TabNavigatorAdmin=()=>{
                     let iconName;
                     if(route.name === "HomeScreen"){
                         iconName = focused ? 'home' : 'home-outline'
+                        size=28
+                    }
+                    else if(route.name === "Services"){
+                        iconName = focused ? 'settings' : 'settings-outline'
+                        size=28
+                    }
+                    else if(route.name === "AboutUs"){
+                        iconName = focused ? 'information-circle' : 'information-circle-outline'
                         size=28
                     }
                     else if(route.name === "Profile"){
@@ -44,7 +54,10 @@ const TabNavigatorAdmin=()=>{
             }}
         >
             <Tab.Screen name="HomeScreen" component={HomeScreen} />
+            <Tab.Screen name="Services" component={Services}/>
+            <Tab.Screen name="AboutUs" component={AboutUs}/>
             <Tab.Screen name="Profile" component={Profile}/>
+            
         </Tab.Navigator>
     );
 };

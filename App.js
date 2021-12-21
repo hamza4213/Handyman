@@ -10,7 +10,7 @@ import EditDetails from './Screens/AdminScreens/EditDetails';
 import Services from './Screens/AdminScreens/Services';
 import AddService from './Screens/AdminScreens/AddService';
 import EditService from './Screens/AdminScreens/EditService';
-
+import AboutUs from './Screens/AdminScreens/AboutUs';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -26,6 +26,7 @@ export default function App() {
         <Stack.Screen name="Services" component={Services}/>
         <Stack.Screen name="AddService" component={AddService}/>
         <Stack.Screen name="EditService" component={EditService}/>
+        <Stack.Screen name="AboutUs" component={AboutUs}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

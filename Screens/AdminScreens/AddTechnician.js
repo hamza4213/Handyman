@@ -51,9 +51,7 @@ const AddTechnician = () => {
         </View>
     )
 }
-
 export default AddTechnician
-
 const styles = StyleSheet.create({
     container:{
         flex:1,

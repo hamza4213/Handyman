@@ -18,12 +18,12 @@ export default function Services({navigation}) {
     return (
         <View style={styles.container}>
             <View style={{
-                 height:50,
-                 width:"98%",
-                 justifyContent:"flex-end",
-                 alignItems:"center",
-                 top:25,
-                 flexDirection:"row",          
+                height:50,
+                width:"98%",
+                justifyContent:"flex-end",
+                alignItems:"center",
+                top:25,
+                flexDirection:"row",          
                 }}>
                 
                 <TouchableOpacity 

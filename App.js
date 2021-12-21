@@ -9,8 +9,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserSignIn from "./Screens/CustomerScreens/UserRegister";
 import Signin from "./Screens/CustomerScreens/Register";
 import Login from "./Screens/CustomerScreens/Login";
-import Time from "./Screens/CustomerScreens/Time";
-import SetDate from "./Screens/CustomerScreens/SetDate";
+
+// Import the functions you need from the SDKs you need
+
+// Initialize Firebase
 
 const UserStack = createNativeStackNavigator();
 export default function App() {
@@ -30,8 +32,6 @@ export default function App() {
                 component={ElectricianScreen}
               />
               <UserStack.Screen name="HomeScreen" component={HomeScreen} />
-              {/* <UserStack.Screen name="TimeScreen" component={Time} /> */}
-              <UserStack.Screen name="DateScreen" component={SetDate} />
             </UserStack.Group>
           : <UserStack.Group>
               <UserStack.Screen name="UserSignIn" component={UserSignIn} />

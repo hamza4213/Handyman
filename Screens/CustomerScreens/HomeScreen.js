@@ -8,21 +8,21 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DATA = [
   {
-    IMAGE: require("../../images/bulb.png"),
+    IMAGE: require("../../Images/bulb.png"),
     height: 50,
     width: 50,
     Imgtext: "Electrician",
     navigateto: "ElectricianScreen"
   },
   {
-    IMAGE: require("../../images/tap.png"),
+    IMAGE: require("../../Images/tap.png"),
     height: 50,
     width: 50,
     Imgtext: "plumber",
     navigateto: "ElectricianScreen"
   },
   {
-    IMAGE: require("../../images/tractor.png"),
+    IMAGE: require("../../Images/tractor.png"),
     height: 50,
     width: 70,
     Imgtext: "Agro equipment",
@@ -31,7 +31,7 @@ const DATA = [
     imgright: 10
   },
   {
-    IMAGE: require("../../images/more.png"),
+    IMAGE: require("../../Images/more.png"),
     height: 50,
     width: 50,
     Imgtext: "more",
@@ -116,7 +116,7 @@ const HomeScreen = () => {
       </View>
       <View style={{}}>
         <Image
-          source={require("../../images/taps.jpg")}
+          source={require("../../Images/taps.jpg")}
           style={{ height: "100%", width: "95%", alignSelf: "center" }}
         />
       </View>

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
@@ -12,7 +12,8 @@ import Login from "./Screens/CustomerScreens/Login";
 
 const UserStack = createNativeStackNavigator();
 export default function App() {
-  const loggedIn = false;
+  // const loggedIn = false;
+  const [loggedIn, setIsloggedIn] = useState(true);
   return (
     <NavigationContainer>
       <UserStack.Navigator screenOptions={{ headerShown: false }}>

@@ -15,7 +15,8 @@ const ARRAY = [
   { iconName: "down", text: "how it works", description: "^It is working" }
 ];
 
-const ElectricianScreen = ({ navigation }) => {
+const ElectricianScreen = ({ navigation, route }) => {
+  const service = route.params;
   const [address, setAddress] = useState("");
   const [datetime, setDatetime] = useState("");
   const [adinfo, setAdinfo] = useState("");
@@ -32,7 +33,7 @@ const ElectricianScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
           <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
-        <Header text="ELECTRICIAN" fontSize={24} color="black" left={20} />
+        <Header text={service} fontSize={24} color="black" left={20} />
       </View>
       <View>
         <Text style={{ left: 10, fontSize: 16 }}>Service required at</Text>
@@ -115,12 +116,12 @@ const ElectricianScreen = ({ navigation }) => {
           costumer decides not to continue with the service after inspection.
         </Text>
       </View>
-
+      {/* 
       <FlatList
         data={ARRAY}
         keyExtractor={item => item.text}
         renderItem={({ item }) => <Listicon item={item} />}
-      />
+      /> */}
 
       <TouchableOpacity
         onPress={() => navigation.navigate("UserSignIn")}

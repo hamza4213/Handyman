@@ -1,8 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import DataForm from '../../Components/DataForm'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
-
 export default function EditDetails() {
     return (
         <View style={styles.container}>

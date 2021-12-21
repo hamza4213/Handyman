@@ -1,11 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { StyleSheet, Text, View, FlatList, Image, TextInput, TouchableOpacity } from 'react-native'
 import Feather from "react-native-vector-icons/Feather"
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
-import AddTechnician from './AddTechnician';
-
-
 export default function Technician({navigation}) {
 
     const FormData=[
@@ -107,11 +103,12 @@ export default function Technician({navigation}) {
                 onPress={() => navigation.navigate('AddTechnician')}
                 style={{
                     height:40,
-                    width:100,
+                    width:120,
                     backgroundColor:"#3A8EC0",
                     alignItems:"center",
                     justifyContent:"center",
                     borderRadius:5,
+                    padding:1
                 }}>
                     <Text style={{color:"white"}}>Add Technician</Text>
                 </TouchableOpacity>
@@ -204,7 +201,7 @@ export default function Technician({navigation}) {
                 <Image source={item.photo}
                 style={{
                     height:60,
-                    width:75
+                    width:63
                 }}
                 />
             </View>

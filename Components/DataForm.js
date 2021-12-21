@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text} from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, TextInput, TouchableOpacity} from 'react-native'
 export default function DataForm(props) {
     return (
         <View>

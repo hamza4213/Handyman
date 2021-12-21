@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 
 import DataForm from '../../Components/DataForm'
 

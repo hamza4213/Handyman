@@ -124,15 +124,22 @@ const ElectricianScreen = ({ navigation, route }) => {
       /> */}
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("UserSignIn")}
+        onPress={() => {
+          const req = {
+            address,
+            datetime,
+            adinfo
+          };
+          console.log(req);
+        }}
         style={{
           backgroundColor: "grey",
           height: 50,
           width: 350,
           alignSelf: "center",
-          borderRadius: 10,
-          position: "absolute",
-          top: "85%"
+          borderRadius: 10
+          // position: "absolute",
+          // top: "85%"
         }}
       >
         <Text

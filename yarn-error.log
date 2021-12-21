@@ -1,13 +1,21 @@
 Arguments: 
+<<<<<<< HEAD
   C:\Program Files\nodejs\node.exe C:\Users\Muhammadsheraz\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\platform-tools;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\emulator;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\tools;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\tools\bin;C:\Users\Muhammadsheraz\AppData\Roaming\npm;C:\Gradle\gradle-7.2\bin;C:\Program Files\Java\jdk-15\bin;C:\Program Files\Git\cmd;C:\New folder\MinGW\bin;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Users\Muhammadsheraz\AppData\Local\Microsoft\WindowsApps;C:\Users\Muhammadsheraz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\platform-tools;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\emulator;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\tools;C:\Users\Muhammadsheraz\AppData\Local\Android\Sdk\tools\bin;C:\Program Files\Java\jdk-15\bin;C:\Gradle\gradle-7.2\bin;C:\Users\Muhammadsheraz\AppData\Local\GitHubDesktop\bin;C:\New folder\MinGW\bin;C:\Users\Muhammadsheraz\.dotnet\tools;C:\Program Files\MongoDB\Server\5.0\bin;C:\Users\Muhammadsheraz\AppData\Roaming\npm
+=======
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.17/libexec/bin/yarn.js install
+
+PATH: 
+  /opt/local/bin:/opt/local/sbin:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/local/bin:/opt/local/sbin:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin:/Users/l3nova/Library/Android/sdk/emulator:/Users/l3nova/Library/Android/sdk/tools:/Users/l3nova/Library/Android/sdk/tools/bin:/Users/l3nova/Library/Android/sdk/platform-tools:/Users/l3nova/Library/Android/sdk/emulator:/Users/l3nova/Library/Android/sdk/tools:/Users/l3nova/Library/Android/sdk/tools/bin:/Users/l3nova/Library/Android/sdk/platform-tools:/Users/l3nova/Library/Android/sdk/emulator:/Users/l3nova/Library/Android/sdk/tools:/Users/l3nova/Library/Android/sdk/tools/bin:/Users/l3nova/Library/Android/sdk/platform-tools
+>>>>>>> home-stack
 
 Yarn version: 
   1.22.17
 
 Node version: 
+<<<<<<< HEAD
   17.2.0
 
 Platform: 
@@ -20,6 +28,20 @@ Trace:
       at Generator.next (<anonymous>)
       at step (C:\Users\Muhammadsheraz\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
       at C:\Users\Muhammadsheraz\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+=======
+  16.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/l3nova/Documents/GitHub/Handyman/package.json: Unexpected token < in JSON at position 592
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.17/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.17/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.17/libexec/lib/cli.js:321:13
+>>>>>>> home-stack
 
 npm manifest: 
   {
@@ -36,12 +58,16 @@ npm manifest:
     "dependencies": {
       "@react-navigation/bottom-tabs": "^6.0.9",
       "@react-navigation/native": "^6.0.6",
+<<<<<<< HEAD
   <<<<<<< HEAD
       "@react-navigation/stack": "^6.0.11",
       "@reduxjs/toolkit": "^1.7.1",
   =======
       "@react-navigation/native-stack": "^6.2.5",
   >>>>>>> Sheraz
+=======
+      "@react-navigation/native-stack": "^6.2.5",
+>>>>>>> home-stack
       "expo": "~43.0.2",
       "expo-image-picker": "^11.0.3",
       "expo-status-bar": "~1.1.0",
@@ -49,6 +75,7 @@ npm manifest:
       "react-dom": "17.0.1",
       "react-native": "0.64.3",
   <<<<<<< HEAD
+<<<<<<< HEAD
       "react-native-gesture-handler": "~1.10.2",
       "react-native-reanimated": "~2.2.0",
       "react-native-safe-area-context": "3.3.2",
@@ -65,6 +92,19 @@ npm manifest:
       "react-native-screens": "^3.10.1",
       "react-native-web": "0.17.1"
   >>>>>>> Sheraz
+=======
+      "react-native-country-codes-picker": "^1.3.2",
+      "react-native-country-picker-modal": "^2.0.0",
+      "react-native-safe-area-context": "^3.3.2",
+      "react-native-screens": "^3.8.0",
+      "react-native-web": "0.17.1",
+      "expo-image-picker": "~11.0.3"
+  =======
+      "react-native-safe-area-context": "^3.3.2",
+      "react-native-screens": "^3.10.1",
+      "react-native-web": "0.17.1"
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     },
     "devDependencies": {
       "@babel/core": "^7.12.9"
@@ -1121,6 +1161,10 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.15.7"
       to-fast-properties "^2.0.0"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   "@callstack/react-theme-provider@3.0.3":
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/@callstack/react-theme-provider/-/react-theme-provider-3.0.3.tgz#f964dda28cd6e731c3fbcf916b0579c6f9fb2db7"
@@ -1130,6 +1174,11 @@ Lockfile:
       deepmerge "^3.2.0"
       hoist-non-react-statics "^3.3.0"
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   "@cnakazawa/watch@^1.0.3":
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -1159,9 +1208,21 @@ Lockfile:
       xml2js "^0.4.23"
   
   "@expo/config-plugins@^4.0.2":
+<<<<<<< HEAD
     version "4.0.13"
     resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-4.0.13.tgz#edb47d710eb92ab6968b3779d617c51bb8e2bfaa"
     integrity sha512-yFcqqllAKz472UUdMRtcmfz8cHBT5VJ044cDY2E5JvaO/DQ9lfe4j/0soVUv7aeiHIWOheywJeefNfqpCo0glQ==
+=======
+  <<<<<<< HEAD
+    version "4.0.14"
+    resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-4.0.14.tgz#39353be207fe499f4e28703a6cbe7a577bc1b3bb"
+    integrity sha512-3UMo9STaIAQRAvtlXXIX83mrxWAh0prQYgVG+n2JRBwI9CWiRdj35W+jyXkTChtPYXGvW1JQF2xatjB8ituSvg==
+  =======
+    version "4.0.13"
+    resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-4.0.13.tgz#edb47d710eb92ab6968b3779d617c51bb8e2bfaa"
+    integrity sha512-yFcqqllAKz472UUdMRtcmfz8cHBT5VJ044cDY2E5JvaO/DQ9lfe4j/0soVUv7aeiHIWOheywJeefNfqpCo0glQ==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     dependencies:
       "@expo/config-types" "^43.0.1"
       "@expo/json-file" "8.2.34"
@@ -1538,6 +1599,10 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   "@types/hoist-non-react-statics@^3.3.1":
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -1546,6 +1611,11 @@ Lockfile:
       "@types/react" "*"
       hoist-non-react-statics "^3.3.0"
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -1566,9 +1636,16 @@ Lockfile:
       "@types/istanbul-lib-report" "*"
   
   "@types/node@*":
+<<<<<<< HEAD
     version "16.11.13"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.13.tgz#6b71641b81a98c6a538d89892440c06f147edddc"
     integrity sha512-eUXZzHLHoZqj1frtUetNkUetYoJ6X55UmrVnFD4DMhVeAmwLjniZhtBmsRiemQh4uq4G3vUra/Ws/hs9vEvL3Q==
+=======
+  <<<<<<< HEAD
+    version "17.0.2"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.2.tgz#a4c07d47ff737e8ee7e586fe636ff0e1ddff070a"
+    integrity sha512-JepeIUPFDARgIs0zD/SKPgFsJEAF0X5/qO80llx59gOxFTboS9Amv3S+QfB7lqBId5sFXJ99BN0J6zFRvL9dDA==
+>>>>>>> home-stack
   
   "@types/prop-types@*":
     version "15.7.4"
@@ -1588,6 +1665,14 @@ Lockfile:
     version "0.16.2"
     resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
     integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+<<<<<<< HEAD
+=======
+  =======
+    version "16.11.13"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.13.tgz#6b71641b81a98c6a538d89892440c06f147edddc"
+    integrity sha512-eUXZzHLHoZqj1frtUetNkUetYoJ6X55UmrVnFD4DMhVeAmwLjniZhtBmsRiemQh4uq4G3vUra/Ws/hs9vEvL3Q==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   "@types/yargs-parser@*":
     version "20.2.1"
@@ -1961,7 +2046,15 @@ Lockfile:
     dependencies:
       fill-range "^7.0.1"
   
+<<<<<<< HEAD
   browserslist@^4.17.5, browserslist@^4.18.1:
+=======
+  <<<<<<< HEAD
+  browserslist@^4.17.5, browserslist@^4.19.1:
+  =======
+  browserslist@^4.17.5, browserslist@^4.18.1:
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     version "4.19.1"
     resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.19.1.tgz#4ac0435b35ab655896c31d53018b6dd5e9e4c9a3"
     integrity sha512-u2tbbG5PdKRTUoctO3NBD8FQ5HdPh1ZXPHzp1rwaa5jTc+RV9/+RlWiAIKmjRPQF+xbGM9Kklj5bZQFa2s/38A==
@@ -2060,9 +2153,21 @@ Lockfile:
     integrity sha512-tVI4q5jjFV5CavAU8DXfza/TJcZutVKo/5Foskmsqcm0MsL91moHvwiGNnqaa2o6PF/7yT5ikDRcVcl8Rj6LCA==
   
   caniuse-lite@^1.0.30001286:
+<<<<<<< HEAD
     version "1.0.30001286"
     resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001286.tgz#3e9debad420419618cfdf52dc9b6572b28a8fff6"
     integrity sha512-zaEMRH6xg8ESMi2eQ3R4eZ5qw/hJiVsO/HlLwniIwErij0JDr9P+8V4dtx1l+kLq6j3yy8l8W4fst1lBnat5wQ==
+=======
+  <<<<<<< HEAD
+    version "1.0.30001291"
+    resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001291.tgz#08a8d2cfea0b2cf2e1d94dd795942d0daef6108c"
+    integrity sha512-roMV5V0HNGgJ88s42eE70sstqGW/gwFndosYrikHthw98N5tLnOTxFqMLQjZVRxTWFlJ4rn+MsgXrR7MDPY4jA==
+  =======
+    version "1.0.30001286"
+    resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001286.tgz#3e9debad420419618cfdf52dc9b6572b28a8fff6"
+    integrity sha512-zaEMRH6xg8ESMi2eQ3R4eZ5qw/hJiVsO/HlLwniIwErij0JDr9P+8V4dtx1l+kLq6j3yy8l8W4fst1lBnat5wQ==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   capture-exit@^2.0.0:
     version "2.0.0"
@@ -2292,11 +2397,25 @@ Lockfile:
     integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
   
   core-js-compat@^3.18.0, core-js-compat@^3.19.1:
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+    version "3.20.0"
+    resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.20.0.tgz#fd704640c5a213816b6d10ec0192756111e2c9d1"
+    integrity sha512-relrah5h+sslXssTTOkvqcC/6RURifB0W5yhYBdBkaPYa5/2KBMiog3XiD+s3TwEHWxInWVv4Jx2/Lw0vng+IQ==
+    dependencies:
+      browserslist "^4.19.1"
+  =======
+>>>>>>> home-stack
     version "3.19.3"
     resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.19.3.tgz#de75e5821c5ce924a0a1e7b7d5c2cb973ff388aa"
     integrity sha512-59tYzuWgEEVU9r+SRgceIGXSSUn47JknoiXW6Oq7RW8QHjXWz3/vp8pa7dbtuVu40sewz3OP3JmQEcDdztrLhA==
     dependencies:
       browserslist "^4.18.1"
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
       semver "7.0.0"
   
   core-js@^1.0.0:
@@ -2353,11 +2472,20 @@ Lockfile:
       hyphenate-style-name "^1.0.2"
       isobject "^3.0.1"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   csstype@^3.0.2:
     version "3.0.10"
     resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.10.tgz#2ad3a7bed70f35b965707c092e5f30b327c290e5"
     integrity sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   dayjs@^1.8.15:
     version "1.10.7"
     resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
@@ -2449,9 +2577,21 @@ Lockfile:
     integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
   
   electron-to-chromium@^1.4.17:
+<<<<<<< HEAD
     version "1.4.18"
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.18.tgz#2fb282213937986a20a653315963070e8321b3f3"
     integrity sha512-i7nKjGGBE1+YUIbfLObA1EZPmN7J1ITEllbhusDk+KIk6V6gUxN9PFe36v+Sd+8Cg0k3cgUv9lQhQZalr8rggw==
+=======
+  <<<<<<< HEAD
+    version "1.4.25"
+    resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.25.tgz#ce95e6678f8c6893ae892c7e95a5000e83f1957f"
+    integrity sha512-bTwub9Y/76EiNmfaiJih+hAy6xn7Ns95S4KvI2NuKNOz8TEEKKQUu44xuy0PYMudjM9zdjKRS1bitsUvHTfuUg==
+  =======
+    version "1.4.18"
+    resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.18.tgz#2fb282213937986a20a653315963070e8321b3f3"
+    integrity sha512-i7nKjGGBE1+YUIbfLObA1EZPmN7J1ITEllbhusDk+KIk6V6gUxN9PFe36v+Sd+8Cg0k3cgUv9lQhQZalr8rggw==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   emoji-regex@^8.0.0:
     version "8.0.0"
@@ -2576,6 +2716,19 @@ Lockfile:
       to-regex "^3.0.1"
   
   expo-application@~4.0.0:
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+    version "4.0.1"
+    resolved "https://registry.yarnpkg.com/expo-application/-/expo-application-4.0.1.tgz#d38a1315c06c253b843c951ddc6fbb9a026f05cc"
+    integrity sha512-yZM/SrpWdi84m5+5F3VDfhrMZOz/uKwXcgBhOP1wzfXt0otGSRW1V5tM+a0sgaKZsDRCGojTU7Jm73BVwwVrwg==
+  
+  expo-asset@~8.4.3:
+    version "8.4.4"
+    resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-8.4.4.tgz#6214270a41af378ac734a28fbff7b542ca84a3cf"
+    integrity sha512-0yxAOJo8bnYvnRNOWikQ1xFP+YQViJ/px3MofZFUPGw02iaSSUzArcKDfMtpJNmH/EC7HE7GJSZpkoxx+zsHWA==
+  =======
+>>>>>>> home-stack
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/expo-application/-/expo-application-4.0.0.tgz#ff629bd441da1b40d299fb84f5740715ece745ba"
     integrity sha512-7n8i0O9n/YCCkP3rU0udC4qdG4Sn4lOzNxFyG9eTwJ5SyCdDNxKdz22j+sUmYYhtx6fjcJLKR0sjq3zSGAwZag==
@@ -2584,6 +2737,10 @@ Lockfile:
     version "8.4.3"
     resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-8.4.3.tgz#a65be884361926ef5f19ea0621edc36a2f502605"
     integrity sha512-cnMXzmJUndLFocflq1d/WzmGB5cbzoDhwqs8v9eNwkZVY/BOIODvsI56fY+s0mKL4KpmE3+sV2VTbyYFBbF3Tw==
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     dependencies:
       blueimp-md5 "^2.10.0"
       invariant "^2.2.4"
@@ -2601,11 +2758,23 @@ Lockfile:
       uuid "^3.3.2"
   
   expo-error-recovery@~3.0.3:
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+    version "3.0.4"
+    resolved "https://registry.yarnpkg.com/expo-error-recovery/-/expo-error-recovery-3.0.4.tgz#de85c8c6b387d9b1e532256600882f2c2704383a"
+    integrity sha512-7z2V7n9Yvm9/ogm4I1KgcsQZfgyDMSOBVHk8pA3IY0jL8+tXTyTrStxHsPXRjE8HHeYikfTRBIeFsh/1wWY7oA==
+  =======
+>>>>>>> home-stack
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/expo-error-recovery/-/expo-error-recovery-3.0.3.tgz#43ded4320ed3a1136f976ed07805303b6069c618"
     integrity sha512-0rKo/b1DPIFMuyaLnH0vZ6pVw0I8bq3kWMY1TLFnvWNCCJ/1nyQN+TydsmRx5eju0dr2byGWgK+y9sZ3/GZfXQ==
     dependencies:
       expo-modules-core "~0.4.4"
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   expo-file-system@~13.0.3:
     version "13.0.3"
@@ -2617,6 +2786,18 @@ Lockfile:
       uuid "^3.4.0"
   
   expo-font@~10.0.3:
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+    version "10.0.4"
+    resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-10.0.4.tgz#c06ff88079c857ef71c24414a583fd270b3f34e7"
+    integrity sha512-ieEsT6tD6yD6qT7WUzzJ5el0UvACr53RqICu0GI9GUiWuwDFPM2Oi5WfWwYFFStCRuaP6kEtpkJDUZ9cjT5F+w==
+    dependencies:
+      fontfaceobserver "^2.1.0"
+  
+  expo-image-picker@~11.0.3:
+  =======
+>>>>>>> home-stack
     version "10.0.3"
     resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-10.0.3.tgz#655817f3e62f39bc906adda4c3a2fec052ef040a"
     integrity sha512-xM5oqIduGvJ+qbsZHjMNNt+3hhjOMTunHUtOx5rAmW/D1ZVdfLwjDwOyWBVkH8ChoBRAZy9gsC2cRs7naw8NIw==
@@ -2625,6 +2806,10 @@ Lockfile:
       fontfaceobserver "^2.1.0"
   
   expo-image-picker@^11.0.3:
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     version "11.0.3"
     resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-11.0.3.tgz#c0b6cb9b5fa027f1bd1879a879fe13157f31ac94"
     integrity sha512-s7nXB+hop5htcETlSvtPhEGE6RM4BX0G2e6mhr2SjJdJPAFn+hY7R3vCGBFMtxV11Gjzr0D1w2y9gDqhOj0GKg==
@@ -2634,9 +2819,21 @@ Lockfile:
       uuid "7.0.2"
   
   expo-keep-awake@~10.0.0:
+<<<<<<< HEAD
     version "10.0.0"
     resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-10.0.0.tgz#275a3e02f99bc0429790047add126c1dcce60d63"
     integrity sha512-x5zRTjIvSry/EISKvjWpnLERGZj5maCwEouOfiDk0JPa0UTg/zFkT7pmiadAfHT95XUgjjb2DOku+wj6J7el7Q==
+=======
+  <<<<<<< HEAD
+    version "10.0.1"
+    resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-10.0.1.tgz#9f1176216c41eee20843c8232acfdca2bc32d334"
+    integrity sha512-kcBtoDGkm3RRe6BpKDvR7gof/ErajEia38u92pRvNRctdh+p8AFO7GQuiipyg3iMfhcCFVTCIV7h3tuA0g/yDw==
+  =======
+    version "10.0.0"
+    resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-10.0.0.tgz#275a3e02f99bc0429790047add126c1dcce60d63"
+    integrity sha512-x5zRTjIvSry/EISKvjWpnLERGZj5maCwEouOfiDk0JPa0UTg/zFkT7pmiadAfHT95XUgjjb2DOku+wj6J7el7Q==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   expo-modules-autolinking@~0.3.4:
     version "0.3.4"
@@ -2754,7 +2951,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
     integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
   
+<<<<<<< HEAD
   fbjs@^0.8.4, fbjs@^0.8.9:
+=======
+  fbjs@^0.8.4:
+>>>>>>> home-stack
     version "0.8.18"
     resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.18.tgz#9835e0addb9aca2eff53295cd79ca1cfc7c9662a"
     integrity sha512-EQaWFK+fEPSoibjNy8IxUtaFOMXcWsY0JaVrQoZR9zC8N2Ygf9iDITPWjUTVIax95b6I742JFLqASHfsag/vKA==
@@ -2856,9 +3057,21 @@ Lockfile:
       path-exists "^4.0.0"
   
   flow-parser@0.*:
+<<<<<<< HEAD
     version "0.167.1"
     resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.167.1.tgz#393091cd6d0108b981a02caaca8c8939508fef3b"
     integrity sha512-KQGKp9VvVXRUI+xznTOVthj1aroBHGOe3/1t9h1KaSWEP6GzMI59L8KtKJPsFYgTFTvQpRmHK8lTR4by9VAJeA==
+=======
+  <<<<<<< HEAD
+    version "0.168.0"
+    resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.168.0.tgz#e9c385499145828b42fd754d3528f4cb7d5c6edf"
+    integrity sha512-YMlc+6vvyDPqWKOpzmyifJXBbwlNdqznuy8YBHxX1/90F8d+NnhsxMe1u/ok5LNvNJVJ2TVMkWudu0BUKOSawA==
+  =======
+    version "0.167.1"
+    resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.167.1.tgz#393091cd6d0108b981a02caaca8c8939508fef3b"
+    integrity sha512-KQGKp9VvVXRUI+xznTOVthj1aroBHGOe3/1t9h1KaSWEP6GzMI59L8KtKJPsFYgTFTvQpRmHK8lTR4by9VAJeA==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   flow-parser@^0.121.0:
     version "0.121.0"
@@ -2940,11 +3153,20 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
     integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   fuse.js@3.4.5:
     version "3.4.5"
     resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.5.tgz#8954fb43f9729bd5dbcb8c08f251db552595a7a6"
     integrity sha512-s9PGTaQIkT69HaeoTVjwGsLfb8V8ScJLx5XGFcKHg0MqLUH/UZ4EKOtqtXX9k7AFqCGxD1aJmYb8Q5VYDibVRQ==
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   gensync@^1.0.0-beta.2:
     version "1.0.0-beta.2"
     resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -3087,13 +3309,32 @@ Lockfile:
     dependencies:
       source-map "^0.7.3"
   
+<<<<<<< HEAD
   hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
+=======
+  <<<<<<< HEAD
+  hoist-non-react-statics@^3.3.0:
+>>>>>>> home-stack
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
     integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
     dependencies:
       react-is "^16.7.0"
   
+<<<<<<< HEAD
+=======
+  http-errors@1.8.1:
+    version "1.8.1"
+    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.1.tgz#7c3f28577cbc8a207388455dbd62295ed07bd68c"
+    integrity sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g==
+    dependencies:
+      depd "~1.1.2"
+      inherits "2.0.4"
+      setprototypeof "1.2.0"
+      statuses ">= 1.5.0 < 2"
+      toidentifier "1.0.1"
+  =======
+>>>>>>> home-stack
   http-errors@~1.7.2:
     version "1.7.3"
     resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
@@ -3104,6 +3345,10 @@ Lockfile:
       setprototypeof "1.1.1"
       statuses ">= 1.5.0 < 2"
       toidentifier "1.0.0"
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.4:
     version "1.0.4"
@@ -3122,11 +3367,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
     integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
   
+<<<<<<< HEAD
   immutable@^4.0.0-rc.12:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
     integrity sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==
   
+=======
+>>>>>>> home-stack
   import-fresh@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-2.0.0.tgz#d81355c15612d386c61f9ddd3922d4304822a546"
@@ -3621,7 +3869,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
     integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
   
+<<<<<<< HEAD
   lodash.debounce@4.0.8, lodash.debounce@^4.0.8:
+=======
+  lodash.debounce@^4.0.8:
+>>>>>>> home-stack
     version "4.0.8"
     resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
     integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
@@ -3671,11 +3923,20 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
     integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   lodash.toarray@^4.4.0:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
     integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   lodash@^4.17.14, lodash@^4.17.15:
     version "4.17.21"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -3745,11 +4006,14 @@ Lockfile:
     dependencies:
       buffer-alloc "^1.1.0"
   
+<<<<<<< HEAD
   memoize-one@^5.2.1:
     version "5.2.1"
     resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
     integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
   
+=======
+>>>>>>> home-stack
   merge-stream@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -4190,6 +4454,10 @@ Lockfile:
     dependencies:
       minimist "^1.2.5"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   modal-react-native-web@0.2.0:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/modal-react-native-web/-/modal-react-native-web-0.2.0.tgz#5daaa76213218fd25df739a267b11aed37e8c0c2"
@@ -4197,26 +4465,51 @@ Lockfile:
     dependencies:
       warning "^4.0.1"
   
+<<<<<<< HEAD
   moment@^2.24.0:
     version "2.29.1"
     resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
     integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
   
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   ms@2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
     integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+  =======
+>>>>>>> home-stack
   ms@2.1.1:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
     integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
   
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   ms@2.1.2:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
     integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+  ms@2.1.3:
+    version "2.1.3"
+    resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
+    integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+  
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   mz@^2.7.0:
     version "2.7.0"
     resolved "https://registry.yarnpkg.com/mz/-/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"
@@ -4275,6 +4568,10 @@ Lockfile:
     dependencies:
       minimatch "^3.0.2"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   node-emoji@1.10.0:
     version "1.10.0"
     resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.10.0.tgz#8886abd25d9c7bb61802a658523d1f8d2a89b2da"
@@ -4282,6 +4579,11 @@ Lockfile:
     dependencies:
       lodash.toarray "^4.4.0"
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   node-fetch@2.6.1:
     version "2.6.1"
     resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
@@ -4302,11 +4604,14 @@ Lockfile:
     dependencies:
       whatwg-url "^5.0.0"
   
+<<<<<<< HEAD
   node-git-hooks@^1.0.1:
     version "1.0.6"
     resolved "https://registry.yarnpkg.com/node-git-hooks/-/node-git-hooks-1.0.6.tgz#9c7a18a8c8622c280f1e5049e3e83d32bc29d2ea"
     integrity sha512-ZTiTpRm16kxZY3JQugqjtm1u6nRt0cF2IH8lTMbiyv1V0qUA6ao8yHBwu4p58s3Ry+DbrlXOgUR4b4o/KzjWAA==
   
+=======
+>>>>>>> home-stack
   node-int64@^0.4.0:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -4636,6 +4941,7 @@ Lockfile:
       kleur "^3.0.3"
       sisteransi "^1.0.5"
   
+<<<<<<< HEAD
   prop-types@15.5.8:
     version "15.5.8"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
@@ -4644,6 +4950,13 @@ Lockfile:
       fbjs "^0.8.9"
   
   prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.7.2:
+=======
+  <<<<<<< HEAD
+  prop-types@15.7.2, prop-types@^15.6.0, prop-types@^15.7.2:
+  =======
+  prop-types@^15.6.0, prop-types@^15.7.2:
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4685,11 +4998,20 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
     integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   react-async-hook@3.6.1:
     version "3.6.1"
     resolved "https://registry.yarnpkg.com/react-async-hook/-/react-async-hook-3.6.1.tgz#aed3e492d87319392865c83ed7cef3609e2a7fef"
     integrity sha512-YWBB2feVQF79t5u2raMPHlZ8975Jds+guCvkWVC4kRLDlSCouLsYpQm4DGSqPeHvoHYVVcDfqNayLZAXQmnxnw==
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   react-devtools-core@^4.6.0:
     version "4.22.1"
     resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.22.1.tgz#b276d42f860bedc373c9b3c0f5f96734318dd453"
@@ -4712,7 +5034,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.0.tgz#b21c65fe1783743007c8c9a2952b1c8879a77354"
     integrity sha512-yQaiOqDmoKqks56LN9MTgY06O0qQHgV4FUrikH357DydArSZHQhl0BJFqGKIZoTqi8JizF9Dxhuk1FIZD6qCaw==
   
+<<<<<<< HEAD
   react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
+=======
+  <<<<<<< HEAD
+  react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
+  =======
+  react-is@^16.13.0, react-is@^16.8.1:
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     version "16.13.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -4722,6 +5052,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
     integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
   
+<<<<<<< HEAD
   react-native-calendar-picker@^7.1.2:
     version "7.1.2"
     resolved "https://registry.yarnpkg.com/react-native-calendar-picker/-/react-native-calendar-picker-7.1.2.tgz#b3bf1ba1cc7b1177b2fac7937564ccf09643029f"
@@ -4746,6 +5077,8 @@ Lockfile:
     optionalDependencies:
       moment "^2.24.0"
   
+=======
+>>>>>>> home-stack
   react-native-codegen@^0.0.6:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.0.6.tgz#b3173faa879cf71bfade8d030f9c4698388f6909"
@@ -4755,6 +5088,10 @@ Lockfile:
       jscodeshift "^0.11.0"
       nullthrows "^1.1.1"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   react-native-country-codes-picker@^1.3.2:
     version "1.3.2"
     resolved "https://registry.yarnpkg.com/react-native-country-codes-picker/-/react-native-country-codes-picker-1.3.2.tgz#7500a54aa8b1aa7c4ee58f911b1929fab913fff0"
@@ -4772,12 +5109,25 @@ Lockfile:
       prop-types "15.7.2"
       react-async-hook "3.6.1"
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   react-native-safe-area-context@^3.3.2:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
     integrity sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q==
   
+<<<<<<< HEAD
   react-native-screens@^3.10.1:
+=======
+  <<<<<<< HEAD
+  react-native-screens@^3.8.0:
+  =======
+  react-native-screens@^3.10.1:
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     version "3.10.1"
     resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-3.10.1.tgz#2634a1a17380c559a06de391e4969ae72c4365ff"
     integrity sha512-ZF/XHnRsuinvDY1XiCWLXxoUoSf+NgsAes2SZfX9rFQQcv128zmh/+19SSavGrSf6rQNzqytEMdRGI6yr4Gbjw==
@@ -4785,11 +5135,14 @@ Lockfile:
       react-freeze "^1.0.0"
       warn-once "^0.1.0"
   
+<<<<<<< HEAD
   react-native-swipe-gestures@^1.0.5:
     version "1.0.5"
     resolved "https://registry.yarnpkg.com/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.5.tgz#a172cb0f3e7478ccd681fd36b8bfbcdd098bde7c"
     integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
   
+=======
+>>>>>>> home-stack
   react-native-web@0.17.1:
     version "0.17.1"
     resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.17.1.tgz#90d473c89dd99b88bc9830b2a9fcdd2fc5f04902"
@@ -4884,6 +5237,7 @@ Lockfile:
     dependencies:
       resolve "^1.1.6"
   
+<<<<<<< HEAD
   recyclerlistview@^3.0.0:
     version "3.0.5"
     resolved "https://registry.yarnpkg.com/recyclerlistview/-/recyclerlistview-3.0.5.tgz#50bf5bcaa401d56bb6bb264354083f4d424408eb"
@@ -4893,6 +5247,8 @@ Lockfile:
       prop-types "15.5.8"
       ts-object-utils "0.0.5"
   
+=======
+>>>>>>> home-stack
   regenerate-unicode-properties@^9.0.0:
     version "9.0.0"
     resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-9.0.0.tgz#54d09c7115e1f53dc2314a974b32c1c344efe326"
@@ -5133,10 +5489,23 @@ Lockfile:
     dependencies:
       lru-cache "^6.0.0"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+  send@0.17.2:
+    version "0.17.2"
+    resolved "https://registry.yarnpkg.com/send/-/send-0.17.2.tgz#926622f76601c41808012c8bf1688fe3906f7820"
+    integrity sha512-UJYB6wFSJE3G00nEivR5rgWp8c2xXvJ3OPWPhmuteU0IKj8nKbG3DrjiOmLwpnHGYWAVwA69zmTm++YG0Hmwww==
+  =======
+>>>>>>> home-stack
   send@0.17.1:
     version "0.17.1"
     resolved "https://registry.yarnpkg.com/send/-/send-0.17.1.tgz#c1d8b059f7900f7466dd4938bdc44e11ddb376c8"
     integrity sha512-BsVKsiGcQMFwT8UxypobUKyv7irCNRHk1T0G680vk88yf6LBByGcZJOTJCrTP2xVN6yI+XjPJcNuE3V4fT9sAg==
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     dependencies:
       debug "2.6.9"
       depd "~1.1.2"
@@ -5145,9 +5514,21 @@ Lockfile:
       escape-html "~1.0.3"
       etag "~1.8.1"
       fresh "0.5.2"
+<<<<<<< HEAD
       http-errors "~1.7.2"
       mime "1.6.0"
       ms "2.1.1"
+=======
+  <<<<<<< HEAD
+      http-errors "1.8.1"
+      mime "1.6.0"
+      ms "2.1.3"
+  =======
+      http-errors "~1.7.2"
+      mime "1.6.0"
+      ms "2.1.1"
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
       on-finished "~2.3.0"
       range-parser "~1.2.1"
       statuses "~1.5.0"
@@ -5158,14 +5539,34 @@ Lockfile:
     integrity sha1-ULZ51WNc34Rme9yOWa9OW4HV9go=
   
   serve-static@^1.13.1:
+<<<<<<< HEAD
     version "1.14.1"
     resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
     integrity sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7ecpZs+3mW+XbQZu9QCg==
+=======
+  <<<<<<< HEAD
+    version "1.14.2"
+    resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.2.tgz#722d6294b1d62626d41b43a013ece4598d292bfa"
+    integrity sha512-+TMNA9AFxUEGuC0z2mevogSnn9MXKb4fa7ngeRMJaaGv8vTwnIEkKi+QGvPt33HSnf8pRS+WGM0EbMtCJLKMBQ==
+  =======
+    version "1.14.1"
+    resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
+    integrity sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7ecpZs+3mW+XbQZu9QCg==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
     dependencies:
       encodeurl "~1.0.2"
       escape-html "~1.0.3"
       parseurl "~1.3.3"
+<<<<<<< HEAD
       send "0.17.1"
+=======
+  <<<<<<< HEAD
+      send "0.17.2"
+  =======
+      send "0.17.1"
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   set-blocking@^2.0.0:
     version "2.0.0"
@@ -5187,10 +5588,23 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
     integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+  setprototypeof@1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
+    integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
+  =======
+>>>>>>> home-stack
   setprototypeof@1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
     integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   shallow-clone@^3.0.0:
     version "3.0.1"
@@ -5276,9 +5690,21 @@ Lockfile:
       is-fullwidth-code-point "^2.0.0"
   
   slugify@^1.3.4:
+<<<<<<< HEAD
     version "1.6.3"
     resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.3.tgz#325aec50871acfb17976f2d3cb09ee1e7ab563be"
     integrity sha512-1MPyqnIhgiq+/0iDJyqSJHENdnH5MMIlgJIBxmkRMzTNKlS/QsN5dXsB+MdDq4E6w0g9jFA4XOTRkVDjDae/2w==
+=======
+  <<<<<<< HEAD
+    version "1.6.4"
+    resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.4.tgz#33d84cc9e859ca3852e6537af6a5ff5bb9e439aa"
+    integrity sha512-Pcz296CK0uGnTf4iNQId79Uv6/5G16t0g0x3OsxWS8qVSOW+JXNnNHKVcuDiMgEGTWyK6zjlWXo2dvzV/FLf9Q==
+  =======
+    version "1.6.3"
+    resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.3.tgz#325aec50871acfb17976f2d3cb09ee1e7ab563be"
+    integrity sha512-1MPyqnIhgiq+/0iDJyqSJHENdnH5MMIlgJIBxmkRMzTNKlS/QsN5dXsB+MdDq4E6w0g9jFA4XOTRkVDjDae/2w==
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   snapdragon-node@^2.0.1:
     version "2.1.1"
@@ -5551,10 +5977,23 @@ Lockfile:
       regex-not "^1.0.2"
       safe-regex "^1.1.0"
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+  toidentifier@1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
+    integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+  =======
+>>>>>>> home-stack
   toidentifier@1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
     integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+<<<<<<< HEAD
+=======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   
   tr46@~0.0.3:
     version "0.0.3"
@@ -5566,11 +6005,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
     integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
   
+<<<<<<< HEAD
   ts-object-utils@0.0.5:
     version "0.0.5"
     resolved "https://registry.yarnpkg.com/ts-object-utils/-/ts-object-utils-0.0.5.tgz#95361cdecd7e52167cfc5e634c76345e90a26077"
     integrity sha1-lTYc3s1+UhZ8/F5jTHY0XpCiYHc=
   
+=======
+>>>>>>> home-stack
   tslib@^2.0.1:
     version "2.3.1"
     resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
@@ -5732,6 +6174,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/warn-once/-/warn-once-0.1.0.tgz#4f58d89b84f968d0389176aa99e0cf0f14ffd4c8"
     integrity sha512-recZTSvuaH/On5ZU5ywq66y99lImWqzP93+AiUo9LUwG8gXHW+LJjhOd6REJHm7qb0niYqrEQJvbHSQfuJtTqA==
   
+<<<<<<< HEAD
+=======
+  <<<<<<< HEAD
+>>>>>>> home-stack
   warning@^4.0.1:
     version "4.0.3"
     resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
@@ -5739,6 +6185,11 @@ Lockfile:
     dependencies:
       loose-envify "^1.0.0"
   
+<<<<<<< HEAD
+=======
+  =======
+  >>>>>>> origin/Sheraz
+>>>>>>> home-stack
   wcwidth@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
@@ -5835,11 +6286,14 @@ Lockfile:
       simple-plist "^1.1.0"
       uuid "^7.0.3"
   
+<<<<<<< HEAD
   xdate@^0.8.0:
     version "0.8.2"
     resolved "https://registry.yarnpkg.com/xdate/-/xdate-0.8.2.tgz#d7b033c00485d02695baf0044f4eacda3fc961a3"
     integrity sha1-17AzwASF0CaVuvAET06s2j/JYaM=
   
+=======
+>>>>>>> home-stack
   xml2js@0.4.23, xml2js@^0.4.23:
     version "0.4.23"
     resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.23.tgz#a0c69516752421eb2ac758ee4d4ccf58843eac66"

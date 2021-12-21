@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   View,
   Text,
@@ -16,7 +16,14 @@ import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import axios from "axios";
 import { NavigationContainer } from "@react-navigation/native";
-
+import {
+  FirebaseRecaptchaVerifierModal,
+  FirebaseRecaptchaBanner,
+} from "expo-firebase-recaptcha";
+import { getApp } from "firebase/app";
+import { PhoneAuthProvider, signInWithCredential } from "firebase/auth";
+import { auth } from "../../Firebase/Firebase";
+const app = getApp();
 const Signin = ({ route, navigation }) => {
   const ph_number = route.params;
   console.log();
@@ -33,9 +40,52 @@ const Signin = ({ route, navigation }) => {
   const [Pincode, setPincode] = useState();
   const [Password, setPassword] = useState("");
   const [police, setPolice] = useState(false);
+  const [verificationId, setVerificationId] = React.useState();
+  const [verificationCode, setVerificationCode] = React.useState();
+  const recaptchaVerifier = React.useRef(null);
+  const [message, showMessage] = React.useState();
+  const Send = async () => {
+    // The FirebaseRecaptchaVerifierModal ref implements the
+    // FirebaseAuthApplicationVerifier interface and can be
+    // passed directly to `verifyPhoneNumber`.
+    try {
+      const phoneProvider = new PhoneAuthProvider(auth);
+      const verificationId = await phoneProvider.verifyPhoneNumber(
+        ph_number,
+        recaptchaVerifier.current
+      );
+      console.log(ph_number);
+      setVerificationId(verificationId);
+      showMessage({
+        text: "Verification code has been sent to your phone.",
+      });
+    } catch (err) {
+      showMessage({ text: `Error: ${err.message}`, color: "red" });
+    }
+  };
+  React.useEffect(() => {
+    Send();
+  }, []);
+  const handleVerifyOtp = async () => {
+    console.log("fkn");
+    try {
+      const credential = PhoneAuthProvider.credential(verificationId, Otp);
+      await signInWithCredential(auth, credential);
+      console.log(Otp);
+
+      alert("Phone authentication successful 👍");
+    } catch (err) {
+      alert(err);
+    }
+  };
 
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#fff" }}>
+      <FirebaseRecaptchaVerifierModal
+        ref={recaptchaVerifier}
+        firebaseConfig={app.options}
+        // attemptInvisibleVerification
+      />
       <View style={{ height: "8%" }} />
       <ScrollView>
         <View style={{ alignSelf: "center" }}>
@@ -145,27 +195,7 @@ const Signin = ({ route, navigation }) => {
         <View style={{ height: 15 }} />
         <TouchableOpacity
           onPress={() => {
-            // console.log(Email, UserName, Address, Password, Pincode);
-            const req = {
-              name: UserName,
-              address: Address,
-              password: Password,
-              phone: ph_number,
-              email: Email,
-              pincode: Pincode,
-            };
-            // console.log(req);
-            setOtpVerify(!otpVerify);
-            // otpVerify ? console.log(true) : console.log("false");
-            // axios
-            //   .post(" https://floringetest.in/handiman/api/register", req)
-            //   .then(res => {
-            //     // console.log(res.data);
-            //     // res.data.HasError
-            //     //   ? Alert.alert("error occured")
-            //     //   :
-            //     navigation.navigate("UserSignIn");
-            //   });
+            handleVerifyOtp();
           }}
         >
           <View

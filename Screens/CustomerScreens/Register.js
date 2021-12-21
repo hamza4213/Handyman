@@ -26,103 +26,91 @@ const Signin = ({ route, navigation }) => {
   const height = Dimensions.get("screen").height;
   const [PhoneNumber, setPhoneNumber] = useState(ph_number);
   const [Otp, setOtp] = useState();
+  const [otpVerify, setOtpVerify] = useState(true);
   const [UserName, setUserName] = useState("");
   const [Email, setEmail] = useState("");
   const [Address, setAddress] = useState("");
   const [Pincode, setPincode] = useState();
   const [Password, setPassword] = useState("");
   const [police, setPolice] = useState(false);
-  const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1
-    });
-
-    if (!result.cancelled) {
-      // setUpload(result.uri);
-      // IMage = result.uri;
-      setIMageSource(result.uri);
-      setCheckIMage(false);
-    }
-  };
+ 
 
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#fff" }}>
       <View style={{ height: "8%" }} />
       <ScrollView>
-        {CheckIMage
-          ? <TouchableOpacity onPress={() => pickImage()}>
+      
               <View style={{ alignSelf: "center" }}>
                 <Ionicons name="person-outline" size={34} color="black" />
               </View>
-            </TouchableOpacity>
-          : <TouchableOpacity onPress={() => pickImage()}>
-              <View style={{ alignSelf: "center", height: 50, width: 50 }}>
-                <Image
-                  style={{ height: 50, width: 50, borderRadius: 25 }}
-                  source={{ uri: IMageSource }}
+              <View
+                style={{ width: "85%", alignSelf: "center",
+                // height:"90%" 
+                height: height - 210 
+              }}
+              >
+           
+            {
+              !otpVerify?
+              <>
+              
+              <FormInput
+                  labelValue={PhoneNumber}
+                  editable={false}
+                  placeholderText={"productexperience@gmail.com"}
+                  onChangeText={val => setPhoneNumber(val)}
+                  keyboardTyp="numeric"
                 />
-              </View>
-            </TouchableOpacity>}
-        <View
-          style={{ width: "85%", alignSelf: "center", height: height - 220 }}
-        >
-          <FormInput
-            labelValue={PhoneNumber}
-            placeholderText={"productexperience@gmail.com"}
-            onChangeText={val => setPhoneNumber(val)}
-            keyboardTyp="numeric"
-          />
-          <View style={{ height: "4%" }} />
-          <FormInput
-            labelValue={Otp}
-            placeholderText={"Enter One Time Password"}
-            onChangeText={val => setOtp(val)}
-          />
-          <View style={{ height: "2%" }} />
-          <Pressable onPress={() => alert("Otp Sended")}>
-            <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
-              <Entypo
-                style={[{ transform: [{ rotate: "180deg" }] }]}
-                name="forward"
-                size={20}
-                color="black"
-              />
-              <Text style={{ fontSize: 18 }}>Resend Otp</Text>
-            </View>
-          </Pressable>
-          <View style={{ height: "1%" }} />
-          <FormInput
-            labelValue={Email}
-            placeholderText={"Enter Email"}
-            onChangeText={val => setEmail(val)}
-          />
-          <FormInput
-            labelValue={UserName}
-            placeholderText={"Enter Name"}
-            onChangeText={val => setUserName(val)}
-          />
-          <FormInput
-            labelValue={Address}
-            placeholderText={"Enter Address"}
-            onChangeText={val => setAddress(val)}
-          />
-          <FormInput
-            labelValue={Pincode}
-            placeholderText={"Enter Pincode"}
-            onChangeText={val => setPincode(val)}
-          />
-          <FormInput
-            labelValue={Password}
-            placeholderText={"Enter Password"}
-            onChangeText={val => setPassword(val)}
-          />
-        </View>
-        <View style={{ marginTop: -10 }} />
-        <View
-          style={{ width: "80%", alignSelf: "center", flexDirection: "row" }}
+                <View style={{ height: "4%" }} />
+                <FormInput
+                  labelValue={Otp}
+                  placeholderText={"Enter One Time Password"}
+                  onChangeText={val => setOtp(val)}
+                />
+                <View style={{ height: "2%" }} />
+                <Pressable onPress={() => alert("Otp Sended")}>
+                  <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
+                    <Entypo
+                      style={[{ transform: [{ rotate: "180deg" }] }]}
+                      name="forward"
+                      size={20}
+                      color="black"
+                    />
+                    <Text style={{ fontSize: 18 }}>Resend Otp</Text>
+                  </View>
+                </Pressable>
+              </>
+              :  
+              <>
+
+                <View style={{ height: "1%" }} />
+                <FormInput
+                  labelValue={Email}
+                  placeholderText={"Enter Email"}
+                  onChangeText={val => setEmail(val)}
+                />
+                <FormInput
+                  labelValue={UserName}
+                  placeholderText={"Enter Name"}
+                  onChangeText={val => setUserName(val)}
+                />
+                <FormInput
+                  labelValue={Address}
+                  placeholderText={"Enter Address"}
+                  onChangeText={val => setAddress(val)}
+                />
+                <FormInput
+                  labelValue={Pincode}
+                  placeholderText={"Enter Pincode"}
+                  onChangeText={val => setPincode(val)}
+                />
+                <FormInput
+                  labelValue={Password}
+                  placeholderText={"Enter Password"}
+                  onChangeText={val => setPassword(val)}
+                />
+                 <View
+          style={{ width: "80%", alignSelf: "center", flexDirection: "row",padding:20 }}
         >
           <TouchableOpacity onPress={() => setPolice(!police)}>
             <View
@@ -147,6 +135,13 @@ const Signin = ({ route, navigation }) => {
           <View style={{ width: 3 }} />
           <Text style={{ fontSize: 16 }}>Polices</Text>
         </View>
+               </>
+
+                
+              }
+              </View>
+       
+       
         <View style={{ height: 15 }} />
         <TouchableOpacity
           onPress={() => {
@@ -184,7 +179,10 @@ const Signin = ({ route, navigation }) => {
             }}
           >
             <Text style={{ justifyContent: "center", fontSize: 18 }}>
-              Continue
+              {
+                otpVerify?" Register ":"Verify OTP"
+              }
+              
             </Text>
           </View>
         </TouchableOpacity>

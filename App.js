@@ -30,7 +30,6 @@ export default function App() {
             </UserStack.Group>
           : <UserStack.Group>
               <UserStack.Screen name="UserSignIn" component={UserSignIn} />
-              <UserStack.Screen name="Login" component={Login} />
               <UserStack.Screen name="UserSignIn1" component={Signin} />
             </UserStack.Group>}
       </UserStack.Navigator>

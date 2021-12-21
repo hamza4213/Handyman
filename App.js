@@ -9,7 +9,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserSignIn from "./Screens/CustomerScreens/UserRegister";
 import Signin from "./Screens/CustomerScreens/Register";
 import Login from "./Screens/CustomerScreens/Login";
-import Check from "./Check";
+
 // Import the functions you need from the SDKs you need
 
 // Initialize Firebase
@@ -31,7 +31,6 @@ export default function App() {
           </UserStack.Group>
         ) : (
           <UserStack.Group>
-            {/* <UserStack.Screen name="Check" component={Check} /> */}
             <UserStack.Screen name="UserSignIn" component={UserSignIn} />
             <UserStack.Screen name="UserSignIn1" component={Signin} />
           </UserStack.Group>

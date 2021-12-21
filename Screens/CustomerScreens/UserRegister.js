@@ -108,7 +108,6 @@ const UserSignIn = ({ navigation }) => {
               }}
             >
               <FormInput
-                editable={false}
                 labelValue={passwd}
                 secureTextEntry={true}
                 placeholderText={"Password"}

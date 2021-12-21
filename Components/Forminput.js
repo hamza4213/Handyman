@@ -1,10 +1,11 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 
-const FormInput = ({ labelValue, keyboardTyp, placeholderText, ...rest }) => {
+const FormInput = ({ labelValue, keyboardTyp,maxl, placeholderText, ...rest }) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput
+      maxLength={maxl}
         value={labelValue}
         style={styles.input}
         numberOfLines={1}
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
 
   input: {
     padding: 10,
-    // flex: 1,
+    flex: 1,
     fontSize: 16,
 
     color: "#333",

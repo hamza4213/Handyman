@@ -126,7 +126,7 @@ const Login = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
       <View style={{ height: "52%", top: "3%", alignSelf: "center" }}>
-        <Image source={require("../../images/map.png")} />
+        <Image source={require("../../Images/map.png")} />
       </View>
     </View>
   );

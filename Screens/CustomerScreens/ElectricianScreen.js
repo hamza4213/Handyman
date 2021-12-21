@@ -15,7 +15,8 @@ const ARRAY = [
   { iconName: "down", text: "how it works", description: "^It is working" }
 ];
 
-const ElectricianScreen = ({ navigation }) => {
+const ElectricianScreen = ({ navigation, route }) => {
+  const service = route.params;
   const [address, setAddress] = useState("");
   const [datetime, setDatetime] = useState("");
   const [adinfo, setAdinfo] = useState("");
@@ -32,7 +33,7 @@ const ElectricianScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
           <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
-        <Header text="ELECTRICIAN" fontSize={24} color="black" left={20} />
+        <Header text={service} fontSize={24} color="black" left={20} />
       </View>
       <View>
         <Text style={{ left: 10, fontSize: 16 }}>Service required at</Text>
@@ -80,6 +81,26 @@ const ElectricianScreen = ({ navigation }) => {
           placeholderText={"Enter here"}
           onChangeText={val => setAdinfo(val)}
         />
+
+        <View>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            Mode of Payment
+          </Text>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "yellow",
+                width: 15,
+                height: 15,
+                borderRadius: 20,
+                borderColor: "black",
+                borderWidth: 1,
+                padding: 2
+              }}
+            />
+            <Text style={{ fontWeight: "bold" }}>Cash on delivery</Text>
+          </View>
+        </View>
       </View>
       <View style={{ height: 15, backgroundColor: "#D3D3D3" }} />
       <View style={{ flexDirection: "row" }}>
@@ -116,22 +137,31 @@ const ElectricianScreen = ({ navigation }) => {
         </Text>
       </View>
 
+      {/* 
       <FlatList
         data={ARRAY}
         keyExtractor={item => item.text}
         renderItem={({ item }) => <Listicon item={item} />}
-      />
+      /> */}
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("UserSignIn")}
+        onPress={() => {
+          const req = {
+            address,
+            datetime,
+            adinfo
+          };
+          navigation.navigate("DateScreen");
+          console.log(req);
+        }}
         style={{
           backgroundColor: "grey",
           height: 50,
           width: 350,
           alignSelf: "center",
-          borderRadius: 10,
-          position: "absolute",
-          top: "85%"
+          borderRadius: 10
+          // position: "absolute",
+          // top: "85%"
         }}
       >
         <Text

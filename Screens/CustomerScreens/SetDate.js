@@ -9,7 +9,7 @@ const SetDate = props => {
       style={{
         justifyContent: "center",
         flex: 1,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#FFFFFF"
         // marginTop: 100,
       }}
     >
@@ -43,14 +43,14 @@ const SetDate = props => {
             borderRadius: 10,
             justifyContent: "center",
             alignSelf: "center",
-            backgroundColor: "cyan",
+            backgroundColor: "cyan"
           }}
         >
           <Text
             style={{
               justifyContent: "center",
               alignSelf: "center",
-              color: "#fff",
+              color: "#fff"
             }}
           >
             Continue

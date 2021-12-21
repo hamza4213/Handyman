@@ -130,6 +130,7 @@ const ElectricianScreen = ({ navigation, route }) => {
             datetime,
             adinfo
           };
+          navigation.navigate("DateScreen");
           console.log(req);
         }}
         style={{

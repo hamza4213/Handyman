@@ -13,6 +13,8 @@ import CountryPicker from "react-native-country-picker-modal";
 import { AntDesign } from "@expo/vector-icons";
 // import Textinput from "../../Components/Textinputcomponent";
 import FormInput from "../../Components/Forminput";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
 
 const UserSignIn = ({ navigation, route }) => {
   const { loggedIn, setIsloggedIn } = route.params;
@@ -32,13 +34,41 @@ const UserSignIn = ({ navigation, route }) => {
   const [phoneNo, setPhoneNo] = useState("");
   const [passwd, setPasswd] = useState("");
 
-  const HandleSignIn = useCallback(
-    async () => {
-      setIsloggedIn({ ...loggedIn, loggedIn: true });
-      console.log("loggedIn", loggedIn);
-    },
-    [loggedIn]
-  );
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem("@user", jsonValue);
+    } catch (e) {
+      console.warn(e);
+      // saving error
+    }
+  };
+  const HandleSignIn = useCallback(async () => {
+    // setIsloggedIn({ ...loggedIn, loggedIn: true });
+
+    // storeData();
+    console.log(Country.callingCode + phoneNo, passwd);
+    try {
+      const res = await axios.post(
+        " https://floringetest.in/handiman/api/login",
+        {
+          phone: Country.callingCode + phoneNo,
+          password: passwd
+        }
+      );
+      // const jsonValue = await JSON.stringify(res.data.result.users);
+      if (res.data) {
+        console.log(res.data.result.users);
+        await AsyncStorage.setItem(
+          "@user",
+          JSON.stringify(res.data.result.users)
+        );
+        navigation.navigate("TabNavigator2");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
   return (
     <SafeAreaView>
       <View

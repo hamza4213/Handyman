@@ -8,21 +8,18 @@ const Images = props => {
   const navigation = useNavigation();
   const [user, setUser] = useState({});
 
-  const getData = useCallback(
-    async () => {
-      try {
-        const value = await AsyncStorage.getItem("@user");
-        if (value !== null) {
-          setUser(JSON.parse(value));
-          // value previously stored
-        }
-      } catch (e) {
-        console.log(e);
-        // error reading value
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("@user");
+      if (value !== null) {
+        setUser(JSON.parse(value));
+        // value previously stored
       }
-    },
-    [user]
-  );
+    } catch (e) {
+      console.log(e);
+      // error reading value
+    }
+  };
 
   useEffect(() => {
     getData();
@@ -33,6 +30,7 @@ const Images = props => {
     <View style={{ marginHorizontal: "17%", marginVertical: "5%" }}>
       <TouchableOpacity
         onPress={() => {
+          console.log(user);
           user.id
             ? navigation.navigate(`${item.navigateto}`, (header = item))
             : Alert.alert("Login First", "Please Login to continue", [

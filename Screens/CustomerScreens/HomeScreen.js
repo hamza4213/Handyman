@@ -1,14 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import Header from "../../Components/UserHeader";
 import Images from "../../Components/Image";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import axios from "axios";
 
 const DATA = [
   {
     IMAGE: require("../../Images/bulb.png"),
+    id: 2,
     height: 50,
     width: 50,
     Imgtext: "Electrician",
@@ -17,6 +19,7 @@ const DATA = [
   {
     IMAGE: require("../../Images/tap.png"),
     height: 50,
+    id: 2,
     width: 50,
     Imgtext: "plumber",
     navigateto: "ElectricianScreen"
@@ -26,6 +29,7 @@ const DATA = [
     height: 50,
     width: 70,
     Imgtext: "Agro equipment",
+    id: 3,
     navigateto: "ElectricianScreen",
     right: 10,
     imgright: 10
@@ -42,6 +46,24 @@ const DATA = [
 ];
 
 const HomeScreen = () => {
+  const [data, setData] = useState([]);
+  const handleFetchServices = useCallback(
+    async () => {
+      axios
+        .get(" https://floringetest.in/handiman/api/serviceList")
+        .then(res => {
+          setData(res.data.result.service);
+          console.log(data);
+        });
+    },
+    [data, setData]
+  );
+
+  useEffect(() => {
+    handleFetchServices();
+    return () => {};
+  }, []);
+
   return (
     <View style={{ height: "100%", width: "100%" }}>
       <View

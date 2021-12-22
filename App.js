@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,6 +10,7 @@ import UserSignIn from "./Screens/CustomerScreens/UserRegister";
 import Signin from "./Screens/CustomerScreens/Register";
 import Login from "./Screens/CustomerScreens/Login";
 import Services from "./Screens/CustomerScreens/Services";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Import the functions you need from the SDKs you need
 
@@ -23,6 +24,29 @@ export default function App() {
     user: "shahzaib",
     loggedIn: false
   });
+  const user = {
+    id: "",
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    pincode: ""
+  };
+
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem("@user", jsonValue);
+    } catch (e) {
+      console.warn(e);
+      // saving error
+    }
+  };
+
+  useEffect(() => {
+    storeData(user);
+    return () => {};
+  }, []);
   return (
     <NavigationContainer>
       <UserStack.Navigator screenOptions={{ headerShown: false }}>

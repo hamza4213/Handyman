@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, Text, TouchableOpacity, Modal, Alert } from "react-native";
 import Header from "../../Components/UserHeader";
 import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
 import Listicon from "../../Components/Listicon";
 import SetDate from "../../Components/SetDate";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ARRAY = [
   { iconName: "down", text: "rate chart", description: "^100Rs" },
@@ -18,10 +19,35 @@ const ARRAY = [
 
 const ElectricianScreen = ({ navigation, route }) => {
   const { name, id } = route.params;
+
   const [address, setAddress] = useState("");
   const [datetime, setDatetime] = useState(new Date());
   const [adinfo, setAdinfo] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  const [user, setUser] = useState({});
+
+  const getData = useCallback(
+    async () => {
+      try {
+        const value = await AsyncStorage.getItem("@user");
+        if (value !== null) {
+          setUser(JSON.parse(value));
+          // value previously stored
+        }
+      } catch (e) {
+        console.log(e);
+        // error reading value
+      }
+    },
+    [user]
+  );
+
+  useEffect(() => {
+    getData();
+    console.log(user);
+    user.id ? console.log("hello") : console.log("world");
+    return () => {};
+  }, []);
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -155,8 +181,9 @@ const ElectricianScreen = ({ navigation, route }) => {
             datetime,
             adinfo
           };
-          navigation.navigate("DateScreen");
-          console.log(req);
+
+          // navigation.navigate("DateScreen");
+          console.log(user);
         }}
         style={{
           backgroundColor: "grey",

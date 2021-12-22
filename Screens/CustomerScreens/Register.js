@@ -25,7 +25,8 @@ import { PhoneAuthProvider, signInWithCredential } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase";
 const app = getApp();
 const Signin = ({ route, navigation }) => {
-  const ph_number = route.params;
+  const {ph_number} = route.params;
+  console.log(ph_number)
 
   const [IMageSource, setIMageSource] = useState("");
   useState;
@@ -33,7 +34,7 @@ const Signin = ({ route, navigation }) => {
   const height = Dimensions.get("screen").height;
   const [PhoneNumber, setPhoneNumber] = useState(ph_number);
   const [Otp, setOtp] = useState();
-  const [otpVerify, setOtpVerify] = useState(false);
+  const [otpVerify, setOtpVerify] = useState(true);
   const [UserName, setUserName] = useState("");
   const [Email, setEmail] = useState("");
   const [Address, setAddress] = useState("");
@@ -73,6 +74,9 @@ const Signin = ({ route, navigation }) => {
       console.log(Otp);
 
       alert("Phone authentication successful 👍");
+      setOtpVerify(true)
+      // setIsloggedIn(true)
+      
     } catch (err) {
       alert(err);
     }
@@ -114,7 +118,9 @@ const Signin = ({ route, navigation }) => {
                 onChangeText={val => setOtp(val)}
               />
               <View style={{ height: "2%" }} />
-              <Pressable onPress={() => alert("Otp Sended")}>
+              <Pressable onPress={() => {
+            Send()
+            }}>
                 <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
                   <Entypo
                     style={[{ transform: [{ rotate: "180deg" }] }]}
@@ -194,6 +200,10 @@ const Signin = ({ route, navigation }) => {
         <View style={{ height: 15 }} />
         <TouchableOpacity
           onPress={() => {
+
+            otpVerify?
+            navigation.navigate("UserSignIn")
+            :
             handleVerifyOtp();
           }}
         >

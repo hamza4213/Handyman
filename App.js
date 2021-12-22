@@ -18,7 +18,7 @@ import Services from "./Screens/CustomerScreens/Services";
 const UserStack = createNativeStackNavigator();
 export default function App() {
   // const loggedIn = false;
-  const [loggedIn, setIsloggedIn] = useState(true);
+  const [loggedIn, setIsloggedIn] = useState(false);
   return (
     <NavigationContainer>
       <UserStack.Navigator screenOptions={{ headerShown: false }}>
@@ -27,17 +27,23 @@ export default function App() {
               <UserStack.Screen
                 name="TabNavigator2"
                 component={TabNavigator2}
+                initialParams={{ loggedIn, setIsloggedIn }}
               />
               <UserStack.Screen
                 name="ElectricianScreen"
                 component={ElectricianScreen}
               />
+              <UserStack.Screen name="UserSignIn1" component={Signin} />
+
               {/* <UserStack.Screen name="HomeScreen" component={HomeScreen} /> */}
               {/* <UserStack.Screen name="Services" component={Services} /> */}
             </UserStack.Group>
           : <UserStack.Group>
-              <UserStack.Screen name="UserSignIn" component={UserSignIn} />
-              <UserStack.Screen name="UserSignIn1" component={Signin} />
+              <UserStack.Screen
+                name="UserSignIn"
+                component={UserSignIn}
+                initialParams={{ loggedIn, setIsloggedIn }}
+              />
             </UserStack.Group>}
       </UserStack.Navigator>
     </NavigationContainer>

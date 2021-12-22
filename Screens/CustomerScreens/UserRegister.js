@@ -5,7 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  SafeAreaView,
+  SafeAreaView
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,7 +14,9 @@ import { AntDesign } from "@expo/vector-icons";
 // import Textinput from "../../Components/Textinputcomponent";
 import FormInput from "../../Components/Forminput";
 
-const UserSignIn = ({ navigation }) => {
+const UserSignIn = ({ navigation, route }) => {
+  const { loggedIn, setIsloggedIn } = route.params;
+
   const [IMageSource, setIMageSource] = useState("");
   const [signin, setSignIn] = useState(false);
   const [Country, setCountry] = useState({
@@ -24,7 +26,7 @@ const UserSignIn = ({ navigation }) => {
     flag: "flag-pk",
     name: "Pakistan",
     region: "Asia",
-    subregion: "Southern Asia",
+    subregion: "Southern Asia"
   });
   const [CheckIMage, setCheckIMage] = useState(true);
   const [phoneNo, setPhoneNo] = useState("");
@@ -37,7 +39,7 @@ const UserSignIn = ({ navigation }) => {
           height: "100%",
           width: "100%",
           backgroundColor: "#fff",
-          padding: 20,
+          padding: 20
         }}
       >
         <View style={{ height: "10%", justifyContent: "flex-end" }}>
@@ -46,7 +48,7 @@ const UserSignIn = ({ navigation }) => {
               fontSize: 28,
               left: 20,
 
-              fontWeight: "bold",
+              fontWeight: "bold"
             }}
           >
             {signin ? "Sign In" : " Register"}
@@ -63,7 +65,7 @@ const UserSignIn = ({ navigation }) => {
             flexDirection: "row",
             borderWidth: 1,
             borderRadius: 10,
-            margin: 10,
+            margin: 10
           }}
         >
           <View
@@ -71,7 +73,7 @@ const UserSignIn = ({ navigation }) => {
               justifyContent: "center",
               flexDirection: "row",
               top: 18,
-              left: 10,
+              left: 10
             }}
           >
             <CountryPicker
@@ -95,26 +97,26 @@ const UserSignIn = ({ navigation }) => {
             />
           </View>
         </View>
-        {signin ? (
-          <View
-            style={{
-              padding: 10,
-            }}
-          >
-            <FormInput
-              labelValue={passwd}
-              secureTextEntry={true}
-              placeholderText={"Password"}
-              onChangeText={val => setPasswd(val)}
-            />
-          </View>
-        ) : null}
+        {signin
+          ? <View
+              style={{
+                padding: 10
+              }}
+            >
+              <FormInput
+                labelValue={passwd}
+                secureTextEntry={true}
+                placeholderText={"Password"}
+                onChangeText={val => setPasswd(val)}
+              />
+            </View>
+          : null}
 
         <View
           style={{
             color: "black",
             flexDirection: "row",
-            justifyContent: "flex-end",
+            justifyContent: "flex-end"
           }}
         >
           <Text style={{ color: "black" }}>
@@ -130,7 +132,7 @@ const UserSignIn = ({ navigation }) => {
           >
             <Text
               style={{
-                fontWeight: "bold",
+                fontWeight: "bold"
               }}
             >
               {signin ? "Register" : "Sign IN"}
@@ -144,16 +146,15 @@ const UserSignIn = ({ navigation }) => {
             width: 350,
             alignSelf: "center",
             borderRadius: 10,
-            top: "2%",
+            top: "2%"
           }}
           onPress={() => {
             signin
               ? // send request here
-                "hello"
-              : navigation.navigate(
-                  "UserSignIn1",
-                  (ph_number = "+" + Country.callingCode + phoneNo)
-                );
+                setIsloggedIn(true)
+              : navigation.navigate("UserSignIn1", {
+                  ph_number: "+" + Country.callingCode + phoneNo
+                });
           }}
         >
           <Text
@@ -162,7 +163,7 @@ const UserSignIn = ({ navigation }) => {
               top: 12,
               fontSize: 18,
               color: "black",
-              fontWeight: "bold",
+              fontWeight: "bold"
             }}
           >
             CONTINUE

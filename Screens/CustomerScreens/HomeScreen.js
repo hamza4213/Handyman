@@ -43,7 +43,7 @@ const DATA = [
     width: 50,
 
     Imgtext: "more",
-    navigateto: "Services",
+    navigateto: "UserSignIn",
     imgright: 30,
     right: 20
   }

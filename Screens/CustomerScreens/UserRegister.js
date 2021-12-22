@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   View,
   Text,
@@ -32,6 +32,13 @@ const UserSignIn = ({ navigation, route }) => {
   const [phoneNo, setPhoneNo] = useState("");
   const [passwd, setPasswd] = useState("");
 
+  const HandleSignIn = useCallback(
+    async () => {
+      setIsloggedIn({ ...loggedIn, loggedIn: true });
+      console.log("loggedIn", loggedIn);
+    },
+    [loggedIn]
+  );
   return (
     <SafeAreaView>
       <View
@@ -151,7 +158,7 @@ const UserSignIn = ({ navigation, route }) => {
           onPress={() => {
             signin
               ? // send request here
-                setIsloggedIn(true)
+                HandleSignIn()
               : navigation.navigate("UserSignIn1", {
                   ph_number: "+" + Country.callingCode + phoneNo
                 });

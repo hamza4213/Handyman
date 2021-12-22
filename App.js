@@ -18,33 +18,43 @@ import Services from "./Screens/CustomerScreens/Services";
 const UserStack = createNativeStackNavigator();
 export default function App() {
   // const loggedIn = false;
-  const [loggedIn, setIsloggedIn] = useState(false);
+
+  const [loggedIn, setIsloggedIn] = useState({
+    user: "shahzaib",
+    loggedIn: false
+  });
   return (
     <NavigationContainer>
       <UserStack.Navigator screenOptions={{ headerShown: false }}>
-        {loggedIn
-          ? <UserStack.Group>
-              <UserStack.Screen
-                name="TabNavigator2"
-                component={TabNavigator2}
-                initialParams={{ loggedIn, setIsloggedIn }}
-              />
-              <UserStack.Screen
-                name="ElectricianScreen"
-                component={ElectricianScreen}
-              />
-              <UserStack.Screen name="UserSignIn1" component={Signin} />
+        {/* {loggedIn
+          ?  */}
+        <UserStack.Group>
+          <UserStack.Screen
+            name="TabNavigator2"
+            component={TabNavigator2}
+            initialParams={{ loggedIn, setIsloggedIn }}
+          />
+          <UserStack.Screen
+            name="ElectricianScreen"
+            component={ElectricianScreen}
+          />
+          <UserStack.Screen name="UserSignIn1" component={Signin} />
+          <UserStack.Screen
+            name="UserSignIn"
+            component={UserSignIn}
+            initialParams={{ loggedIn, setIsloggedIn }}
+          />
 
-              {/* <UserStack.Screen name="HomeScreen" component={HomeScreen} /> */}
-              {/* <UserStack.Screen name="Services" component={Services} /> */}
-            </UserStack.Group>
-          : <UserStack.Group>
+          {/* <UserStack.Screen name="HomeScreen" component={HomeScreen} /> */}
+          {/* <UserStack.Screen name="Services" component={Services} /> */}
+        </UserStack.Group>
+        {/* : <UserStack.Group>
               <UserStack.Screen
                 name="UserSignIn"
                 component={UserSignIn}
                 initialParams={{ loggedIn, setIsloggedIn }}
               />
-            </UserStack.Group>}
+            </UserStack.Group>} */}
       </UserStack.Navigator>
     </NavigationContainer>
   );

@@ -4,7 +4,7 @@ import Header from "../../Components/UserHeader";
 import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
 import Listicon from "../../Components/Listicon";
-import SetDate from "../../Screens/CustomerScreens/SetDate";
+import SetDate from "../../Components/SetDate";
 
 const ARRAY = [
   { iconName: "down", text: "rate chart", description: "^100Rs" },
@@ -21,7 +21,7 @@ const ElectricianScreen = ({ navigation, route }) => {
   const [address, setAddress] = useState("");
   const [datetime, setDatetime] = useState(new Date());
   const [adinfo, setAdinfo] = useState("");
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={{ flex: 1 }}>
       <View

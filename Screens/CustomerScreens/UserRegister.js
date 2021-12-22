@@ -5,7 +5,8 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  SafeAreaView
+  SafeAreaView,
+  Alert
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
@@ -58,7 +59,7 @@ const UserSignIn = ({ navigation, route }) => {
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
       if (res.data) {
-        console.log(res.data.result.users);
+        console.log(res.data);
         await AsyncStorage.setItem(
           "@user",
           JSON.stringify(res.data.result.users)
@@ -66,6 +67,8 @@ const UserSignIn = ({ navigation, route }) => {
         navigation.navigate("TabNavigator2");
       }
     } catch (error) {
+      // console.log("object");
+      Alert.alert("invalid credentials");
       console.log(error);
     }
   });

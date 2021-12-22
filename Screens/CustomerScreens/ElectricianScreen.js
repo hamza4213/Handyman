@@ -181,8 +181,8 @@ const ElectricianScreen = ({ navigation, route }) => {
             datetime,
             adinfo
           };
-
-          // navigation.navigate("DateScreen");
+          Alert.alert("order created successfully, you will be contact soon");
+          navigation.navigate("HomeScreen");
           console.log(user);
         }}
         style={{

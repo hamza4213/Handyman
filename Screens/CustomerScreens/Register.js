@@ -34,7 +34,7 @@ const Signin = ({ route, navigation }) => {
   const height = Dimensions.get("screen").height;
   const [PhoneNumber, setPhoneNumber] = useState(ph_number);
   const [Otp, setOtp] = useState();
-  const [otpVerify, setOtpVerify] = useState(true);
+  const [otpVerify, setOtpVerify] = useState(false);
   const [UserName, setUserName] = useState("");
   const [Email, setEmail] = useState("");
   const [Address, setAddress] = useState("");
@@ -81,6 +81,20 @@ const Signin = ({ route, navigation }) => {
       alert(err);
     }
   };
+  const handleSignUp= async()=>{
+    axios.post(" https://floringetest.in/handiman/api/register",{
+      phone:ph_number,
+      name:UserName,
+      password:Password,
+      email:Email,
+      address:Address,
+      pincode:Pincode,
+      user_type:3
+    }).then(res=>{console.log(res.data)
+                navigation.navigate("UserSignIn")}
+
+    )
+  }
 
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#fff" }}>
@@ -202,7 +216,8 @@ const Signin = ({ route, navigation }) => {
           onPress={() => {
 
             otpVerify?
-            navigation.navigate("UserSignIn")
+            handleSignUp()
+            // navigation.navigate("UserSignIn")
             :
             handleVerifyOtp();
           }}

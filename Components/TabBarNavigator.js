@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import IonicIcon from "react-native-vector-icons/Ionicons";
 import HomeScreen from "../Screens/CustomerScreens/HomeScreen";
 import ElectricianScreen from "../Screens/CustomerScreens/ElectricianScreen";
+import Services from "../Screens/CustomerScreens/Services";
 const fullScreenWidth = Dimensions.get("window").width;
 const Tabs = createBottomTabNavigator();
 const TabNavigator2 = () => {
@@ -32,7 +33,7 @@ const TabNavigator2 = () => {
           if (route.name === "HomeScreen") {
             iconName = focused ? "home" : "home-outline";
             size = 28;
-          } else if (route.name === "ElectricianScreen") {
+          } else if (route.name === "Services") {
             iconName = focused ? "settings-outline" : "settings-outline";
             size = 28;
           }
@@ -56,7 +57,7 @@ const TabNavigator2 = () => {
       }}
     >
       <Tabs.Screen name="HomeScreen" component={HomeScreen} />
-      <Tabs.Screen name="ElectricianScreen" component={ElectricianScreen} />
+      <Tabs.Screen name="Services" component={Services} />
     </Tabs.Navigator>
   );
 };

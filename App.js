@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserSignIn from "./Screens/CustomerScreens/UserRegister";
 import Signin from "./Screens/CustomerScreens/Register";
 import Login from "./Screens/CustomerScreens/Login";
+import Services from "./Screens/CustomerScreens/Services";
 
 // Import the functions you need from the SDKs you need
 
@@ -31,7 +32,8 @@ export default function App() {
                 name="ElectricianScreen"
                 component={ElectricianScreen}
               />
-              <UserStack.Screen name="HomeScreen" component={HomeScreen} />
+              {/* <UserStack.Screen name="HomeScreen" component={HomeScreen} /> */}
+              {/* <UserStack.Screen name="Services" component={Services} /> */}
             </UserStack.Group>
           : <UserStack.Group>
               <UserStack.Screen name="UserSignIn" component={UserSignIn} />

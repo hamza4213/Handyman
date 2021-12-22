@@ -95,13 +95,13 @@ const HomeScreen = () => {
         </Text>
       </View>
       <View style={{ borderBottomWidth: 0.3 }} />
-      <View style={{ height: "3%" }}>
+      <View>
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
           Most used services in odisha
         </Text>
       </View>
-      <View style={{ height: "2%" }} />
-      <View style={{ height: "30%" }}>
+      {/* <View style={{ height: "2%" }} /> */}
+      <View style={{ height: "40%" }}>
         <FlatList
           data={DATA}
           numColumns="2"
@@ -117,7 +117,7 @@ const HomeScreen = () => {
       <View style={{}}>
         <Image
           source={require("../../Images/taps.jpg")}
-          style={{ height: "100%", width: "95%", alignSelf: "center" }}
+          style={{ height: "60%", width: "95%", alignSelf: "center" }}
         />
       </View>
     </View>

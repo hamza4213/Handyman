@@ -17,7 +17,7 @@ const ARRAY = [
 ];
 
 const ElectricianScreen = ({ navigation, route }) => {
-  const service = route.params;
+  const { name, id } = route.params;
   const [address, setAddress] = useState("");
   const [datetime, setDatetime] = useState(new Date());
   const [adinfo, setAdinfo] = useState("");
@@ -35,7 +35,7 @@ const ElectricianScreen = ({ navigation, route }) => {
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
           <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
-        <Header text={service} fontSize={24} color="black" left={20} />
+        <Header text={name} fontSize={24} color="black" left={20} />
       </View>
       <View>
         <Text style={{ left: 10, fontSize: 16 }}>Service required at</Text>
@@ -137,7 +137,7 @@ const ElectricianScreen = ({ navigation, route }) => {
       </View>
       <View>
         <Text style={{ left: 15, fontSize: 16 }}>
-          costumer decides not to continue with the service after inspection.
+          costumer decides not to continue with the name after inspection.
         </Text>
       </View>
 

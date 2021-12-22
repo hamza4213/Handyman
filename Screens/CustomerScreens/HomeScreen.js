@@ -10,7 +10,8 @@ import axios from "axios";
 const DATA = [
   {
     IMAGE: require("../../Images/bulb.png"),
-    id: 2,
+    id: 1,
+    name: "Electrical",
     height: 50,
     width: 50,
     Imgtext: "Electrician",
@@ -20,6 +21,7 @@ const DATA = [
     IMAGE: require("../../Images/tap.png"),
     height: 50,
     id: 2,
+    name: "Plumbing",
     width: 50,
     Imgtext: "plumber",
     navigateto: "ElectricianScreen"
@@ -30,6 +32,7 @@ const DATA = [
     width: 70,
     Imgtext: "Agro equipment",
     id: 3,
+    name: "Agro Equipment",
     navigateto: "ElectricianScreen",
     right: 10,
     imgright: 10
@@ -38,6 +41,7 @@ const DATA = [
     IMAGE: require("../../Images/more.png"),
     height: 50,
     width: 50,
+
     Imgtext: "more",
     navigateto: "ElectricianScreen",
     imgright: 30,

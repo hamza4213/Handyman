@@ -9,7 +9,7 @@ const Images = props => {
     <View style={{ marginHorizontal: "17%", marginVertical: "5%" }}>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate(`${item.navigateto}`, (header = item.Imgtext))}
+          navigation.navigate(`${item.navigateto}`, (header = item))}
       >
         <Image
           source={item.IMAGE}

@@ -38,7 +38,7 @@ const ElectricianScreen = ({ navigation, route }) => {
         <Header text={name} fontSize={24} color="black" left={20} />
       </View>
       <View>
-        <Text style={{ left: 10, fontSize: 16 }}>Service required at</Text>
+        <Text style={{ left: 10, fontSize: 16 }}>Service required at *</Text>
       </View>
       <View style={{ width: "95%", alignSelf: "center" }}>
         <Textinput
@@ -49,7 +49,7 @@ const ElectricianScreen = ({ navigation, route }) => {
       </View>
       <View style={{ height: 15, backgroundColor: "#D3D3D3" }} />
       <View>
-        <Text style={{ left: 10, fontSize: 16 }}>Service required on</Text>
+        <Text style={{ left: 10, fontSize: 16 }}>Service required on *</Text>
       </View>
       <View style={{ width: "95%", alignSelf: "center" }}>
         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>

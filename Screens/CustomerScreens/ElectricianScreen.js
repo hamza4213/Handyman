@@ -4,6 +4,7 @@ import Header from "../../Components/UserHeader";
 import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
 import Listicon from "../../Components/Listicon";
+import SetDate from "../../Screens/CustomerScreens/SetDate";
 
 const ARRAY = [
   { iconName: "down", text: "rate chart", description: "^100Rs" },
@@ -18,7 +19,7 @@ const ARRAY = [
 const ElectricianScreen = ({ navigation, route }) => {
   const service = route.params;
   const [address, setAddress] = useState("");
-  const [datetime, setDatetime] = useState("");
+  const [datetime, setDatetime] = useState(new Date());
   const [adinfo, setAdinfo] = useState("");
   const [modalVisible, setModalVisible] = useState(true);
   return (
@@ -53,9 +54,8 @@ const ElectricianScreen = ({ navigation, route }) => {
       <View style={{ width: "95%", alignSelf: "center" }}>
         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
           <Textinput
-            labelValue={datetime}
+            labelValue={datetime.toString()}
             placeholderText={"Enter date & time"}
-            onChangeText={val => setDatetime(val)}
             editable={false}
           />
         </TouchableOpacity>
@@ -183,32 +183,38 @@ const ElectricianScreen = ({ navigation, route }) => {
 
       <Modal
         animationType="slide"
-        transparent={true}
+        // transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
-            setModalVisible(!modalVisible);
+            // setModalVisible(!modalVisible);
+          }}
+        > */}
+        <View
+          style={{
+            // flex: 1,
+            // width: "100%",
+            height: "80%",
+            position: "absolute",
+            top: 0,
+            // justifyContent: "center",
+            alignItems: "center"
           }}
         >
-          <View
-            style={{
-              // flex: 1,
-              width: "100%",
-              height: "100%",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <View style={{ height: "50%", backgroundColor: "grey" }}>
-              <Text> Hello world</Text>
-            </View>
+          <View style={{ backgroundColor: "blue" }}>
+            <SetDate
+              datetime={datetime}
+              setDatetime={setDatetime}
+              setModalVisible={setModalVisible}
+            />
           </View>
-        </TouchableOpacity>
+        </View>
+        {/* </TouchableOpacity> */}
       </Modal>
     </View>
   );

@@ -4,6 +4,9 @@ import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import CalendarPicker from "react-native-calendar-picker";
 
 const SetDate = props => {
+  const { datetime, setDatetime, setModalVisible } = props;
+  // console.log(props);
+  // const setDatetime = props.setDatetime;
   return (
     <View
       style={{
@@ -28,13 +31,16 @@ const SetDate = props => {
         selectedDayTextColor="#FFFFFF"
         // nextTitle=" "
         // previousTitle=" "
-        onDateChange={val => console.log(val)}
+        onDateChange={val => {
+          console.log(val);
+          setDatetime(val);
+        }}
       />
       <View style={{ height: 20 }} />
       <View style={{ alignItems: "center" }}>
         <Text> no Time slot avaliable </Text>
       </View>
-      <TouchableOpacity onPress={() => props.navigation.navigate("Time")}>
+      <TouchableOpacity onPress={() => setModalVisible(false)}>
         <View
           style={{
             height: 50,

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, Modal, Alert } from "react-native";
 import Header from "../../Components/UserHeader";
 import { AntDesign } from "@expo/vector-icons";
 import Textinput from "../../Components/Textinputcomponent";
 import Listicon from "../../Components/Listicon";
+import SetDate from "../../Screens/CustomerScreens/SetDate";
 
 const ARRAY = [
   { iconName: "down", text: "rate chart", description: "^100Rs" },
@@ -18,8 +19,9 @@ const ARRAY = [
 const ElectricianScreen = ({ navigation, route }) => {
   const service = route.params;
   const [address, setAddress] = useState("");
-  const [datetime, setDatetime] = useState("");
+  const [datetime, setDatetime] = useState(new Date());
   const [adinfo, setAdinfo] = useState("");
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -50,11 +52,13 @@ const ElectricianScreen = ({ navigation, route }) => {
         <Text style={{ left: 10, fontSize: 16 }}>Service required on</Text>
       </View>
       <View style={{ width: "95%", alignSelf: "center" }}>
-        <Textinput
-          labelValue={datetime}
-          placeholderText={"Enter date & time"}
-          onChangeText={val => setDatetime(val)}
-        />
+        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+          <Textinput
+            labelValue={datetime.toString()}
+            placeholderText={"Enter date & time"}
+            editable={false}
+          />
+        </TouchableOpacity>
       </View>
       <View style={{ height: 15, backgroundColor: "#D3D3D3" }} />
       <View>
@@ -86,7 +90,7 @@ const ElectricianScreen = ({ navigation, route }) => {
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>
             Mode of Payment
           </Text>
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row", padding: 10 }}>
             <TouchableOpacity
               style={{
                 backgroundColor: "yellow",
@@ -176,6 +180,42 @@ const ElectricianScreen = ({ navigation, route }) => {
           CONTINUE BOOKING
         </Text>
       </TouchableOpacity>
+
+      <Modal
+        animationType="slide"
+        // transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        {/* <TouchableOpacity
+          onPress={() => {
+            // setModalVisible(!modalVisible);
+          }}
+        > */}
+        <View
+          style={{
+            // flex: 1,
+            // width: "100%",
+            height: "80%",
+            position: "absolute",
+            top: 0,
+            // justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <View style={{ backgroundColor: "blue" }}>
+            <SetDate
+              datetime={datetime}
+              setDatetime={setDatetime}
+              setModalVisible={setModalVisible}
+            />
+          </View>
+        </View>
+        {/* </TouchableOpacity> */}
+      </Modal>
     </View>
   );
 };

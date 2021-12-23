@@ -3,43 +3,40 @@ import React, { useState, useCallback, useEffect } from "react";
 import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Images = props => {
+const Images = (props) => {
   const { item } = props;
   const navigation = useNavigation();
   const [user, setUser] = useState({});
 
-  const getData = useCallback(
-    async () => {
-      try {
-        const value = await AsyncStorage.getItem("@user");
-        if (value !== null) {
-          setUser(JSON.parse(value));
-          // value previously stored
-        }
-      } catch (e) {
-        console.log(e);
-        // error reading value
+  const getData = useCallback(async () => {
+    try {
+      const value = await AsyncStorage.getItem("@user");
+      if (value !== null) {
+        setUser(JSON.parse(value));
+        // value previously stored
       }
-    },
-    [user]
-  );
+    } catch (e) {
+      console.log(e);
+      // error reading value
+    }
+  }, [user]);
 
-  useEffect(
-    () => {
-      getData();
-    },
-    [user]
-  );
+  useEffect(() => {
+    getData();
+  }, [user]);
   return (
     <View style={{ marginHorizontal: "17%", marginVertical: "5%" }}>
       <TouchableOpacity
         onPress={() => {
           // getData();
-          console.log(user);
+          console.log(typeof user.id);
           user.id
             ? navigation.navigate(`${item.navigateto}`, (header = item))
             : Alert.alert("Login First", "Please Login to continue", [
-                { text: "OK", onPress: () => navigation.navigate("UserSignIn") }
+                {
+                  text: "OK",
+                  onPress: () => navigation.navigate("UserSignIn"),
+                },
               ]);
         }}
       >
@@ -49,13 +46,11 @@ const Images = props => {
             height: item.height,
             width: item.width,
             left: item.imgleft,
-            right: item.imgright
+            right: item.imgright,
           }}
         />
       </TouchableOpacity>
-      <Text style={{ left: item.left, right: item.right }}>
-        {item.Imgtext}
-      </Text>
+      <Text style={{ left: item.left, right: item.right }}>{item.Imgtext}</Text>
     </View>
   );
 };

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
-  Alert
+  Alert,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
@@ -29,13 +29,13 @@ const UserSignIn = ({ navigation, route }) => {
     flag: "flag-pk",
     name: "Pakistan",
     region: "Asia",
-    subregion: "Southern Asia"
+    subregion: "Southern Asia",
   });
   const [CheckIMage, setCheckIMage] = useState(true);
   const [phoneNo, setPhoneNo] = useState("");
   const [passwd, setPasswd] = useState("");
 
-  const storeData = async value => {
+  const storeData = async (value) => {
     try {
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem("@user", jsonValue);
@@ -53,8 +53,8 @@ const UserSignIn = ({ navigation, route }) => {
       const res = await axios.post(
         " https://floringetest.in/handiman/api/login",
         {
-          phone: Country.callingCode + phoneNo,
-          password: passwd
+          phone: "+" + Country.callingCode + phoneNo,
+          password: passwd,
         }
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
@@ -79,7 +79,7 @@ const UserSignIn = ({ navigation, route }) => {
           height: "100%",
           width: "100%",
           backgroundColor: "#fff",
-          padding: 20
+          padding: 20,
         }}
       >
         <View style={{ height: "10%", justifyContent: "flex-end" }}>
@@ -88,7 +88,7 @@ const UserSignIn = ({ navigation, route }) => {
               fontSize: 28,
               left: 20,
 
-              fontWeight: "bold"
+              fontWeight: "bold",
             }}
           >
             {signin ? "Sign In" : " Register"}
@@ -105,7 +105,7 @@ const UserSignIn = ({ navigation, route }) => {
             flexDirection: "row",
             borderWidth: 1,
             borderRadius: 10,
-            margin: 10
+            margin: 10,
           }}
         >
           <View
@@ -113,12 +113,12 @@ const UserSignIn = ({ navigation, route }) => {
               justifyContent: "center",
               flexDirection: "row",
               top: 18,
-              left: 10
+              left: 10,
             }}
           >
             <CountryPicker
               placeholder={Country.callingCode}
-              onSelect={country => setCountry(country)}
+              onSelect={(country) => setCountry(country)}
               withFlag={true}
               withCallingCode={true}
               withFilter={true}
@@ -137,26 +137,26 @@ const UserSignIn = ({ navigation, route }) => {
             />
           </View>
         </View>
-        {signin
-          ? <View
-              style={{
-                padding: 10
-              }}
-            >
-              <FormInput
-                labelValue={passwd}
-                secureTextEntry={true}
-                placeholderText={"Password"}
-                onChangeText={val => setPasswd(val)}
-              />
-            </View>
-          : null}
+        {signin ? (
+          <View
+            style={{
+              padding: 10,
+            }}
+          >
+            <FormInput
+              labelValue={passwd}
+              secureTextEntry={true}
+              placeholderText={"Password"}
+              onChangeText={(val) => setPasswd(val)}
+            />
+          </View>
+        ) : null}
 
         <View
           style={{
             color: "black",
             flexDirection: "row",
-            justifyContent: "flex-end"
+            justifyContent: "flex-end",
           }}
         >
           <Text style={{ color: "black" }}>
@@ -172,7 +172,7 @@ const UserSignIn = ({ navigation, route }) => {
           >
             <Text
               style={{
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               {signin ? "Register" : "Sign IN"}
@@ -186,14 +186,14 @@ const UserSignIn = ({ navigation, route }) => {
             width: 350,
             alignSelf: "center",
             borderRadius: 10,
-            top: "2%"
+            top: "2%",
           }}
           onPress={() => {
             signin
               ? // send request here
                 HandleSignIn()
               : navigation.navigate("UserSignIn1", {
-                  ph_number: "+" + Country.callingCode + phoneNo
+                  ph_number: "+" + Country.callingCode + phoneNo,
                 });
           }}
         >
@@ -203,7 +203,7 @@ const UserSignIn = ({ navigation, route }) => {
               top: 12,
               fontSize: 18,
               color: "black",
-              fontWeight: "bold"
+              fontWeight: "bold",
             }}
           >
             CONTINUE

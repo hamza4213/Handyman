@@ -154,14 +154,7 @@ const Signin = ({ navigation }) => {
             borderRadius: 10,
             top: "2%",
           }}
-          onPress={() => {
-            signin
-              ? // send request here
-                HandleSignIn()
-              : navigation.navigate("UserSignIn1", {
-                  ph_number: "+" + Country.callingCode + phoneNo,
-                });
-          }}
+          onPress={HandleSignIn}
         >
           <Text
             style={{

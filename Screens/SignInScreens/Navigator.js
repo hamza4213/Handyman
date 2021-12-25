@@ -5,9 +5,9 @@ const Returnnavigator = ({ route }) => {
   const { type } = route.params;
   if (type === 2) {
     console.log("user is admin");
-    return <TechnichianStack />;
-  } else {
     return <AdminStack />;
+  } else {
+    return <TechnichianStack />;
   }
 };
 

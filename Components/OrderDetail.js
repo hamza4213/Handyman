@@ -1,44 +1,72 @@
-import React,{useEffect} from 'react';
-import { View, Text,TouchableOpacity} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, { useEffect } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 const OrderDetail = (props) => {
-    const {item} = props;
-    const navigation= useNavigation();
-    
-    return (
-        <>
-        <TouchableOpacity 
-            style={{borderWidth:1,borderColor:'#8c8c8c',paddingLeft:'2%',padding:'4%',}}
-            onPress={()=>navigation.navigate("OrderHistoryScreen",{data:item})}
+  const { item } = props;
+  const navigation = useNavigation();
+
+  return (
+    <>
+      <TouchableOpacity
+        style={{
+          borderWidth: 1,
+          borderColor: "#8c8c8c",
+          paddingLeft: "2%",
+          padding: "4%",
+          //   width: "100%",
+          //   backgroundColor: "black",
+        }}
+        onPress={() =>
+          navigation.navigate("OrderHistoryScreen", { data: item })
+        }
+      >
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          {item.order_reference_no}
+        </Text>
+
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 14, fontWeight: "bold" }}>
+            {item.technician_name}
+          </Text>
+          <Text style={{ fontSize: 14, fontWeight: "bold" }}>751003</Text>
+        </View>
+
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#8c8c8c" }}>
+            {item.receive_date}
+          </Text>
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#8c8c8c" }}>
+            {item.close_time}
+          </Text>
+        </View>
+
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#dcdcdc" }}>
+            status -
+          </Text>
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#dcdcdc" }}>
+            {item.close_info}
+          </Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginRight: "12%",
+          }}
         >
-            
-            <Text style={{fontSize:18,fontWeight:'bold'}}>{item.Text1}</Text>
-            
-            <View style={{flexDirection:'row',}}>
-                <Text style={{fontSize:14,fontWeight:'bold'}}>{item.Text2}</Text>
-                <Text style={{fontSize:14,fontWeight:'bold'}}>{item.Text3}</Text>
-            </View>
-            
-            <View style={{flexDirection:'row',}}>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#8c8c8c'}}>{item.Text4}</Text>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#8c8c8c'}}>{item.Text5}</Text>
-            </View>
-            
-            <View style={{flexDirection:'row',}}>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#dcdcdc'}}>{item.Text6}</Text>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#dcdcdc'}}>{item.Text7}</Text>
-            </View>
-            
-            <View style={{flexDirection:'row',justifyContent:'space-between',marginRight:'12%'}}>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#dcdcdc'}}>{item.Text8}</Text>
-                <Text style={{fontSize:14,fontWeight:'bold',color:'#000'}}>{item.Text9}</Text>
-            </View>
-            
-        </TouchableOpacity>
-        
-        <View style={{height:'0.05%'}}></View>
-        
-        </>
-    );
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#dcdcdc" }}>
+            Additional Info -
+          </Text>
+          <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000" }}>
+            {item.additional_info}
+          </Text>
+        </View>
+      </TouchableOpacity>
+
+      <View style={{ height: "0.05%" }}></View>
+    </>
+  );
 };
 export default OrderDetail;

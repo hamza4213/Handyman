@@ -48,6 +48,7 @@ const Signin = ({ navigation }) => {
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
       console.log(res.data.HasError);
+      console.log(res.data.result.users);
       if (!res.data.HasError) {
         navigation.navigate("Navigator", { type: 1 });
       } else Alert.alert("invalid credentials");

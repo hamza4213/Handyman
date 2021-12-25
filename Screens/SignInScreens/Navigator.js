@@ -4,10 +4,10 @@ import TechnichianStack from "../../Stacks/TechnichianStack";
 const Returnnavigator = ({ route }) => {
   const { type } = route.params;
   if (type === 1) {
-    console.log("user is Technician");
-    return <TechnichianStack />;
-  } else {
+    console.log("user is admin");
     return <AdminStack />;
+  } else {
+    return <TechnichianStack />;
   }
 };
 

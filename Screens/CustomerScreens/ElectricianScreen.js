@@ -6,15 +6,15 @@ import Textinput from "../../Components/Textinputcomponent";
 import Listicon from "../../Components/Listicon";
 import SetDate from "../../Components/SetDate";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import axios from "axios";
 const ARRAY = [
   { iconName: "down", text: "rate chart", description: "^100Rs" },
   {
     iconName: "down",
     text: "Terms and conditions",
-    description: "^Term &conditions"
+    description: "^Term &conditions",
   },
-  { iconName: "down", text: "how it works", description: "^It is working" }
+  { iconName: "down", text: "how it works", description: "^It is working" },
 ];
 
 const ElectricianScreen = ({ navigation, route }) => {
@@ -26,21 +26,18 @@ const ElectricianScreen = ({ navigation, route }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [user, setUser] = useState({});
 
-  const getData = useCallback(
-    async () => {
-      try {
-        const value = await AsyncStorage.getItem("@user");
-        if (value !== null) {
-          setUser(JSON.parse(value));
-          // value previously stored
-        }
-      } catch (e) {
-        console.log(e);
-        // error reading value
+  const getData = useCallback(async () => {
+    try {
+      const value = await AsyncStorage.getItem("@user");
+      if (value !== null) {
+        setUser(JSON.parse(value));
+        // value previously stored
       }
-    },
-    [user]
-  );
+    } catch (e) {
+      console.log(e);
+      // error reading value
+    }
+  }, [user]);
 
   useEffect(() => {
     getData();
@@ -48,6 +45,29 @@ const ElectricianScreen = ({ navigation, route }) => {
     user.id ? console.log("hello") : console.log("world");
     return () => {};
   }, []);
+  async function HandlPlaceOrder() {
+    axios
+      .post("http://floringetest.in/handiman/api/orderCreate", {
+        userID: "48",
+        serviceID: "2",
+        appointmentDate: "2021-12-26",
+        appointmentTime: "4:00 pm - 5:00 pm",
+        additionalInfo: "electric fire",
+        paymentMode: "COD",
+      })
+      .then(function (response) {
+        console.log(response.data);
+        if (!response.data.HasError) {
+          Alert.alert("order created successfully, you will be contact soon");
+          navigation.navigate("HomeScreen");
+        } else {
+          Alert.alert(response.data.Message);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -55,7 +75,7 @@ const ElectricianScreen = ({ navigation, route }) => {
           height: 70,
           backgroundColor: "#D3D3D3",
           flexDirection: "row",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
@@ -70,7 +90,7 @@ const ElectricianScreen = ({ navigation, route }) => {
         <Textinput
           labelValue={address}
           placeholderText={"Enter Address"}
-          onChangeText={val => setAddress(val)}
+          onChangeText={(val) => setAddress(val)}
         />
       </View>
       <View style={{ height: 15, backgroundColor: "#D3D3D3" }} />
@@ -98,7 +118,7 @@ const ElectricianScreen = ({ navigation, route }) => {
               left: 20,
               fontSize: 20,
               fontWeight: "bold",
-              color: "grey"
+              color: "grey",
             }}
           >
             Information{" "}
@@ -109,7 +129,7 @@ const ElectricianScreen = ({ navigation, route }) => {
         <Textinput
           labelValue={adinfo}
           placeholderText={"Enter here"}
-          onChangeText={val => setAdinfo(val)}
+          onChangeText={(val) => setAdinfo(val)}
         />
 
         <View>
@@ -125,7 +145,7 @@ const ElectricianScreen = ({ navigation, route }) => {
                 borderRadius: 20,
                 borderColor: "black",
                 borderWidth: 1,
-                padding: 2
+                padding: 2,
               }}
             />
             <Text style={{ fontWeight: "bold" }}>Cash on delivery</Text>
@@ -141,7 +161,7 @@ const ElectricianScreen = ({ navigation, route }) => {
             backgroundColor: "black",
             top: 7,
             borderRadius: 5,
-            left: 5
+            left: 5,
           }}
         />
         <Text style={{ left: 10, fontSize: 16 }}>Material charges extra</Text>
@@ -154,7 +174,7 @@ const ElectricianScreen = ({ navigation, route }) => {
             backgroundColor: "black",
             top: 7,
             borderRadius: 5,
-            left: 5
+            left: 5,
           }}
         />
         <Text style={{ left: 10, fontSize: 16 }}>
@@ -176,13 +196,8 @@ const ElectricianScreen = ({ navigation, route }) => {
 
       <TouchableOpacity
         onPress={() => {
-          const req = {
-            address,
-            datetime,
-            adinfo
-          };
-          Alert.alert("order created successfully, you will be contact soon");
-          navigation.navigate("HomeScreen");
+          HandlPlaceOrder();
+
           console.log(user);
         }}
         style={{
@@ -190,7 +205,7 @@ const ElectricianScreen = ({ navigation, route }) => {
           height: 50,
           width: 350,
           alignSelf: "center",
-          borderRadius: 10
+          borderRadius: 10,
           // position: "absolute",
           // top: "85%"
         }}
@@ -201,7 +216,7 @@ const ElectricianScreen = ({ navigation, route }) => {
             top: 12,
             fontSize: 18,
             color: "#fff",
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           CONTINUE BOOKING
@@ -230,7 +245,7 @@ const ElectricianScreen = ({ navigation, route }) => {
             position: "absolute",
             top: 0,
             // justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <View style={{ backgroundColor: "blue" }}>

@@ -50,7 +50,9 @@ const Signin = ({ navigation }) => {
       console.log(res.data.HasError);
       console.log(res.data.result.users);
       if (!res.data.HasError) {
-        navigation.navigate("Navigator", { type: 1 });
+        navigation.navigate("Navigator", {
+          type: res.data.result.users.join_date ? 2 : 3,
+        });
       } else Alert.alert("invalid credentials");
     } catch (error) {
       // console.log("object");

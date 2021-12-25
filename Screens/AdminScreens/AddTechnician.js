@@ -25,16 +25,16 @@ const AddTechnician = ({ navigation, route }) => {
       const res = await axios.post(
         " http://floringetest.in/handiman/api/register",
         {
-          name: name,
-          password: pincode,
-          phone: phone,
-          email: email,
-          other_phone: "2211333333",
-          address: address,
+          name: "PRakash",
+          password: "123456",
+          phone: "5652267890",
+          email: "test31@floringetest.in",
+          other_phone: "2215333333",
+          address: "BBSR",
           pincode: "751014",
-          dob: "2081-11-14",
+          dob: "1985-11-15",
           join_date: "2020-06-23",
-          leave_date: "2099-01-01",
+          leave_date: "2022-05-21",
           user_type: "2",
         }
       );

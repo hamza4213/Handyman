@@ -7,7 +7,7 @@ import AddTechnician from "./AddTechnician";
 
 export default function Technician({ navigation, route }) {
   const { Data } = route.params;
-  console.log(Data);
+  // console.log(Data);
   return (
     <View style={styles.container}>
       <View

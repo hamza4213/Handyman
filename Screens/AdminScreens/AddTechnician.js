@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import {
   TextInput,
   TouchableOpacity,
@@ -7,7 +7,7 @@ import {
 } from "react-native-gesture-handler";
 
 import DataForm from "../../Components/DataForm";
-
+import axios from "axios";
 const AddTechnician = ({ navigation, route }) => {
   const { Data } = route.params;
   const [name, setName] = useState("");
@@ -23,13 +23,13 @@ const AddTechnician = ({ navigation, route }) => {
   async function HandleAddTechnichian() {
     try {
       const res = await axios.post(
-        " https://floringetest.in/handiman/api/register",
+        " http://floringetest.in/handiman/api/register",
         {
           name: name,
           password: pincode,
           phone: phone,
           email: email,
-          // other_phone: "2222333333",
+          other_phone: "2222333333",
           address: address,
           dob: dob,
           join_date: doj,
@@ -38,7 +38,7 @@ const AddTechnician = ({ navigation, route }) => {
         }
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
-      console.log(res.data);
+      console.log("datais", res.data);
       // console.log(res.data.result.users);
       if (!res.data.HasError) {
         console.log("Semd");
@@ -122,8 +122,7 @@ const AddTechnician = ({ navigation, route }) => {
                 pincode: pincode,
                 addressprof: addressprof,
               }),
-                HandleAddTechnichian;
-              navigation.navigate("Technician", { Data });
+                HandleAddTechnichian();
             }}
             style={{
               height: 50,

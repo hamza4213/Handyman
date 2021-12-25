@@ -2,12 +2,31 @@ import React from "react";
 import { View, Text, Platform } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import * as ImagePicker from "expo-image-picker";
 const DataForm = (props) => {
   const [show, setShow] = React.useState(Platform.OS === "ios");
   const [date, setDate] = React.useState(new Date());
   //   const [date, setDate] = React.useState(new Date(1598051730000));
   const [item, setItem] = React.useState({});
   const [ind, setInd] = React.useState();
+  const [image, setImage] = React.useState({
+    cancelled: false,
+    height: 540,
+    type: "image",
+    uri: "No File Choosen",
+    width: 720,
+  });
+  React.useEffect(() => {
+    (async () => {
+      if (Platform.OS !== "web") {
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== "granted") {
+          alert("Sorry, we need camera roll permissions to make this work!");
+        }
+      }
+    })();
+  }, []);
 
   const {
     name,
@@ -31,6 +50,24 @@ const DataForm = (props) => {
     setAddressprof,
     addressprof,
   } = props;
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+    console.log(result);
+    setImage(result);
+    // const data = new FormData();
+    // // data.append('name', 'avatar');
+    // data.append("user_id", UserID);
+    // data.append("myFile", {
+    //   uri: result.uri,
+    //   type: "image/jpg",
+    //   name: "avatarf",
+    // });
+  };
   const data = [
     { name: "Name", state: name, setstate: setName },
     {
@@ -159,7 +196,7 @@ const DataForm = (props) => {
         </View>
 
         <TouchableOpacity
-          // onPress={}
+          onPress={pickImage}
           style={{
             height: 40,
             width: 100,
@@ -173,7 +210,7 @@ const DataForm = (props) => {
           <Text style={{ color: "black" }}>Choose file</Text>
         </TouchableOpacity>
 
-        <Text style={{ left: 20, color: "black" }}>No file chosen</Text>
+        <Text style={{ left: 20, color: "black" }}>{image.uri}</Text>
       </View>
 
       <View
@@ -196,7 +233,7 @@ const DataForm = (props) => {
         </View>
 
         <TouchableOpacity
-          // onPress={}
+          onPress={pickImage}
           style={{
             height: 40,
             width: 100,

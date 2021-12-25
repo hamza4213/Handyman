@@ -29,11 +29,12 @@ const AddTechnician = ({ navigation, route }) => {
           password: pincode,
           phone: phone,
           email: email,
-          other_phone: "2222333333",
+          other_phone: "2211333333",
           address: address,
-          dob: dob,
-          join_date: doj,
-          leave_date: dol,
+          pincode: "751014",
+          dob: "2081-11-14",
+          join_date: "2020-06-23",
+          leave_date: "2099-01-01",
           user_type: "2",
         }
       );
@@ -42,6 +43,7 @@ const AddTechnician = ({ navigation, route }) => {
       // console.log(res.data.result.users);
       if (!res.data.HasError) {
         console.log("Semd");
+        navigation.navigate("Technician", { Data });
       } else Alert.alert("invalid credentials");
     } catch (error) {
       // console.log("object");

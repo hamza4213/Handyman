@@ -30,14 +30,15 @@ const Images = (props) => {
         onPress={() => {
           // getData();
           console.log(typeof user.id);
-          user.id
-            ? navigation.navigate(`${item.navigateto}`, (header = item))
-            : Alert.alert("Login First", "Please Login to continue", [
-                {
-                  text: "OK",
-                  onPress: () => navigation.navigate("UserSignIn"),
-                },
-              ]);
+          // user.id
+          // ?
+          navigation.navigate(`${item.navigateto}`, { header: item });
+          // : Alert.alert("Login First", "Please Login to continue", [
+          // {
+          // text: "OK",
+          // onPress: () => navigation.navigate("UserSignIn"),
+          // },
+          // ]);
         }}
       >
         <Image

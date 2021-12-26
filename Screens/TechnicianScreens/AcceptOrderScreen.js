@@ -1,6 +1,11 @@
 import React from "react";
-import { View, TextInput, Dimensions, Text } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {
+  View,
+  TextInput,
+  Dimensions,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 const AcceptOrderScreen = () => {
   const count = useSelector((state) => state.counter.data);

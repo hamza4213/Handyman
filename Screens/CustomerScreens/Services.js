@@ -4,7 +4,7 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
-  FlatList
+  FlatList,
 } from "react-native";
 import axios from "axios";
 import Header from "../../Components/UserHeader";
@@ -13,17 +13,14 @@ import Images from "../../Components/Image";
 
 const Services = ({ navigation }) => {
   const [data, setData] = useState([]);
-  const handleFetchServices = useCallback(
-    async () => {
-      axios
-        .get(" https://floringetest.in/handiman/api/serviceList")
-        .then(res => {
-          setData(res.data.result.service);
-          console.log(data);
-        });
-    },
-    [data, setData]
-  );
+  const handleFetchServices = useCallback(async () => {
+    axios
+      .get(" https://floringetest.in/handiman/api/serviceList")
+      .then((res) => {
+        setData(res.data.result.service);
+        console.log(data);
+      });
+  }, [data, setData]);
 
   useEffect(() => {
     handleFetchServices();
@@ -37,7 +34,7 @@ const Services = ({ navigation }) => {
           height: 70,
           backgroundColor: "#D3D3D3",
           flexDirection: "row",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
@@ -46,45 +43,46 @@ const Services = ({ navigation }) => {
         <Header text={"Services"} fontSize={24} color="black" left={20} />
       </View>
       <View>
-        {data
-          ? <FlatList
-              data={data}
-              keyExtractor={item => item.id}
-              renderItem={({ item }) =>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate("ElectricianScreen", item);
-                    }}
+        {data ? (
+          <FlatList
+            data={data}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ElectricianScreen", item);
+                  }}
+                  style={{
+                    flexDirection: "row",
+                    padding: 10,
+                  }}
+                >
+                  <View
                     style={{
-                      flexDirection: "row",
-                      padding: 10
+                      padding: 2,
                     }}
                   >
-                    <View
+                    <AntDesign name="setting" size={48} color="black" />
+                  </View>
+                  <View
+                    style={{
+                      padding: 2,
+                    }}
+                  >
+                    <Text
                       style={{
-                        padding: 2
+                        fontSize: 28,
                       }}
                     >
-                      <AntDesign name="setting" size={48} color="black" />
-                    </View>
-                    <View
-                      style={{
-                        padding: 2
-                      }}
-                    >
-                      <Text
-                        style={{
-                          fontSize: 28
-                        }}
-                      >
-                        {item.name}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>}
-            />
-          : null}
+                      {item.name}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            )}
+          />
+        ) : null}
       </View>
     </SafeAreaView>
   );

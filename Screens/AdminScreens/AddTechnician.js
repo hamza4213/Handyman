@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Alert } from "react-native";
 import {
+  StyleSheet,
+  Text,
+  View,
+  Alert,
   TextInput,
   TouchableOpacity,
   ScrollView,
-} from "react-native-gesture-handler";
+} from "react-native";
 
 import DataForm from "../../Components/DataForm";
 import axios from "axios";

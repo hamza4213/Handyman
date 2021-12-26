@@ -1,6 +1,11 @@
 import React from "react";
-import { View, Text, Platform } from "react-native";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import {
+  View,
+  Text,
+  Platform,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import * as ImagePicker from "expo-image-picker";
 const DataForm = (props) => {

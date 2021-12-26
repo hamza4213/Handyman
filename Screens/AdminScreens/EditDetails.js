@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import DataForm from "../../Components/DataForm";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 
 export default function EditDetails({ navigation, route }) {
   const { item, Data, index } = route.params;

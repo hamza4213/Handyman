@@ -1,6 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import AddTechnician from "./AddTechnician";

@@ -1,22 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
-import TabNavigator2 from "../../Components/TabBarNavigator";
+import TabNavigator2 from "../Components/TabBarNavigator";
 import ElectricianScreen from "../Screens/CustomerScreens/ElectricianScreen";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import UserSignIn from "../Screens/CustomerScreens/UserRegister";
-import Signin from "../Screens/CustomerScreens/Register";
-import Login from "./Screens/CustomerScreens/Login";
-import Services from "./Screens/CustomerScreens/Services";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Import the functions you need from the SDKs you need
 
 // Initialize Firebase
 
-const UserStack = createNativeStackNavigator();
-export default function UserStack() {
+const UserStack = createStackNavigator();
+export default function UserStac() {
   // const loggedIn = false;
 
   const [loggedIn, setIsloggedIn] = useState({

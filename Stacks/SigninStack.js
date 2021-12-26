@@ -9,7 +9,7 @@ export default function SigninStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <UserStack.Screen name="UserSignIn1" component={UserSignIn} />
+        <Stack.Screen name="UserSignIn1" component={UserSignIn} />
         <Stack.Screen name="Navigator" component={Navigator} />
       </Stack.Navigator>
     </NavigationContainer>

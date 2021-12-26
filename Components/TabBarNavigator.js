@@ -3,7 +3,6 @@ import { Dimensions } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import IonicIcon from "react-native-vector-icons/Ionicons";
 import HomeScreen from "../Screens/CustomerScreens/HomeScreen";
-import ElectricianScreen from "../Screens/CustomerScreens/ElectricianScreen";
 import Services from "../Screens/CustomerScreens/Services";
 const fullScreenWidth = Dimensions.get("window").width;
 const Tabs = createBottomTabNavigator();
@@ -27,7 +26,7 @@ const TabNavigator2 = () => {
           paddingBottom,
           paddingLeft,
           borderBottomColor,
-          borderBottomWidth
+          borderBottomWidth,
         }) => {
           let iconName;
           if (route.name === "HomeScreen") {
@@ -44,16 +43,16 @@ const TabNavigator2 = () => {
               color={color}
               style={{
                 paddingBottom: padding,
-                bottom: bottom
+                bottom: bottom,
               }}
             />
           );
-        }
+        },
       })}
       tabBarOptions={{
         activeTintColor: "#F1C40F",
         inactiveTintColor: "#8C8C8C",
-        style: { width: fullScreenWidth }
+        style: { width: fullScreenWidth },
       }}
     >
       <Tabs.Screen name="HomeScreen" component={HomeScreen} />

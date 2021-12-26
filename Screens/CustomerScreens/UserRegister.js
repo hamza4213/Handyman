@@ -17,9 +17,7 @@ import FormInput from "../../Components/Forminput";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-const UserSignIn = ({ navigation, route }) => {
-  const { loggedIn, setIsloggedIn } = route.params;
-
+const UserSignIn = ({ navigation }) => {
   const [IMageSource, setIMageSource] = useState("");
   const [signin, setSignIn] = useState(false);
   const [Country, setCountry] = useState({
@@ -45,9 +43,6 @@ const UserSignIn = ({ navigation, route }) => {
     }
   };
   const HandleSignIn = useCallback(async () => {
-    // setIsloggedIn({ ...loggedIn, loggedIn: true });
-
-    // storeData();
     console.log(Country.callingCode + phoneNo, passwd);
     try {
       const res = await axios.post(
@@ -64,7 +59,11 @@ const UserSignIn = ({ navigation, route }) => {
           "@user",
           JSON.stringify(res.data.result.users)
         );
-        navigation.navigate("Navigator", { type: user_type });
+        if (!res.data.HasError) {
+          navigation.navigate("Navigator", {
+            type: res.data.result.users.user_type,
+          });
+        }
       }
     } catch (error) {
       // console.log("object");

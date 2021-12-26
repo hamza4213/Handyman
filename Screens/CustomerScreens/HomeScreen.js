@@ -15,7 +15,7 @@ const DATA = [
     height: 50,
     width: 50,
     Imgtext: "Electrician",
-    navigateto: "ElectricianScreen"
+    navigateto: "ElectricianScreen",
   },
   {
     IMAGE: require("../../Images/tap.png"),
@@ -24,7 +24,7 @@ const DATA = [
     name: "Plumbing",
     width: 50,
     Imgtext: "plumber",
-    navigateto: "ElectricianScreen"
+    navigateto: "ElectricianScreen",
   },
   {
     IMAGE: require("../../Images/tractor.png"),
@@ -35,7 +35,7 @@ const DATA = [
     name: "Agro Equipment",
     navigateto: "ElectricianScreen",
     right: 10,
-    imgright: 10
+    imgright: 10,
   },
   {
     IMAGE: require("../../Images/more.png"),
@@ -45,23 +45,20 @@ const DATA = [
     Imgtext: "more",
     navigateto: "UserSignIn",
     imgright: 30,
-    right: 20
-  }
+    right: 20,
+  },
 ];
 
 const HomeScreen = () => {
   const [data, setData] = useState([]);
-  const handleFetchServices = useCallback(
-    async () => {
-      axios
-        .get(" https://floringetest.in/handiman/api/serviceList")
-        .then(res => {
-          setData(res.data.result.service);
-          console.log(data);
-        });
-    },
-    [data, setData]
-  );
+  const handleFetchServices = useCallback(async () => {
+    axios
+      .get(" https://floringetest.in/handiman/api/serviceList")
+      .then((res) => {
+        setData(res.data.result.service);
+        console.log(data);
+      });
+  }, [data, setData]);
 
   useEffect(() => {
     handleFetchServices();
@@ -76,7 +73,7 @@ const HomeScreen = () => {
           backgroundColor: "#D3D3D3",
           flexDirection: "row",
           justifyContent: "space-between",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <View style={{ flexDirection: "row" }}>
@@ -108,13 +105,13 @@ const HomeScreen = () => {
           flexDirection: "row",
           height: "4%",
           justifyContent: "space-around",
-          top: 5
+          top: 5,
         }}
       >
         <MaterialCommunityIcons name="bell-ring-outline" size={22} />
         <Text
           style={{
-            fontSize: 13
+            fontSize: 13,
           }}
         >
           Please expect delays in services due to COVID-19 restrictions
@@ -131,7 +128,7 @@ const HomeScreen = () => {
         <FlatList
           data={DATA}
           numColumns="2"
-          keyExtractor={item => item.Imgtext}
+          keyExtractor={(item) => item.Imgtext}
           renderItem={({ item }) => <Images item={item} />}
         />
       </View>

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  ScrollView,
   Alert,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
@@ -208,8 +209,11 @@ const UserSignIn = ({ navigation }) => {
             CONTINUE
           </Text>
         </TouchableOpacity>
-        <View style={{ height: "52%", top: "3%", alignSelf: "center" }}>
-          <Image source={require("../../Images/map.png")} />
+        <View style={{ top: "3%", alignSelf: "center" }}>
+          <Image
+            source={require("../../Images/map.png")}
+            style={{ height: "70%" }}
+          />
         </View>
       </View>
     </SafeAreaView>

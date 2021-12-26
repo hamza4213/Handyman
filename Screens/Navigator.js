@@ -5,7 +5,6 @@ import UserStack from "../Stacks/UserStack";
 const Returnnavigator = ({ route }) => {
   const { type } = route.params;
   if (type === 1) {
-    console.log("user is admin");
     return <AdminStack />;
   } else if (type === 2) {
     return <TechnichianStack />;

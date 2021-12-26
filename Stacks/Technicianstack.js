@@ -1,18 +1,31 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Signin from "../Screens/SignInScreens/Signin";
-import Signup from "../Screens/SignInScreens/Signup";
-import Navigator from "../Screens/SignInScreens/Navigator";
+import TabBarNavigator3 from "../Components/TabBarNavigator3";
+import OrderDetailScreen from "../Screens/TechnicianScreens/OrderDetailScreen";
+import OrderHistoryScreen from "../Screens/TechnicianScreens/OrderHistoryScreen";
+import AcceptOrderScreen from "../Screens/TechnicianScreens/AcceptOrderScreen";
+import PaymentScreen from "../Screens/TechnicianScreens/PaymentScreen";
+import store from "../Redux/store";
+import { Provider } from "react-redux";
 const Stack = createStackNavigator();
 export default function Technicianstack() {
   return (
-    <NavigationContainer>
+    <Provider store={store}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Signin" component={Signin} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Navigator" component={Navigator} />
+        <Stack.Screen name="TabBarNavigator3" component={TabBarNavigator3} />
+
+        <Stack.Screen name="OrderDetailScreen" component={OrderDetailScreen} />
+
+        <Stack.Screen
+          name="OrderHistoryScreen"
+          component={OrderHistoryScreen}
+        />
+
+        <Stack.Screen name="AcceptOrderScreen" component={AcceptOrderScreen} />
+
+        <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </Provider>
   );
 }

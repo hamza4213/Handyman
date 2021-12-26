@@ -1,11 +1,17 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 
-const FormInput = ({ labelValue, keyboardTyp,maxl, placeholderText, ...rest }) => {
+const FormInput = ({
+  labelValue,
+  keyboardTyp,
+  maxl,
+  placeholderText,
+  ...rest
+}) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput
-      maxLength={maxl}
+        maxLength={maxl}
         value={labelValue}
         style={styles.input}
         numberOfLines={1}

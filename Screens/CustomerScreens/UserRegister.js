@@ -64,7 +64,7 @@ const UserSignIn = ({ navigation, route }) => {
           "@user",
           JSON.stringify(res.data.result.users)
         );
-        navigation.navigate("TabNavigator2");
+        navigation.navigate("Navigator", { type: user_type });
       }
     } catch (error) {
       // console.log("object");

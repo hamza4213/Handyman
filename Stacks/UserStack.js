@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./Screens/CustomerScreens/HomeScreen";
-import TabNavigator2 from "../Components/TabBarNavigator";
+import TabNavigator2 from "../../Components/TabBarNavigator";
 import ElectricianScreen from "../Screens/CustomerScreens/ElectricianScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserSignIn from "../Screens/CustomerScreens/UserRegister";

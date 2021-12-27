@@ -45,18 +45,19 @@ const Signin = ({ route, navigation }) => {
   const [verificationCode, setVerificationCode] = React.useState();
   const recaptchaVerifier = React.useRef(null);
   const [message, showMessage] = React.useState();
+  const [role, setRole] = useState();
   const Send = async () => {
     // The FirebaseRecaptchaVerifierModal ref implements the
     // FirebaseAuthApplicationVerifier interface and can be
     // passed directly to `verifyPhoneNumber`.
     try {
       const phoneProvider = new PhoneAuthProvider(auth);
-      const verificationId = await phoneProvider.verifyPhoneNumber(
+      const verificationid = await phoneProvider.verifyPhoneNumber(
         ph_number,
         recaptchaVerifier.current
       );
 
-      setVerificationId(verificationId);
+      setVerificationId(verificationid);
       showMessage({
         text: "Verification code has been sent to your phone.",
       });
@@ -90,11 +91,11 @@ const Signin = ({ route, navigation }) => {
         email: Email,
         address: Address,
         pincode: Pincode,
-        user_type: 3,
+        user_type: role,
       })
       .then((res) => {
         console.log(res.data);
-        navigation.navigate("UserSignIn");
+        navigation.navigate("UserSignIn1");
       });
   };
 
@@ -178,6 +179,66 @@ const Signin = ({ route, navigation }) => {
                 placeholderText={"Enter Password"}
                 onChangeText={(val) => setPassword(val)}
               />
+              <Text style={{ alignSelf: "center", marginTop: 10 }}>
+                Please Select Your Role
+              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  width: "80%",
+                  justifyContent: "space-between",
+                  alignSelf: "center",
+                  marginTop: 20,
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "40%",
+                    justifyContent: "space-between",
+                    // backgroundColor: "cyan",
+                  }}
+                >
+                  <TouchableOpacity
+                    onPress={() => {
+                      setRole(3);
+                    }}
+                    disabled={role === 3 ? true : false}
+                    style={{
+                      backgroundColor: role === 3 ? "#fbd43e" : "white",
+                      height: 18,
+                      width: 18,
+                      borderRadius: 20,
+                      borderWidth: 1,
+                      borderColor: "gray",
+                    }}
+                  ></TouchableOpacity>
+                  <Text>Customer</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "30%",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <TouchableOpacity
+                    disabled={role === 1 ? true : false}
+                    onPress={() => {
+                      setRole(1);
+                    }}
+                    style={{
+                      backgroundColor: role === 1 ? "#fbd43e" : "white",
+                      height: 18,
+                      width: 18,
+                      borderRadius: 20,
+                      borderWidth: 1,
+                      borderColor: "gray",
+                    }}
+                  ></TouchableOpacity>
+                  <Text>Admin</Text>
+                </View>
+              </View>
               <View
                 style={{
                   width: "80%",

@@ -49,8 +49,10 @@ const UserSignIn = ({ navigation }) => {
       const res = await axios.post(
         " https://floringetest.in/handiman/api/login",
         {
-          phone: "+" + Country.callingCode + phoneNo,
-          password: passwd,
+          // phone: "+" + Country.callingCode + phoneNo,
+          // password: passwd,
+          phone: 5652267890,
+          password: 123456,
         }
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);

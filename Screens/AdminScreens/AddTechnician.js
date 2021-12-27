@@ -21,8 +21,20 @@ const AddTechnician = ({ navigation, route }) => {
   const [dol, setDol] = useState(new Date());
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("");
-  const [addressprof, setAddressprof] = useState("");
-  const [pic, setPic] = useState("");
+  const [addressprof, setAddressprof] = useState({
+    cancelled: false,
+    height: 540,
+    type: "image",
+    uri: "No File Choosen",
+    width: 720,
+  });
+  const [pic, setPic] = useState({
+    cancelled: false,
+    height: 540,
+    type: "image",
+    uri: "No File Choosen",
+    width: 720,
+  });
   async function HandleAddTechnichian() {
     try {
       const res = await axios.post(
@@ -33,7 +45,8 @@ const AddTechnician = ({ navigation, route }) => {
           phone: phone,
           email: email,
           other_phone: "2215333333",
-          address: addressprof,
+          address: address,
+          addressprof: addressprof.uri,
           pincode: pincode,
           dob: dob,
           join_date: doj,
@@ -125,7 +138,7 @@ const AddTechnician = ({ navigation, route }) => {
                 dol: dol,
                 address: address,
                 pincode: pincode,
-                addressprof: addressprof,
+                addressprof: addressprof.uri,
               }),
                 HandleAddTechnichian();
             }}

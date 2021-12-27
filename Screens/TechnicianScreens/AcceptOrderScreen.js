@@ -5,10 +5,35 @@ import {
   Dimensions,
   Text,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-const AcceptOrderScreen = () => {
+import axios from "axios";
+const AcceptOrderScreen = ({ navigation }) => {
   const count = useSelector((state) => state.counter.data);
+  async function handleorderaccept() {
+    try {
+      const res = await axios.post(
+        " http://floringetest.in/handiman/api/orderStatus",
+        {
+          orderid: count.id,
+          userid: count.user_id,
+        }
+      );
+      // const jsonValue = await JSON.stringify(res.data.result.users);
+      console.log("datais", res.data);
+      // console.log(res.data.result.users);
+      if (!res.data.HasError) {
+        console.log("Semd");
+        Alert.alert("Order Accepted");
+        // navigation.navigate("Technician",);
+      } else Alert.alert("invalid credentials");
+    } catch (error) {
+      // console.log("object");
+      Alert.alert("invalid credentials");
+      console.log(error);
+    }
+  }
   return (
     <View
       style={{
@@ -47,6 +72,7 @@ const AcceptOrderScreen = () => {
         }}
       >
         <TouchableOpacity
+          onPress={handleorderaccept}
           style={{
             height: "100%",
             width: "20%",
@@ -75,6 +101,9 @@ const AcceptOrderScreen = () => {
         </View>
         <Text style={{ fontSize: 16, fontWeight: "bold" }}>
           Technician Assigned
+        </Text>
+        <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+          {count.technician_name}
         </Text>
       </View>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   TextInput,
@@ -6,10 +6,48 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import DateTimePicker from "@react-native-community/datetimepicker";
 const PaymentScreen = () => {
   const count = useSelector((state) => state.counter.data);
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = React.useState(new Date());
+  const [show, setShow] = React.useState(Platform.OS === "ios");
+  const [time, setTime] = useState("");
+  const onChange = React.useCallback((event, selectedDate) => {
+    console.log(selectedDate);
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === "ios");
+    setDate(currentDate);
+  });
+  async function handleorderaccept() {
+    try {
+      const res = await axios.post(
+        " http://floringetest.in/handiman/api/orderPaymentUpdate",
+        {
+          orderid: count.id,
+          amount: "50",
+          receive_date: date,
+          receive_time: time,
+        }
+      );
+      // const jsonValue = await JSON.stringify(res.data.result.users);
+      console.log("datais", res.data);
+      // console.log(res.data.result.users);
+      if (!res.data.HasError) {
+        console.log("Semd");
+        Alert.alert("Payment added");
+        // navigation.navigate("Technician",);
+      } else Alert.alert("invalid credentials");
+    } catch (error) {
+      // console.log("object");
+      Alert.alert("invalid credentials");
+      console.log(error);
+    }
+  }
   return (
     <ScrollView>
       <View
@@ -38,6 +76,8 @@ const PaymentScreen = () => {
           }}
         >
           <TextInput
+            value={amount}
+            onChangeText={setAmount}
             placeholder="Amount"
             style={{ fontWeight: "bold", color: "#000", fontSize: 16 }}
           />
@@ -54,10 +94,26 @@ const PaymentScreen = () => {
             padding: "2%",
           }}
         >
-          <TextInput
-            placeholder="Amount Receipt date "
-            style={{ fontWeight: "bold", color: "#000", fontSize: 16 }}
-          />
+          <TouchableOpacity
+            style={{ width: "100%" }}
+            onPress={() => {
+              setShow(true);
+            }}
+          >
+            {Platform.OS === "android" ? (
+              <Text style={{ color: "black" }}>{date.toDateString()}</Text>
+            ) : null}
+            {show ? (
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                // mode={mode}
+                is24Hour={true}
+                // display="default"
+                onChange={onChange}
+              />
+            ) : null}
+          </TouchableOpacity>
         </View>
 
         <View
@@ -72,6 +128,8 @@ const PaymentScreen = () => {
           }}
         >
           <TextInput
+            value={time}
+            onChangeText={setTime}
             placeholder="Amount Receipt Time"
             style={{ fontWeight: "bold", color: "#000", fontSize: 16 }}
           />
@@ -87,6 +145,7 @@ const PaymentScreen = () => {
           }}
         >
           <TouchableOpacity
+            onPress={handleorderaccept}
             style={{
               height: "100%",
               width: "20%",
@@ -122,6 +181,9 @@ const PaymentScreen = () => {
           </View>
           <Text style={{ fontSize: 16, fontWeight: "bold" }}>
             Technician Assigned
+          </Text>
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+            {count.technician_name}
           </Text>
         </View>
 
@@ -160,7 +222,7 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.Service}
+              {count.service_id}
             </Text>
           </View>
 
@@ -168,7 +230,7 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.AddInfo}
+              {count.additional_info}
             </Text>
           </View>
         </View>
@@ -205,14 +267,14 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.CustmerName}
+              NMIRU
             </Text>
           </View>
           <View style={{ width: "50%" }}>
             <Text
               style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.CMOBNO}
+              33212567898
             </Text>
           </View>
         </View>
@@ -249,14 +311,14 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.customerAddress}
+              nepuormu strt 3421 main 567 ft
             </Text>
           </View>
           <View style={{ width: "50%" }}>
             <Text
               style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.Pincode}
+              60800
             </Text>
           </View>
         </View>
@@ -293,14 +355,14 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.Techname}
+              {count.technician_name}
             </Text>
           </View>
           <View style={{ width: "50%" }}>
             <Text
               style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.TechMobNo}
+              {count.technician_phone}
             </Text>
           </View>
         </View>
@@ -349,7 +411,7 @@ const PaymentScreen = () => {
             <Text
               style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}
             >
-              {count.paymentTime}
+              {count.add_date}
             </Text>
           </View>
         </View>

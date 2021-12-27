@@ -11,6 +11,7 @@ import * as ImagePicker from "expo-image-picker";
 const DataForm = (props) => {
   const [show, setShow] = React.useState(Platform.OS === "ios");
   const [date, setDate] = React.useState(new Date());
+  const [selectfor, setSelectfor] = React.useState("");
   //   const [date, setDate] = React.useState(new Date(1598051730000));
   const [item, setItem] = React.useState({});
   const [ind, setInd] = React.useState();
@@ -63,7 +64,12 @@ const DataForm = (props) => {
       quality: 1,
     });
     console.log(result);
-    setImage(result);
+    console.log("Selected is ", typeof selectfor);
+    if (selectfor === "1") {
+      setPic(result);
+    } else {
+      setAddressprof(result);
+    }
     // const data = new FormData();
     // // data.append('name', 'avatar');
     // data.append("user_id", UserID);
@@ -85,7 +91,7 @@ const DataForm = (props) => {
     { name: "Date Of Birth", state: dob, setstate: setDob, date: true },
     { name: "Date of Joining", state: doj, setstate: setDoj, date: true },
     { name: "Date of leaving", state: dol, setstate: setDol, date: true },
-    { name: "Address", state: addressprof, setstate: setAddressprof },
+    { name: "Address", state: address, setstate: setAddress },
     {
       name: "Pincode",
       state: pincode,
@@ -201,7 +207,10 @@ const DataForm = (props) => {
         </View>
 
         <TouchableOpacity
-          onPress={pickImage}
+          onPress={async () => {
+            await setSelectfor("1");
+            pickImage();
+          }}
           style={{
             height: 40,
             width: 100,
@@ -215,7 +224,7 @@ const DataForm = (props) => {
           <Text style={{ color: "black" }}>Choose file</Text>
         </TouchableOpacity>
 
-        <Text style={{ left: 20, color: "black" }}>{image.uri}</Text>
+        <Text style={{ left: 20, color: "black" }}>{addressprof.uri}</Text>
       </View>
 
       <View
@@ -238,7 +247,10 @@ const DataForm = (props) => {
         </View>
 
         <TouchableOpacity
-          onPress={pickImage}
+          onPress={async () => {
+            await setSelectfor("2");
+            pickImage();
+          }}
           style={{
             height: 40,
             width: 100,
@@ -252,7 +264,7 @@ const DataForm = (props) => {
           <Text style={{ color: "black" }}>Choose file</Text>
         </TouchableOpacity>
 
-        <Text style={{ left: 20, color: "black" }}>No file chosen</Text>
+        <Text style={{ left: 20, color: "black" }}>{pic.uri}</Text>
       </View>
     </View>
   );

@@ -189,7 +189,7 @@ export default function Technician({ navigation, route }) {
                 }}
               >
                 <Image
-                  source={item.photo}
+                  source={item.addressprof}
                   style={{
                     height: 60,
                     width: 75,

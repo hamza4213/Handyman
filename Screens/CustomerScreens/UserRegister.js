@@ -49,10 +49,10 @@ const UserSignIn = ({ navigation }) => {
       const res = await axios.post(
         " https://floringetest.in/handiman/api/login",
         {
-          // phone: "+" + Country.callingCode + phoneNo,
-          // password: passwd,
-          phone: 5652267890,
-          password: 123456,
+          phone: phoneNo,
+          password: passwd,
+          // phone: 5652267890,
+          // password: 123456,
         }
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
@@ -118,17 +118,7 @@ const UserSignIn = ({ navigation }) => {
               left: 10,
             }}
           >
-            <CountryPicker
-              placeholder={Country.callingCode}
-              onSelect={(country) => setCountry(country)}
-              withFlag={true}
-              withCallingCode={true}
-              withFilter={true}
-              withAlphaFilter={true}
-              withEmoji={true}
-              country={true}
-            />
-            <AntDesign name="down" size={20} color="black" />
+            <Text>91</Text>
           </View>
           <View style={{ justifyContent: "center" }}>
             <TextInput

@@ -10,7 +10,7 @@ const Home = () => {
       height: 50,
       width: 50,
       Imgtext: "Order",
-      navigateto: "OrderDetailScreen",
+      navigateto: "OrderHistoryScreen",
     },
     {
       IMAGE: require("../../Images/img2.png"),

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 const OrderDetail = (props) => {
-  const { item } = props;
+  const { item, navigatin } = props;
   const navigation = useNavigation();
-
+  const itm = useSelector((state) => state.counter.navigator);
   return (
     <>
       <TouchableOpacity
@@ -16,9 +17,7 @@ const OrderDetail = (props) => {
           //   width: "100%",
           //   backgroundColor: "black",
         }}
-        onPress={() =>
-          navigation.navigate("OrderHistoryScreen", { data: item })
-        }
+        onPress={() => navigation.navigate(itm.navigateto, { data: item })}
       >
         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
           {item.order_reference_no}

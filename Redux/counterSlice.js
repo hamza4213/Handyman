@@ -1,16 +1,26 @@
-import { createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: {
     value: 0,
-    data:[]
+    data: [],
+    userData: {},
+    navigator: {},
   },
   reducers: {
-    Adddata:(state,action)=>{
-      state.data =action.payload
-    }
+    Adddata: (state, action) => {
+      state.data = action.payload;
+    },
+    setuserData: (state, action) => {
+      state.userData = action.payload;
+      console.log("In redux user data", state.userData);
+    },
+    setnavigator: (state, action) => {
+      state.navigator = action.payload;
+      console.log("item in redux", state.navigator);
+    },
   },
 });
-export const {Adddata } = counterSlice.actions;
+export const { Adddata, setuserData, setnavigator } = counterSlice.actions;
 export default counterSlice.reducer;

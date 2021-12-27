@@ -9,15 +9,16 @@ import {
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-const AcceptOrderScreen = ({ navigation }) => {
-  const count = useSelector((state) => state.counter.data);
+const AcceptOrderScreen = ({ navigation, route }) => {
+  // const data = useSelector((state) => state.counter.data);
+  const { data } = route.params;
   async function handleorderaccept() {
     try {
       const res = await axios.post(
         " http://floringetest.in/handiman/api/orderStatus",
         {
-          orderid: count.id,
-          userid: count.user_id,
+          orderid: data.id,
+          userid: data.user_id,
         }
       );
       // const jsonValue = await JSON.stringify(res.data.result.users);
@@ -89,21 +90,21 @@ const AcceptOrderScreen = ({ navigation }) => {
 
       <View style={{ width: "100%", height: "15%", justifyContent: "center" }}>
         <Text style={{ fontSize: 24, fontWeight: "bold" }}>
-          {count.order_reference_no}
+          {data.order_reference_no}
         </Text>
         <View style={{ flexDirection: "row", marginTop: "1%" }}>
           <Text style={{ fontSize: 16, color: "#8c8c8c", fontWeight: "bold" }}>
-            {count.receive_date}
+            {data.receive_date}
           </Text>
           <Text style={{ fontSize: 16, color: "#8c8c8c", fontWeight: "bold" }}>
-            {count.close_time}
+            {data.close_time}
           </Text>
         </View>
         <Text style={{ fontSize: 16, fontWeight: "bold" }}>
           Technician Assigned
         </Text>
         <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-          {count.technician_name}
+          {data.technician_name}
         </Text>
       </View>
 
@@ -140,13 +141,13 @@ const AcceptOrderScreen = ({ navigation }) => {
       >
         <View style={{ width: "50%" }}>
           <Text style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.service_id}
+            {data.service_id}
           </Text>
         </View>
 
         <View style={{ width: "50%" }}>
           <Text style={{ fontSize: 20, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.additional_info}
+            {data.additional_info}
           </Text>
         </View>
       </View>
@@ -261,12 +262,12 @@ const AcceptOrderScreen = ({ navigation }) => {
       >
         <View style={{ width: "50%" }}>
           <Text style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.technician_name}
+            {data.technician_name}
           </Text>
         </View>
         <View style={{ width: "50%" }}>
           <Text style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.technician_phone}
+            {data.technician_phone}
           </Text>
         </View>
       </View>
@@ -301,15 +302,15 @@ const AcceptOrderScreen = ({ navigation }) => {
       >
         <View style={{ width: "50%" }}>
           <Text style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.amount}
+            {data.amount}
           </Text>
         </View>
         <View style={{ width: "50%", flexDirection: "row" }}>
           <Text style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.paymentdate}
+            {data.paymentdate}
           </Text>
           <Text style={{ fontSize: 18, color: "#8C8C8C", fontWeight: "bold" }}>
-            {count.add_date}
+            {data.add_date}
           </Text>
         </View>
       </View>

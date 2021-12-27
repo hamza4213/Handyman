@@ -17,10 +17,12 @@ import { AntDesign } from "@expo/vector-icons";
 import FormInput from "../../Components/Forminput";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-
+import { useDispatch } from "react-redux";
+import { setuserData } from "../../Redux/counterSlice";
 const UserSignIn = ({ navigation }) => {
   const [IMageSource, setIMageSource] = useState("");
   const [signin, setSignIn] = useState(false);
+  const dispatch = useDispatch();
   const [Country, setCountry] = useState({
     callingCode: ["92"],
     cca2: "PK",
@@ -44,7 +46,7 @@ const UserSignIn = ({ navigation }) => {
     }
   };
   const HandleSignIn = useCallback(async () => {
-    console.log(Country.callingCode + phoneNo, passwd);
+    console.log(phoneNo, passwd);
     try {
       const res = await axios.post(
         " https://floringetest.in/handiman/api/login",
@@ -63,6 +65,7 @@ const UserSignIn = ({ navigation }) => {
           JSON.stringify(res.data.result.users)
         );
         if (!res.data.HasError) {
+          dispatch(setuserData(res.data.result.users));
           navigation.navigate("Navigator", {
             type: res.data.result.users.user_type,
           });

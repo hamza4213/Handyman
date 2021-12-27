@@ -23,6 +23,10 @@ export default function Technicianstack() {
         />
 
         <Stack.Screen name="AcceptOrderScreen" component={AcceptOrderScreen} />
+        <Stack.Screen
+          name="OrderHistoryScreen"
+          component={OrderHistoryScreen}
+        />
 
         <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
       </Stack.Navigator>

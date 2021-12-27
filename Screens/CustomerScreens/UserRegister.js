@@ -192,7 +192,7 @@ const UserSignIn = ({ navigation }) => {
             signin
               ? // send request here
                 HandleSignIn()
-              : navigation.navigate("UserSignIn1", {
+              : navigation.navigate("Register", {
                   ph_number: "+" + Country.callingCode + phoneNo,
                 });
           }}

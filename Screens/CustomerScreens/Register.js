@@ -25,8 +25,8 @@ import { PhoneAuthProvider, signInWithCredential } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase";
 const app = getApp();
 const Signin = ({ route, navigation }) => {
-  const {ph_number} = route.params;
-  console.log(ph_number)
+  const { ph_number } = route.params;
+  console.log(ph_number);
 
   const [IMageSource, setIMageSource] = useState("");
   useState;
@@ -62,6 +62,7 @@ const Signin = ({ route, navigation }) => {
       });
     } catch (err) {
       showMessage({ text: `Error: ${err.message}`, color: "red" });
+      console.log(err.message);
     }
   };
   React.useEffect(() => {
@@ -74,27 +75,28 @@ const Signin = ({ route, navigation }) => {
       console.log(Otp);
 
       alert("Phone authentication successful 👍");
-      setOtpVerify(true)
+      setOtpVerify(true);
       // setIsloggedIn(true)
-      
     } catch (err) {
       alert(err);
     }
   };
-  const handleSignUp= async()=>{
-    axios.post(" https://floringetest.in/handiman/api/register",{
-      phone:ph_number,
-      name:UserName,
-      password:Password,
-      email:Email,
-      address:Address,
-      pincode:Pincode,
-      user_type:3
-    }).then(res=>{console.log(res.data)
-                navigation.navigate("UserSignIn")}
-
-    )
-  }
+  const handleSignUp = async () => {
+    axios
+      .post(" https://floringetest.in/handiman/api/register", {
+        phone: ph_number,
+        name: UserName,
+        password: Password,
+        email: Email,
+        address: Address,
+        pincode: Pincode,
+        user_type: 3,
+      })
+      .then((res) => {
+        console.log(res.data);
+        navigation.navigate("UserSignIn");
+      });
+  };
 
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#fff" }}>
@@ -122,19 +124,21 @@ const Signin = ({ route, navigation }) => {
                 labelValue={PhoneNumber}
                 editable={false}
                 placeholderText={"productexperience@gmail.com"}
-                onChangeText={val => setPhoneNumber(val)}
+                onChangeText={(val) => setPhoneNumber(val)}
                 keyboardTyp="numeric"
               />
               <View style={{ height: "4%" }} />
               <FormInput
                 labelValue={Otp}
                 placeholderText={"Enter One Time Password"}
-                onChangeText={val => setOtp(val)}
+                onChangeText={(val) => setOtp(val)}
               />
               <View style={{ height: "2%" }} />
-              <Pressable onPress={() => {
-            Send()
-            }}>
+              <Pressable
+                onPress={() => {
+                  Send();
+                }}
+              >
                 <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
                   <Entypo
                     style={[{ transform: [{ rotate: "180deg" }] }]}
@@ -152,27 +156,27 @@ const Signin = ({ route, navigation }) => {
               <FormInput
                 labelValue={Email}
                 placeholderText={"Enter Email"}
-                onChangeText={val => setEmail(val)}
+                onChangeText={(val) => setEmail(val)}
               />
               <FormInput
                 labelValue={UserName}
                 placeholderText={"Enter Name"}
-                onChangeText={val => setUserName(val)}
+                onChangeText={(val) => setUserName(val)}
               />
               <FormInput
                 labelValue={Address}
                 placeholderText={"Enter Address"}
-                onChangeText={val => setAddress(val)}
+                onChangeText={(val) => setAddress(val)}
               />
               <FormInput
                 labelValue={Pincode}
                 placeholderText={"Enter Pincode"}
-                onChangeText={val => setPincode(val)}
+                onChangeText={(val) => setPincode(val)}
               />
               <FormInput
                 labelValue={Password}
                 placeholderText={"Enter Password"}
-                onChangeText={val => setPassword(val)}
+                onChangeText={(val) => setPassword(val)}
               />
               <View
                 style={{
@@ -214,12 +218,10 @@ const Signin = ({ route, navigation }) => {
         <View style={{ height: 15 }} />
         <TouchableOpacity
           onPress={() => {
-
-            otpVerify?
-            handleSignUp()
-            // navigation.navigate("UserSignIn")
-            :
-            handleVerifyOtp();
+            otpVerify
+              ? handleSignUp()
+              : // navigation.navigate("UserSignIn")
+                handleVerifyOtp();
           }}
         >
           <View

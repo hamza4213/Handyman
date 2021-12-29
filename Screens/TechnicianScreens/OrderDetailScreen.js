@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Dimensions,
+  ActivityIndicator,
+} from "react-native";
 import OrderDetail from "../../Components/OrderDetail";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 const OrderDetailScreen = ({ route, navigation }) => {
   const [Arr3, setArr3] = useState([]);
+  const [loading, setLoading] = useState(true);
   const user = useSelector((state) => state.counter.userData);
   useEffect(() => {
     console.log("pincode", user.pincode);
@@ -15,15 +22,16 @@ const OrderDetailScreen = ({ route, navigation }) => {
       })
       .then(function (response) {
         // console.log(response.data.result.orderList);
-        // for (let i = 0; i < response.data.result.orderList.length; i++) {
-        //   if (
-        //     response.data.result.orderList[i].technician_pincode ===
-        //     user.pincode
-        //   ) {
-        //     Arr3.push(i);
-        //   }
-        // }
-        setArr3(response.data.result.orderList);
+        for (let i = 0; i < response.data.result.orderList.length; i++) {
+          if (
+            response.data.result.orderList[i].technician_pincode ===
+            user.pincode
+          ) {
+            Arr3.push(i);
+          }
+        }
+        // setArr3(response.data.result.orderList);
+        setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
@@ -52,7 +60,9 @@ const OrderDetailScreen = ({ route, navigation }) => {
       >
         <Text style={{ fontSize: 22, fontWeight: "bold" }}>ORDER DETAILS</Text>
       </View>
-      {Arr3.length === 0 ? (
+      {loading ? (
+        <ActivityIndicator size="large" color="0000ff" />
+      ) : Arr3.length === 0 ? (
         <Text>No Orders yet</Text>
       ) : (
         <FlatList

@@ -29,7 +29,7 @@ const PaymentScreen = () => {
         " http://floringetest.in/handiman/api/orderPaymentUpdate",
         {
           orderid: count.id,
-          amount: "50",
+          amount: amount,
           receive_date: date,
           receive_time: time,
         }
